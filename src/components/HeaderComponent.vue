@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <img src="src/assets/images/logo.png" alt="Logo" class="logo" />
+      <img src="../assets/images/logo.png" alt="Logo" class="logo" />
       <nav class="nav-menu">
         <button class="menu-toggle" @click="toggleMenu">☰</button>
         <ul :class="{ 'active': isMenuOpen }">

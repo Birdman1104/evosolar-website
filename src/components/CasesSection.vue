@@ -10,14 +10,14 @@
         </p>
         <div class="cases-section">
             <div class="case" v-for="(block, index) in cases" :key="index">
-                <img src="src/assets/images/service1.jpg" alt="" class="case-image">
+                <img src="../assets/images/service1.jpg" alt="" class="case-image">
                 <div class="overlay"></div>
 
                 <h3>{{ block.title }}</h3>
                 <div class="units-wrapper">
                     <div class="unit-tools">
                         <div class="unit" v-for="(unit, index) in block.units" :key="index">
-                            <div class="units-icon"><img src="src/assets/icons/tool.png" alt="?"><span
+                            <div class="units-icon"><img src="../assets/icons/tool.png" alt="?"><span
                                     class="unit-name">{{ unit }}</span></div>
                         </div>
                     </div>

@@ -26,9 +26,9 @@
                     <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
                     <div class="social-icons">
                         <!-- TODO add links -->
-                        <img src="src/assets/icons/telegram.png" alt="Telegram">
-                        <img src="src/assets/icons/viber.png" alt="Viber">
-                        <img src="src/assets/icons/whatsapp.png" alt="WhatsApp">
+                        <img src="../assets/icons/telegram.png" alt="Telegram">
+                        <img src="../assets/icons/viber.png" alt="Viber">
+                        <img src="../assets/icons/whatsapp.png" alt="WhatsApp">
                     </div>
                 </div>
 
