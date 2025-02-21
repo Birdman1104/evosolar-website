@@ -22,17 +22,17 @@ export default {
         {
           title: 'Design and Installation',
           description: 'We offer premium solar system design and installation services for both homes and businesses, free of charge.',
-          image: '../assets/images/service1.jpg',
+          image: 'src/assets/images/service1.jpg',
         },
         {
           title: 'Maintenance of Solar Systems',
           description: 'We provide maintenance services for both solar systems installed by us and those installed by other companies.',
-          image: '../assets/images/service2.jpg',
+          image: 'src/assets/images/service2.jpg',
         },
         {
           title: 'Adding Solar Panels',
           description: 'Increase the capacity of your existing solar system. We specialize in adding solar panels and expanding your system for improved energy efficiency.',
-          image: '../assets/images/service3.jpg',
+          image: 'src/assets/images/service3.jpg',
         },
       ],
     };
