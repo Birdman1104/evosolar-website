@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <!-- <img src="images/logo.png" alt="Logo" class="logo" /> -->
+      <img src="/images/logo.png" alt="Logo" class="logo" />
       <nav class="nav-menu">
         <button class="menu-toggle" @click="toggleMenu">☰</button>
         <ul :class="{ 'active': isMenuOpen }">
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .header {
-  background-image: url('images/hero.jpg');
+  background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
