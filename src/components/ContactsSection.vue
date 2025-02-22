@@ -1,14 +1,3 @@
-<script>
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-
-// export default {
-//     components: {
-//         FontAwesomeIcon
-//     },
-// };
-</script>
-
 <template>
     <section class="contact-section">
         <h2>Contact us</h2>
@@ -25,10 +14,9 @@
                     <p>📞 Call us</p>
                     <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
                     <div class="social-icons">
-                        <!-- TODO add links -->
-                        <img src="../assets/icons/telegram.png" alt="Telegram">
-                        <img src="../assets/icons/viber.png" alt="Viber">
-                        <img src="../assets/icons/whatsapp.png" alt="WhatsApp">
+                        <a v-for="(social, index) in socials" :key="index" :href=social.url target="_blank">
+                            <img :src=social.icon :alt=social.alt>
+                        </a>
                     </div>
                 </div>
 
@@ -51,6 +39,32 @@
     </section>
 </template>
 
+
+<script>
+export default {
+    data() {
+        return {
+            socials: [
+                {
+                    icon: 'icons/telegram.png',
+                    alt: 'Telegram',
+                    url: 'https://t.me/Birdman1104'
+                },
+                {
+                    icon: 'icons/viber.png',
+                    alt: 'Viber',
+                    url: 'https://t.me/Birdman1104'
+                },
+                {
+                    icon: 'icons/whatsapp.png',
+                    alt: 'WhatsApp',
+                    url: 'https://t.me/Birdman1104'
+                },
+            ]
+        }
+    }
+};
+</script>
 
 
 <style scoped>

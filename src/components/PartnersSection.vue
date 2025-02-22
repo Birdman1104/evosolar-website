@@ -15,11 +15,11 @@
 
 <script>
 const partners = [
-    { image: 'src/assets/icons/longi.png', url: 'https://www.longi.com/', title: 'Longi' },
-    { image: 'src/assets/icons/ameriabank.png', url: 'https://ameriabank.am/', title: 'AmeriaBank' },
-    { image: 'src/assets/icons/acbabank.png', url: 'https://www.acba.am/en/', title: 'ACBA Bank' },
-    { image: 'src/assets/icons/growatt.png', url: 'https://en.growatt.com/', title: 'Growatt' },
-    { image: 'src/assets/icons/fca.png', url: 'https://www.fca.am/en/home.html', title: 'FCA' },
+    { image: 'icons/longi.png', url: 'https://www.longi.com/', title: 'Longi' },
+    { image: 'icons/ameriabank.png', url: 'https://ameriabank.am/', title: 'AmeriaBank' },
+    { image: 'icons/acbabank.png', url: 'https://www.acba.am/en/', title: 'ACBA Bank' },
+    { image: 'icons/growatt.png', url: 'https://en.growatt.com/', title: 'Growatt' },
+    { image: 'icons/fca.png', url: 'https://www.fca.am/en/home.html', title: 'FCA' },
 ];
 
 export default {

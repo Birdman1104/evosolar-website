@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .header {
-  background-image: url('../assets/images/hero.jpg');
+  background-image: url('images/hero.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
