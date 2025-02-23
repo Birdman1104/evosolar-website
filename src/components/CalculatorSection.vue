@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group">
-                <div class="label">Էլեկտրականության սպառման միչին արժեքը</div>
+                <div class="label">Էլեկտրականության սպառման միջին արժեքը</div>
                 <div class="toggle">
                     <input type="radio" id="option1" name="option" checked>
                     <label for="option1">Դրամ</label>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-                <div class="label">Գավաֆիկացված է</div>
+                <div class="label">Գազաֆիկացված է</div>
                 <div class="toggle">
                     <input type="radio" id="gas1" name="gas" checked>
                     <label for="gas1">Այո</label>
@@ -147,18 +147,19 @@ select {
 .toggle label {
     cursor: pointer;
     background: #ddd;
+    color: rgb(33, 33, 33);
     padding: 5px 15px;
     border-radius: 20px;
     margin: 0 5px;
 }
 
 .toggle input:checked+label {
-    background: #e5b400;
+    background: #c69b00;
     color: white;
 }
 
 .submit-btn {
-    background: #2c2f3b;
+    background: #0c9e29;
     color: white;
     margin: 15px auto;
     padding: 10px;
