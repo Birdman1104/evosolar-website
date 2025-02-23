@@ -2,9 +2,9 @@
   <div id="app">
     <Header />
     <Services />
-    <BlocksSection />
+    <WhyChooseUs />
     <OfferSection />
-    <CasesSection />
+    <OurProjects />
     <PartnersSection />
     <CalculatorSection />
     <ContactsSection />
@@ -17,10 +17,10 @@
 <script>
 import Header from './components/HeaderComponent.vue';
 import Services from './components/ServicesComponent.vue';
-import BlocksSection from './components/BlocksSection.vue';
+import WhyChooseUs from './components/WhyChooseUs.vue';
 import OfferSection from './components/OfferSection.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
-import CasesSection from './components/CasesSection.vue';
+import OurProjects from './components/OurProjects.vue';
 import CalculatorSection from './components/CalculatorSection.vue';
 import PartnersSection from './components/PartnersSection.vue';
 import ContactsSection from './components/ContactsSection.vue';
@@ -31,12 +31,12 @@ export default {
   components: {
     Header,
     Services,
-    BlocksSection,
+    WhyChooseUs,
     OfferSection,
     CalculatorButton,
     CalculatorSection,
     PartnersSection,
-    CasesSection,
+    OurProjects,
     ContactsSection,
     EmailContact,
     FooterComponent,

@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .blocks-section {
   background: #081C10;
-  padding: 20px;
+  padding: 20px 60px;
 
 }
 

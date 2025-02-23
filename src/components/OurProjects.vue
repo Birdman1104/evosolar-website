@@ -18,7 +18,7 @@
                     <div class="unit-tools">
                         <div class="unit" v-for="(unit, index) in block.units" :key="index">
                             <div class="units-icon"><img :src=toolIcon alt="?"><span class="unit-name">{{ unit
-                                    }}</span></div>
+                            }}</span></div>
                         </div>
                     </div>
                 </div>
