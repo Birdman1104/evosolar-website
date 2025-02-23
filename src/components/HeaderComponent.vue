@@ -4,12 +4,11 @@
       <img src="/images/logo.png" alt="Logo" class="logo" />
       <nav class="nav-menu">
         <button class="menu-toggle" @click="toggleMenu">☰</button>
-        <ul :class="{ 'active': isMenuOpen }">
-          <li><a href="#">Home</a></li>
+        <ul :class="{ 'active': isMenuOpen }" id="myLinks">
           <li><a href="#services">Services</a></li>
           <li><a href="#blocks">Why Choose Us?</a></li>
           <li><a href="#cases">Our Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contacts</a></li>
         </ul>
       </nav>
     </div>
@@ -80,9 +79,10 @@ export default {
     flex-direction: column;
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 10px;
+    top: 50px;
+    left: 0px;
+    padding: 20px;
+    width: 100%;
   }
 
   .nav-menu ul.active {

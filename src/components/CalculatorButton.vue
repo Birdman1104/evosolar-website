@@ -24,4 +24,11 @@
 
     color: white
 }
+
+
+@media (max-width: 768px) {
+    .calculator-button {
+        display: none;
+    }
+}
 </style>

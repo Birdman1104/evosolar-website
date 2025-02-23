@@ -62,6 +62,7 @@ export default {
   position: relative;
   z-index: 1;
   color: #193D27;
+  margin-bottom: 30px;
 }
 
 .circle {
@@ -90,11 +91,12 @@ h3 {
     flex-direction: column;
   }
 
+  .circle {
+    margin-bottom: 3px;
+  }
+
   .circles::before {
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
+    display: none;
   }
 }
 </style>
