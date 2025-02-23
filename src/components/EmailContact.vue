@@ -77,6 +77,12 @@ button:hover {
 section {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 20px 150px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
 }
 </style>

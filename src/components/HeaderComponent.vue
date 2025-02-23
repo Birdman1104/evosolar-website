@@ -7,7 +7,8 @@
         <ul :class="{ 'active': isMenuOpen }">
           <li><a href="#">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#offer">What We Offer</a></li>
+          <li><a href="#blocks">Why Choose Us?</a></li>
+          <li><a href="#cases">Our Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>

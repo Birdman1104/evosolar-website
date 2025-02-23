@@ -1,10 +1,11 @@
 <template>
     <hr>
     <footer class="footer">
-        <span>Evosolar &#169; <span id='yearSpan'>2025</span></span>
-        <div>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">Privacy and Policy</a>
+        <span class="copyright">Evosolar &#169; <span id='yearSpan'>2025</span> </span>
+        <div class="urls">
+            <a href="#">Terms and Conditions </a>
+            <a href="#">Privacy and Policy </a>
+            <a href="http://birdman1104.github.io/" target="_blank">Developer: Birdman</a>
         </div>
     </footer>
 </template>
@@ -29,9 +30,26 @@ hr {
     color: #5c5c5c;
 }
 
-.footer a {
+.urls a {
     color: #5c5c5c;
     margin-left: 15px;
     text-decoration: none;
+}
+
+.copyright a {
+    color: #5c5c5c;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        display: block;
+        text-align: center;
+    }
+
+    .urls a {
+        margin: 0;
+        display: block;
+    }
 }
 </style>

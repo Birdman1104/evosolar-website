@@ -1,5 +1,5 @@
 <template>
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <h2>Contact us</h2>
         <div class="container">
             <div class="map-container">
@@ -80,6 +80,7 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .map-container iframe {
@@ -120,5 +121,26 @@ export default {
 .social-icons img {
     width: 24px;
     height: 24px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 200px;
+    }
+
+    .info {
+        max-width: 100%;
+    }
+
+    .contact-box {
+        width: 100%;
+    }
 }
 </style>
