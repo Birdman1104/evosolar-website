@@ -1,18 +1,23 @@
 <template>
   <section id="services" class="services">
-    <h2>OUR SERVICES</h2>
-    <p>We provide the best services for your needs.</p>
+    <h2>{{ translationStore.t('services', 'title') }}</h2>
+    <p>{{ translationStore.t('services', 'description') }}</p>
     <div class="service-cards">
       <div class="card" v-for="(service, index) in services" :key="index">
         <img :src="service.image" :alt="service.title" />
         <div class="overlay"></div>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-        <button @click="scrollToContact">Learn More</button>
+        <h3>{{ translationStore.t('services', `service${index + 1}`, 'title') }}, </h3>
+        <p>{{ translationStore.t('services', `service${index + 1}`, 'description') }}</p>
+        <button @click="scrollToContact">{{ translationStore.t('services', 'button') }}</button>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
 
 <script>
 export default {
@@ -20,7 +25,7 @@ export default {
     return {
       services: [
         {
-          title: 'Design and Installation',
+          title: 'service1',
           description: 'We offer premium solar system design and installation services for both homes and businesses, free of charge.',
           image: 'images/service1.jpg',
         },

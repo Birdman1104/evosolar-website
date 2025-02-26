@@ -1,19 +1,7 @@
-<template>
-  <header class="header">
-    <div class="header-content">
-      <img src="/images/logo.png" alt="Logo" class="logo" />
-      <nav class="nav-menu">
-        <button class="menu-toggle" @click="toggleMenu">☰</button>
-        <ul :class="{ 'active': isMenuOpen }" id="myLinks">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#blocks">Why Choose Us?</a></li>
-          <li><a href="#cases">Our Projects</a></li>
-          <li><a href="#contact">Contacts</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-</template>
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
 
 <script>
 export default {
@@ -29,6 +17,25 @@ export default {
   },
 };
 </script>
+
+<template>
+  <header class="header">
+    <div class="header-content">
+      <img src="/images/logo.png" alt="Logo" class="logo" />
+      <nav class="nav-menu">
+        <button class="menu-toggle" @click="toggleMenu">☰</button>
+        <ul :class="{ 'active': isMenuOpen }" id="myLinks">
+          <li><a href="#services">{{ translationStore.t('header', 'services') }}</a></li>
+          <li><a href="#blocks">{{ translationStore.t('header', 'whyChooseUs') }}</a></li>
+          <li><a href="#cases">{{ translationStore.t('header', 'ourProjects') }}</a></li>
+          <li><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</template>
+
+
 
 <style scoped>
 .header {

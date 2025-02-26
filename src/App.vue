@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Header from './components/HeaderComponent.vue';
 import Services from './components/ServicesComponent.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
@@ -27,21 +27,36 @@ import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
-export default {
-  components: {
-    Header,
-    Services,
-    WhyChooseUs,
-    OfferSection,
-    CalculatorButton,
-    CalculatorSection,
-    PartnersSection,
-    OurProjects,
-    ContactsSection,
-    EmailContact,
-    FooterComponent,
+import { provide, reactive } from "vue";
+import { TRANSLATIONS } from "./translations";
+
+const translationStore = reactive({
+  language: "hy",
+  translations: TRANSLATIONS,
+  t(...keys) {
+    let current = this.translations[this.language];
+
+    for (let key of keys) {
+      if (current && current.hasOwnProperty(key)) {
+        current = current[key];
+      } else {
+        return "ERROR";
+      }
+    }
+
+    return current;
   },
-};
+  switchLanguage() {
+    this.language = this.language === "en" ? "hy" : "en";
+  },
+});
+
+provide("translationStore", translationStore);
+</script>
+
+<script setup>
+
+
 </script>
 
 <style>

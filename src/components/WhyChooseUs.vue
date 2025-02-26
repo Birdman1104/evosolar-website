@@ -1,14 +1,20 @@
 <template>
   <section id="blocks" class="blocks-section">
-    <h2>Why Choose Us?</h2>
+    <h2>{{ translationStore.t('whyChooseUs', 'title') }}</h2>
     <div class="blocks">
-      <div class="block" v-for="(block, index) in blocks" :key="index">
-        <h3>{{ block.title }}</h3>
-        <p>{{ block.text }}</p>
+      <div class="block" v-for="(index) in 4" :key="index">
+        <h3>{{ translationStore.t('whyChooseUs', `block${index}`, 'title') }}</h3>
+        <p>{{ translationStore.t('whyChooseUs', `block${index}`, 'description') }}</p>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
+
 
 <script>
 export default {

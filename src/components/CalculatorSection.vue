@@ -1,5 +1,5 @@
 <template>
-    <div class="calculator-section">
+    <section class="calculator-section">
         <h2>Calculator</h2>
         <p class="calculator-description">Lorem ipsum dolor sit amet consectetur. Ipsum consequat ac egestas vestibulum
             integer vivamus ullamcorper
@@ -72,7 +72,7 @@
 
             <button class="submit-btn">Հաշվել</button>
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>
@@ -81,6 +81,10 @@
     padding: 50px 20px;
     color: white;
     text-align: center;
+}
+
+.calculator-section p {
+    margin: auto;
 }
 
 .calculator-description {

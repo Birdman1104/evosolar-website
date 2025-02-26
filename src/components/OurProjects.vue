@@ -1,12 +1,8 @@
 <template>
     <section id="cases">
-        <h2>OUR PROJECTS</h2>
+        <h2>{{ translationStore.t('ourProjects', 'title') }}</h2>
         <p class="cases-description">
-            Lorem ipsum dolor sit amet consectetur. Ipsum consequat ac egestas vestibulum
-            integer vivamus ullamcorper
-            ultrices. Proin eu at tortor eget. Semper sed mattis volutpat urna at congue. Nibh arcu proin iaculis
-            odio.
-            Ridiculus lorem sit facilisi.
+            {{ translationStore.t('ourProjects', 'description') }}
         </p>
         <div class="cases-section">
             <div class="case" v-for="(block, index) in cases" :key="index">
@@ -18,7 +14,7 @@
                     <div class="unit-tools">
                         <div class="unit" v-for="(unit, index) in block.units" :key="index">
                             <div class="units-icon"><img :src=toolIcon alt="?"><span class="unit-name">{{ unit
-                            }}</span></div>
+                                    }}</span></div>
                         </div>
                     </div>
                 </div>
@@ -31,6 +27,12 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
+
 
 <script>
 export default {
@@ -53,7 +55,7 @@ export default {
 <style scoped>
 #cases {
     background: #04210c;
-    padding: 20px;
+    padding: 20px 50px;
 }
 
 #cases h2 {

@@ -1,6 +1,6 @@
 <template>
     <section id="partners" class="partners-section">
-        <h2>OUR PARTNERS</h2>
+        <h2>{{ translationStore.t('ourPartners', 'title') }}</h2>
         <div class="slider-container">
             <div class="slider">
                 <a v-for="(partner, index) in partners" :key="index" :href="partner.url">
@@ -12,6 +12,11 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
 
 <script>
 const partners = [
@@ -29,26 +34,6 @@ export default {
         };
     },
 };
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const slider = document.querySelector(".slider");
-//     const images = Array.from(slider.children);
-
-//     if (images.length > 5) {
-//         setInterval(() => {
-//             slider.style.transition = "transform 0.5s ease-in-out";
-//             slider.style.transform = "translateX(-120px)";
-//             setTimeout(() => {
-//                 const firstImage = images.shift();
-//                 slider.appendChild(firstImage);
-//                 images.push(firstImage);
-//                 slider.style.transition = "none";
-//                 slider.style.transform = "translateX(0)";
-//             }, 500);
-//         }, 2000);
-//     }
-// });
-
 </script>
 
 <style scoped>

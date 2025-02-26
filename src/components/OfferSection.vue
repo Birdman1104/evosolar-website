@@ -1,17 +1,23 @@
 <template>
   <section id="offer" class="offer">
-    <h2>5 STEPS TO YOUR SOLAR SYSTEM</h2>
-    <p>Explore our services and solutions.</p>
+    <h2>{{ translationStore.t('steps', 'title') }}</h2>
+    <p>{{ translationStore.t('steps', 'description') }}</p>
     <div class="circles">
       <div class="circle-wrapper" v-for="(offer, index) in offers" :key="index">
         <div class="circle">
           <div class="icon">{{ offer.icon }}</div>
         </div>
-        <h3 v-html="offer.title"></h3>
+        <h3>{{ translationStore.t('steps', `step${index + 1}`) }}</h3>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+</script>
+
 
 <script>
 export default {
