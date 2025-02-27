@@ -1,11 +1,11 @@
 <template>
     <section id="partners" class="partners-section">
         <h2>{{ translationStore.t('ourPartners', 'title') }}</h2>
-        <div class="slider-container">
-            <div class="slider">
-                <a v-for="(partner, index) in partners" :key="index" :href="partner.url">
-                    <div class='partner-icon'>
-                        <img :src=partner.image :alt="partner.title">
+        <div class="slider-container" ref="sliderContainer" @mouseenter="pauseScrolling" @mouseleave="startScrolling">
+            <div class="slider" ref="slider">
+                <a v-for="(partner, index) in partners" :key="index" :href="partner.url" target="_blank">
+                    <div class="partner-icon">
+                        <img :src="partner.image" :alt="partner.title">
                     </div>
                 </a>
             </div>
@@ -14,28 +14,55 @@
 </template>
 
 <script setup>
-import { inject } from "vue";
-const translationStore = inject("translationStore");
-</script>
+import { inject, onMounted, ref } from "vue";
 
-<script>
+const translationStore = inject("translationStore");
+
 const partners = [
-    { image: 'icons/longi.png', url: 'https://www.longi.com/', title: 'Longi' },
-    { image: 'icons/ameriabank.png', url: 'https://ameriabank.am/', title: 'AmeriaBank' },
-    { image: 'icons/acbabank.png', url: 'https://www.acba.am/en/', title: 'ACBA Bank' },
-    { image: 'icons/growatt.png', url: 'https://en.growatt.com/', title: 'Growatt' },
-    { image: 'icons/fca.png', url: 'https://www.fca.am/en/home.html', title: 'FCA' },
+    { image: "icons/longi.png", url: "https://www.longi.com/", title: "Longi" },
+    { image: "icons/ameriabank.png", url: "https://ameriabank.am/", title: "AmeriaBank" },
+    { image: "icons/acbabank.png", url: "https://www.acba.am/en/", title: "ACBA Bank" },
+    { image: "icons/growatt.png", url: "https://en.growatt.com/", title: "Growatt" },
+    { image: "icons/fca.png", url: "https://www.fca.am/en/home.html", title: "FCA" },
 ];
 
-export default {
-    data() {
-        return {
-            partners: partners,
-        };
-    },
-};
-</script>
+const slider = ref(null);
+let animationFrame;
+let position = 0;
+const speed = 1.5; 
+const FPS = 16
+let lastTime = performance.now();
 
+const scroll = (time) => {
+    const deltaTime = time - lastTime;
+    lastTime = time;
+
+    if (slider.value) {
+        position -= speed * (deltaTime / FPS);
+        if (Math.abs(position) >= slider.value.scrollWidth / 2) {
+            position = 0;
+        }
+        slider.value.style.transform = `translate3d(${position}px, 0, 0)`;
+    }
+
+    animationFrame = requestAnimationFrame(scroll);
+};
+
+const startScrolling = () => {
+    animationFrame = requestAnimationFrame(scroll);
+};
+
+const pauseScrolling = () => {
+    cancelAnimationFrame(animationFrame);
+};
+
+onMounted(() => {
+    if (slider.value) {
+        slider.value.innerHTML += slider.value.innerHTML;
+        startScrolling();
+    }
+});
+</script>
 <style scoped>
 .partners-section {
     background: #ffffff;
@@ -47,32 +74,30 @@ export default {
     text-align: center;
 }
 
-.partners-section p {
-    font-size: 0.8rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .slider-container {
     width: 100%;
     overflow: hidden;
-    white-space: nowrap;
     position: relative;
 }
 
 .slider {
-    display: inline-block;
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.slider a {
+    align-content: center;
+    margin: 0 20px;
 }
 
 .partner-icon {
     display: inline-block;
-    width: 20%;
-    margin: 0 10px;
+    width: 150px;
 }
 
 .partner-icon img {
     width: 100%;
     height: auto;
-    vertical-align: middle;
 }
 </style>

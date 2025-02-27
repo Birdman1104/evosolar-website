@@ -6,8 +6,8 @@
       <div class="card" v-for="(service, index) in services" :key="index">
         <img :src="service.image" :alt="service.title" />
         <div class="overlay"></div>
-        <h3>{{ translationStore.t('services', `service${index + 1}`, 'title') }}, </h3>
-        <p>{{ translationStore.t('services', `service${index + 1}`, 'description') }}</p>
+        <span class="card-title">{{ translationStore.t('services', `service${index + 1}`, 'title') }}, </span>
+        <p class="description">{{ translationStore.t('services', `service${index + 1}`, 'description') }}</p>
         <button @click="scrollToContact">{{ translationStore.t('services', 'button') }}</button>
       </div>
     </div>
@@ -91,15 +91,19 @@ export default {
   background-color: #000000;
 }
 
-.card h3 {
+.card-title {
   position: absolute;
-  top: 45%;
+  font-size: 19px;
+  font-weight: 800;
+  top: 50%;
   left: 15px;
   transform: translate(0, -50%);
 }
 
-.card p {
+.description {
   position: absolute;
+  font-size: 16px;
+
   top: 55%;
   left: 15px;
 }
@@ -122,10 +126,33 @@ export default {
   background: #ED3200;
 }
 
+
+@media (max-width: 1280px) and (min-width:  768px) {
+  .card-title {
+    font-size: 20px;
+    top: 20%;
+  }
+
+  .description {
+    font-size: 13px;
+    top: 28%;
+  }
+}
+
 @media (max-width: 768px) {
   .card {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .card-title {
+    font-size: 20px;
+    top: 45%;
+  }
+
+  .description {
+    font-size: 13px;
+    top:  49%;
   }
 }
 </style>

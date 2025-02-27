@@ -75,12 +75,17 @@ export default {
 
 .container {
     display: flex;
+    justify-content: center;
+
     gap: 50px;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
+}
+.map-container {
+    max-width: 350px;
 }
 
 .map-container iframe {
@@ -89,9 +94,13 @@ export default {
     height: 250px;
     border: none;
 }
+.mail-address {
+    width: fit-content;
+}
 
 .info {
-    max-width: 400px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .info h2 {
@@ -104,7 +113,11 @@ export default {
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+}
+
+.mail-address {
     width: 100%;
+    max-width: 300px;
 }
 
 .contact-box p {
@@ -135,12 +148,6 @@ export default {
         height: 200px;
     }
 
-    .info {
-        max-width: 100%;
-    }
-
-    .contact-box {
-        width: 100%;
-    }
+    
 }
 </style>
