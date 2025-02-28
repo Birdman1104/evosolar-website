@@ -1,3 +1,24 @@
+<script setup>
+import { inject } from "vue";
+const translationStore = inject("translationStore");
+
+const handleClick = (lang) => {
+    if (translationStore) {
+        translationStore.switchLanguage(lang);
+    } else {
+        console.error("translationStore is not defined");
+    }
+};
+</script>
+
+
+<script>
+window.onload = () => {
+    document.getElementById("yearSpan").innerHTML = new Date().getFullYear();
+}
+</script>
+
+
 <template>
     <hr>
     <footer class="footer">
@@ -6,15 +27,12 @@
             <a href="#">Terms and Conditions </a>
             <a href="#">Privacy and Policy </a>
             <a href="http://birdman1104.github.io/" target="_blank">Developer: Birdman</a>
+            <a href="#" @click.prevent="handleClick('hy')">AM</a>
+            <a href="#" @click.prevent="handleClick('en')">EN</a>
         </div>
     </footer>
 </template>
 
-<script>
-window.onload = () => {
-    document.getElementById("yearSpan").innerHTML = new Date().getFullYear();
-}
-</script>
 
 <style scoped>
 hr {

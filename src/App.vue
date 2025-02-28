@@ -46,8 +46,13 @@ const translationStore = reactive({
 
     return current;
   },
-  switchLanguage() {
-    this.language = this.language === "en" ? "hy" : "en";
+  switchLanguage(key = 'en') {
+    if (key === 'hy') {
+      this.language = 'hy';
+    } else {
+      this.language = 'en';
+    }
+    this.language = this.language;
   },
 });
 
