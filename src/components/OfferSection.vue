@@ -7,7 +7,7 @@
         <div class="circle">
           <div class="icon">{{ offer.icon }}</div>
         </div>
-        <h3>{{ translationStore.t('steps', `step${index + 1}`) }}</h3>
+        <p class="icon-text">{{ translationStore.t('steps', `step${index + 1}`) }}</p>
       </div>
     </div>
   </section>
@@ -87,12 +87,14 @@ export default {
   font-size: 24px;
 }
 
-h3 {
+.icon-text {
+  word-break: break-word;  
   margin: 0;
+  width: 180px;
   font-size: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .circles {
     flex-direction: column;
   }

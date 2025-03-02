@@ -10,7 +10,7 @@
             </div>
             <div class="info">
 
-                <div class="contact-box">
+                <div class="tell">
                     <p>📞 Call us</p>
                     <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
                     <div class="social-icons">
@@ -84,30 +84,30 @@ export default {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
 }
+
 .map-container {
-    max-width: 350px;
+    min-width: 350px;
+    width: 350px;
 }
 
 .map-container iframe {
     border-radius: 10px;
+    min-width: 350px;
     width: 350px;
     height: 250px;
     border: none;
 }
-.mail-address {
-    width: fit-content;
-}
 
 .info {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
+    min-width: 300px;
 }
 
 .info h2 {
     margin-top: 0;
 }
 
-.contact-box {
+.contact-box, .tell {
     background: white;
     border-radius: 10px;
     padding: 15px;
@@ -116,8 +116,12 @@ export default {
 }
 
 .mail-address {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
+    min-width: 300px;
+}
+
+.tell {
+    height: 150px;
 }
 
 .contact-box p {
@@ -136,18 +140,29 @@ export default {
     height: 24px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .container {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
+    .info,
+    .mail-address,
+    .map-container {
+        width: 80%;
+    }
+
+    .tell {
+        height: fit-content;
+    }
+
+
     .map-container iframe {
         width: 100%;
         height: 200px;
     }
 
-    
+
 }
 </style>
