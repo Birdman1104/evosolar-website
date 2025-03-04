@@ -1,6 +1,6 @@
 <template>
     <section id="contact" class="contact-section">
-        <h2>Contact us</h2>
+        <h2>{{ translationStore.t('contactUs', 'title') }}</h2>
         <div class="container">
             <div class="map-container">
                 <iframe
@@ -11,7 +11,7 @@
             <div class="info">
 
                 <div class="tell">
-                    <p>📞 Call us</p>
+                    <p>📞 {{ translationStore.t('contactUs', 'callUs') }}</p>
                     <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
                     <div class="social-icons">
                         <a v-for="(social, index) in socials" :key="index" :href=social.url target="_blank">
@@ -25,13 +25,13 @@
             <div class="mail-address">
 
                 <div class="contact-box">
-                    <p>✉️ Email us</p>
+                    <p>✉️ {{ translationStore.t('contactUs', 'emailUs') }}</p>
                     <p><a href="mailto:arsenmazmanyan11@gmail.com">sales@evosolar.am</a></p>
                 </div>
 
                 <div class="contact-box">
-                    <p>📍 Visit us </p>
-                    <p>Gay Ave 37, Yerevan, Armenia</p>
+                    <p>📍 {{ translationStore.t('contactUs', 'visitUs') }} </p>
+                    <p>{{ translationStore.t('contactUs', 'address') }}</p>
                 </div>
             </div>
         </div>
@@ -39,6 +39,11 @@
     </section>
 </template>
 
+<script setup>
+import { inject } from "vue";
+
+const translationStore = inject("translationStore");
+</script>
 
 <script>
 export default {
@@ -107,7 +112,8 @@ export default {
     margin-top: 0;
 }
 
-.contact-box, .tell {
+.contact-box,
+.tell {
     background: white;
     border-radius: 10px;
     padding: 15px;

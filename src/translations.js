@@ -64,6 +64,19 @@ export const TRANSLATIONS = {
     ourPartners: {
       title: "OUR PARTNERS",
     },
+    emailForm: {
+      fullName: "Full Name",
+      email: "Contact Email",
+      send: "Send",
+      message: "Message",
+    },
+    contactUs: {
+      title: "Contact Us",
+      emailUs: "Email Us",
+      callUs: "Call Us",
+      visitUs: "Visit Us",
+      address: "Gai Ave 37, Yerevan, Armenia",
+    },
   },
   hy: {
     header: {
@@ -129,6 +142,19 @@ export const TRANSLATIONS = {
     },
     ourPartners: {
       title: "ՄԵՐ ԳՈՐԾԸՆԿԵՐՆԵՐԸ",
+    },
+    emailForm: {
+      fullName: "Անուն Ազգանուն",
+      email: "Էլ. հասցե",
+      send: "Ուղարկել",
+      message: "Նամակ",
+    },
+    contactUs: {
+      title: "Կապ",
+      callUs: "Զանգահարեք մեզ",
+      emailUs: "Դիմեք մեզ",
+      visitUs: "Այցելեք մեզ",
+      address: "Գայի պողոտա 37, Երևան",
     },
   },
 };

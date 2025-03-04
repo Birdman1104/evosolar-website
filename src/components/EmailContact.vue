@@ -1,16 +1,22 @@
 <template>
     <section class="email-contact">
         <form @submit.prevent="submitForm">
-            <label for="fname">Full Name</label>
+            <label for="fname">{{ translationStore.t('emailForm', 'fullName') }}</label>
             <input type="text" name="name" id="fname" v-model="name" />
-            <label for="fmail">Contact Email</label>
+            <label for="fmail">{{ translationStore.t('emailForm', 'email') }}</label>
             <input type="email" name="email" id='fmail' v-model="email" />
-            <label for="fmessage">Message</label>
+            <label for="fmessage">{{ translationStore.t('emailForm', 'message') }}</label>
             <textarea name="message" id="fmessage" v-model="message"></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit">{{ translationStore.t('emailForm', 'send') }}</button>
         </form>
     </section>
 </template>
+
+<script setup>
+import { inject } from "vue";
+
+const translationStore = inject("translationStore");
+</script>
 
 <script>
 const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
