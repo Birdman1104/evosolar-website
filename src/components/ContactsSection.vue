@@ -1,6 +1,6 @@
 <template>
     <section id="contact" class="contact-section">
-        <h2>{{ translationStore.t('contactUs', 'title') }}</h2>
+        <h1>{{ translationStore.t('contactUs', 'title') }}</h1>
         <div class="container">
             <div class="map-container">
                 <iframe
@@ -10,7 +10,7 @@
             </div>
             <div class="info">
 
-                <div class="tell">
+                <div class="contact-box tell">
                     <p>📞 {{ translationStore.t('contactUs', 'callUs') }}</p>
                     <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
                     <div class="social-icons">
@@ -53,18 +53,18 @@ export default {
                 {
                     icon: 'icons/telegram.png',
                     alt: 'Telegram',
-                    url: 'https://t.me/Birdman1104'
+                    url: 'https://t.me/LeonK8800'
                 },
-                {
-                    icon: 'icons/viber.png',
-                    alt: 'Viber',
-                    url: 'https://t.me/Birdman1104'
-                },
-                {
-                    icon: 'icons/whatsapp.png',
-                    alt: 'WhatsApp',
-                    url: 'https://t.me/Birdman1104'
-                },
+                // {
+                //     icon: 'icons/viber.png',
+                //     alt: 'Viber',
+                //     url: 'https://t.me/Birdman1104'
+                // },
+                // {
+                //     icon: 'icons/whatsapp.png',
+                //     alt: 'WhatsApp',
+                //     url: 'https://t.me/Birdman1104'
+                // },
             ]
         }
     }
@@ -73,7 +73,7 @@ export default {
 
 
 <style scoped>
-.contact-section h2 {
+.contact-section h1 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -112,8 +112,7 @@ export default {
     margin-top: 0;
 }
 
-.contact-box,
-.tell {
+.contact-box {
     background: white;
     border-radius: 10px;
     padding: 15px;
@@ -142,8 +141,8 @@ export default {
 }
 
 .social-icons img {
-    width: 24px;
-    height: 24px;
+    width: 42px;
+    height: 42px;
 }
 
 @media (max-width: 1100px) {

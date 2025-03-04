@@ -1,12 +1,12 @@
 <template>
   <section id="services" class="services">
-    <h2>{{ translationStore.t('services', 'title') }}</h2>
+    <h1>{{ translationStore.t('services', 'title') }}</h1>
     <p>{{ translationStore.t('services', 'description') }}</p>
     <div class="service-cards">
       <div class="card" v-for="(service, index) in services" :key="index">
         <img :src="service.image" :alt="service.title" />
         <div class="overlay"></div>
-        <span class="card-title">{{ translationStore.t('services', `service${index + 1}`, 'title') }}, </span>
+        <span class="card-title">{{ translationStore.t('services', `service${index + 1}`, 'title') }}</span>
         <p class="description">{{ translationStore.t('services', `service${index + 1}`, 'description') }}</p>
         <!-- <button @click="scrollToContact">{{ translationStore.t('services', 'button') }}</button> -->
       </div>
@@ -26,17 +26,14 @@ export default {
       services: [
         {
           title: 'service1',
-          description: 'We offer premium solar system design and installation services for both homes and businesses, free of charge.',
           image: 'images/service1.jpg',
         },
         {
           title: 'Maintenance of Solar Systems',
-          description: 'We provide maintenance services for both solar systems installed by us and those installed by other companies.',
           image: 'images/service2.jpg',
         },
         {
           title: 'Adding Solar Panels',
-          description: 'Increase the capacity of your existing solar system. We specialize in adding solar panels and expanding your system for improved energy efficiency.',
           image: 'images/service3.jpg',
         },
       ],
@@ -53,7 +50,7 @@ export default {
 <style scoped>
 .services {
   background: white;
-  padding: 30px 20px;
+  padding: 20px 20px 30px 20px;
   text-align: center;
 }
 
@@ -93,7 +90,7 @@ export default {
 
 .card-title {
   position: absolute;
-  font-size: 19px;
+  font-size: 1.4rem;
   font-weight: 800;
   top: 60%;
   left: 15px;
@@ -102,9 +99,9 @@ export default {
 
 .description {
   position: absolute;
-  font-size: 16px;
+  font-size: 1.1rem;
 
-  top: 75%;
+  top: 65%;
   left: 15px;
 }
 

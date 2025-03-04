@@ -127,8 +127,8 @@ export const TRANSLATIONS = {
       },
     },
     steps: {
-      title: "5 ՔԱՅԼ ԴԵՊԻ ՔՈ ԱՐԵՎԱՅԻՆ ԿԱՅԱՆԸ",
-      description: "Բացահայտեք մեր ծառայություններին և լուծումներին",
+      title: "5 քայլ դեպի քո՛ արևային կայանը",
+      description: "Բացահայտե՛ք մեր ծառայություններն և լուծումները",
       step1: "Խորհրդատվություն, Չափագրում",
       step2: "Նախագծում",
       step3: "Նախապատրաստական աշխատանքներ",
@@ -141,7 +141,7 @@ export const TRANSLATIONS = {
         "ՀԱՅԵՐԵՆ Lorem ipsum dolor sit amet consectetur. Ipsum consequat ac egestas vestibulum integer vivamus ullamcorper ultrices. Proin eu at tortor eget. Semper sed mattis volutpat urna at congue. Nibh arcu proin iaculis odio. Ridiculus lorem sit facilisi.",
     },
     ourPartners: {
-      title: "ՄԵՐ ԳՈՐԾԸՆԿԵՐՆԵՐԸ",
+      title: "Մեր Գործընկերները",
     },
     emailForm: {
       fullName: "Անուն Ազգանուն",

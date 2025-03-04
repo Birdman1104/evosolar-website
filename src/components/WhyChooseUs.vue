@@ -18,7 +18,7 @@ const translationStore = inject("translationStore");
 <style scoped>
 .blocks-section {
   background: #081C10;
-  padding: 20px 40px;
+  padding: 20px 40px 30px 40px;
 }
 
 .blocks-section h2 {

@@ -81,7 +81,6 @@ export default {
 }
 
 .menu-item {
-  border-bottom: 3px solid #4b4742;
   padding: 10px 0;
   padding-left: 20px;
 }
@@ -108,6 +107,10 @@ export default {
 
   .menu-toggle {
     display: block;
+  }
+
+  .menu-item {
+    border-bottom: 3px solid #4b4742;
   }
 }
 </style>
