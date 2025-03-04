@@ -37,7 +37,8 @@ export default {
 
 <style scoped>
 .offer {
-  background: white;
+  background: #081C10;
+  color: white;
   padding: 50px 20px;
   text-align: center;
 }
@@ -53,11 +54,12 @@ export default {
 .circles::before {
   content: '';
   position: absolute;
-  top: 35%;
-  left: 0;
+  top: 30%;
+  width: 120%;
+  left: -10%;
   right: 0;
   height: 2px;
-  background: #193D27;
+  background: #c1c1c1;
   z-index: 0;
 }
 
@@ -67,7 +69,9 @@ export default {
   align-items: center;
   position: relative;
   z-index: 1;
-  color: #193D27;
+  color: white;
+  height: 158px;
+  /* color: #193D27; */
   margin-bottom: 30px;
 }
 
@@ -88,10 +92,10 @@ export default {
 }
 
 .icon-text {
-  word-break: break-word;  
+  word-break: break-word;
   margin: 0;
-  width: 180px;
-  font-size: 1rem;
+  width: 195px;
+  font-size: 0.98rem;
 }
 
 @media (max-width: 900px) {

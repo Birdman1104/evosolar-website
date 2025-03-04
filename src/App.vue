@@ -3,14 +3,14 @@
     <Header />
     <Services />
     <WhyChooseUs />
-    <OfferSection />
-    <OurProjects />
+    <!-- <OurProjects /> -->
     <PartnersSection />
-    <CalculatorSection />
+    <OfferSection />
+    <!-- <CalculatorSection /> -->
     <ContactsSection />
     <EmailContact />
     <FooterComponent />
-    <CalculatorButton />
+    <!-- <CalculatorButton /> -->
   </div>
 </template>
 

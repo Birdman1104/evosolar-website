@@ -11,7 +11,6 @@ const handleClick = (lang) => {
 };
 </script>
 
-
 <script>
 window.onload = () => {
     document.getElementById("yearSpan").innerHTML = new Date().getFullYear();
@@ -24,11 +23,11 @@ window.onload = () => {
     <footer class="footer">
         <span class="copyright">Evosolar &#169; <span id='yearSpan'>2025</span> </span>
         <div class="urls">
-            <a href="#">Terms and Conditions </a>
-            <a href="#">Privacy and Policy </a>
+            <!-- <a href="#">Terms and Conditions </a>
+            <a href="#">Privacy and Policy </a> -->
             <a href="http://birdman1104.github.io/" target="_blank">Developer: Birdman</a>
-            <a href="#" @click.prevent="handleClick('hy')">AM</a>
-            <a href="#" @click.prevent="handleClick('en')">EN</a>
+            <a href="#" @click.prevent="handleClick('hy')">Հայերեն</a>
+            <a href="#" @click.prevent="handleClick('en')">English</a>
         </div>
     </footer>
 </template>

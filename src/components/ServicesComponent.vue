@@ -8,7 +8,7 @@
         <div class="overlay"></div>
         <span class="card-title">{{ translationStore.t('services', `service${index + 1}`, 'title') }}, </span>
         <p class="description">{{ translationStore.t('services', `service${index + 1}`, 'description') }}</p>
-        <button @click="scrollToContact">{{ translationStore.t('services', 'button') }}</button>
+        <!-- <button @click="scrollToContact">{{ translationStore.t('services', 'button') }}</button> -->
       </div>
     </div>
   </section>
@@ -95,7 +95,7 @@ export default {
   position: absolute;
   font-size: 19px;
   font-weight: 800;
-  top: 50%;
+  top: 60%;
   left: 15px;
   transform: translate(0, -50%);
 }
@@ -104,7 +104,7 @@ export default {
   position: absolute;
   font-size: 16px;
 
-  top: 55%;
+  top: 75%;
   left: 15px;
 }
 
@@ -127,7 +127,7 @@ export default {
 }
 
 
-@media (max-width: 1280px) and (min-width:  768px) {
+@media (max-width: 1280px) and (min-width: 768px) {
   .card-title {
     font-size: 20px;
     top: 20%;
@@ -147,12 +147,12 @@ export default {
 
   .card-title {
     font-size: 20px;
-    top: 45%;
+    top: 50%;
   }
 
   .description {
     font-size: 13px;
-    top:  49%;
+    top: 59%;
   }
 }
 </style>

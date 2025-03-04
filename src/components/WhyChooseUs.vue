@@ -15,27 +15,10 @@ import { inject } from "vue";
 const translationStore = inject("translationStore");
 </script>
 
-
-<script>
-export default {
-  data() {
-    return {
-      blocks: [
-        { title: 'Experience', text: 'Our team consists of experienced solar specialists who are dedicated to their mission and continuously invest in professional development.' },
-        { title: 'Quality', text: 'We use only high-quality solar panels, equipment, and components to ensure reliability and efficiency.' },
-        { title: 'Customer-Centric Approach', text: 'We provide personalized solutions for each client to meet their unique energy needs and goals.' },
-        { title: 'Sustainability', text: 'We are committed to protecting the environment and creating a GREEN planet.' },
-      ],
-    };
-  },
-};
-</script>
-
 <style scoped>
 .blocks-section {
   background: #081C10;
-  padding: 20px 60px;
-
+  padding: 20px 40px;
 }
 
 .blocks-section h2 {
@@ -96,6 +79,10 @@ export default {
 
   .blocks .block {
     grid-column: span 12;
+  }
+
+  .blocks-section {
+    padding: 20px 10px;
   }
 }
 </style>

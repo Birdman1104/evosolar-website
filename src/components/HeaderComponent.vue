@@ -24,12 +24,10 @@ export default {
       <img src="/images/logo.png" alt="Logo" class="logo" />
       <nav class="nav-menu">
         <button class="menu-toggle" @click="toggleMenu">☰</button>
-        <div
-        class="dropdown-menu"
-        :class=" { 'active': isMenuOpen }" id="myLinks">
+        <div class="dropdown-menu" :class="{ 'active': isMenuOpen }" id="myLinks">
           <div class="menu-item"><a href="#services">{{ translationStore.t('header', 'services') }}</a></div>
           <div class="menu-item"><a href="#blocks">{{ translationStore.t('header', 'whyChooseUs') }}</a></div>
-          <div class="menu-item"><a href="#cases">{{ translationStore.t('header', 'ourProjects') }}</a></div>
+          <!-- <div class="menu-item"><a href="#cases">{{ translationStore.t('header', 'ourProjects') }}</a></div> -->
           <div class="menu-item"><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></div>
         </div>
       </nav>
@@ -85,8 +83,9 @@ export default {
 .menu-item {
   border-bottom: 3px solid #4b4742;
   padding: 10px 0;
-  padding-left:20px;
+  padding-left: 20px;
 }
+
 .menu-item:last-child {
   border: none;
 }
