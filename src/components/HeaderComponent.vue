@@ -24,12 +24,14 @@ export default {
       <img src="/images/logo.png" alt="Logo" class="logo" />
       <nav class="nav-menu">
         <button class="menu-toggle" @click="toggleMenu">☰</button>
-        <ul :class="{ 'active': isMenuOpen }" id="myLinks">
-          <li><a href="#services">{{ translationStore.t('header', 'services') }}</a></li>
-          <li><a href="#blocks">{{ translationStore.t('header', 'whyChooseUs') }}</a></li>
-          <li><a href="#cases">{{ translationStore.t('header', 'ourProjects') }}</a></li>
-          <li><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></li>
-        </ul>
+        <div
+        class="dropdown-menu"
+        :class=" { 'active': isMenuOpen }" id="myLinks">
+          <div class="menu-item"><a href="#services">{{ translationStore.t('header', 'services') }}</a></div>
+          <div class="menu-item"><a href="#blocks">{{ translationStore.t('header', 'whyChooseUs') }}</a></div>
+          <div class="menu-item"><a href="#cases">{{ translationStore.t('header', 'ourProjects') }}</a></div>
+          <div class="menu-item"><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></div>
+        </div>
       </nav>
     </div>
   </header>
@@ -60,15 +62,15 @@ export default {
   height: 20px;
 }
 
-.nav-menu ul {
+.dropdown-menu {
   list-style: none;
   display: flex;
-  gap: 20px;
 }
 
-.nav-menu ul li a {
+.menu-item a {
   color: white;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .menu-toggle {
@@ -80,19 +82,28 @@ export default {
   cursor: pointer;
 }
 
+.menu-item {
+  border-bottom: 3px solid #4b4742;
+  padding: 10px 0;
+  padding-left:20px;
+}
+.menu-item:last-child {
+  border: none;
+}
+
 @media (max-width: 768px) {
-  .nav-menu ul {
+  .dropdown-menu {
     display: none;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 50px;
     left: 0px;
-    padding: 20px;
+    margin-top: 20px;
     width: 100%;
   }
 
-  .nav-menu ul.active {
+  .dropdown-menu.active {
     display: flex;
   }
 
