@@ -17,13 +17,14 @@ const translationStore = inject("translationStore");
 
 <style scoped>
 .blocks-section {
-  background: #081C10;
+  background: #ffffff;
+  /* background: #081C10; */
   padding: 20px 40px 30px 40px;
 }
 
 .blocks-section h2 {
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .blocks {
@@ -45,15 +46,15 @@ const translationStore = inject("translationStore");
 }
 
 .block {
-  border: 1px solid #55B17A;
+  border: 1px solid #081C10;
+  /* border: 1px solid #55B17A; */
   background-color: #2C61411A;
   padding: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   border-radius: 15px;
   font-family: "Inter", serif;
   font-optical-sizing: auto;
-  font-weight: 100;
   font-style: normal;
 }
 
@@ -64,11 +65,11 @@ const translationStore = inject("translationStore");
 
 .block h3 {
   font-size: 1.75rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .block p {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {

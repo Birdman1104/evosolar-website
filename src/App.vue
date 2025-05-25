@@ -5,7 +5,7 @@
     <WhyChooseUs />
     <!-- <OurProjects /> -->
     <PartnersSection />
-    <OfferSection />
+    <!-- <OfferSection /> -->
     <!-- <CalculatorSection /> -->
     <ContactsSection />
     <EmailContact />

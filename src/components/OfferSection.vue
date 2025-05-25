@@ -55,8 +55,8 @@ export default {
   content: '';
   position: absolute;
   top: 30%;
-  width: 120%;
-  left: -10%;
+  width: 100%;
+  left: 0;
   right: 0;
   height: 2px;
   background: #c1c1c1;
