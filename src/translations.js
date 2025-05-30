@@ -26,6 +26,23 @@ export const TRANSLATIONS = {
           "Increase the capacity of your existing solar system. We specialize in adding solar panels and expanding your system for improved energy efficiency.",
       },
     },
+    calculatorModal: {
+      title: "Solar Calculator",
+      description: "Average electricity consumption cost",
+      currency: "AMD",
+      kwhUnit: "kWh",
+      location: "Region",
+      averageMonthlyCost: "Average monthly cost in kWh",
+      averageMonthlyCostAMD: "Average monthly cost in AMD",
+      calculate: "Calculate",
+      getOffer: "Get an Offer",
+      annualProductionLabel: "Annual Production",
+      annualSavingsLabel: "Annual Savings",
+      kwUnit: "kW",
+      calculatedModalTitle: "Solar Station Calculation",
+      calculatedModalDescription:
+        "The proposed installed capacity of the station is:",
+    },
     whyChooseUs: {
       title: "Why Choose Us?",
       block1: {
@@ -40,11 +57,13 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Customer-Centric Approach",
-        description: "We provide personalized solutions for each client to meet their unique energy needs and goals.",
+        description:
+          "We provide personalized solutions for each client to meet their unique energy needs and goals.",
       },
       block4: {
         title: "Sustainability",
-        description: "We are committed to protecting the environment and creating a GREEN planet.",
+        description:
+          "We are committed to protecting the environment and creating a GREEN planet.",
       },
     },
     steps: {
@@ -88,7 +107,8 @@ export const TRANSLATIONS = {
     services: {
       title: "Ծառայություններ",
       button: "Ավելին",
-      description: "Մենք մատուցում ենք ձեզ անհրաժեշտ լավագույն ծառայությունները։",
+      description:
+        "Մենք մատուցում ենք ձեզ անհրաժեշտ լավագույն ծառայությունները։",
       service1: {
         title: "Նախագծում և տեղադրում",
         description:
@@ -105,6 +125,23 @@ export const TRANSLATIONS = {
           "Ձեր առկա արևային կայանի հզորության բարձրացում: Մենք առաջարկում ենք արևային վահանակների ավելացում և համակարգի ընդլայնում։",
       },
     },
+    calculatorModal: {
+      title: "Արևային Հաշվիչ",
+      description: "Էլեկտրաէներգիայի սպառման միջին արժեքը",
+      currency: "Դրամ",
+      kwhUnit: "ԿՎտ*Ժ",
+      location: "Տարածաշրջան",
+      averageMonthlyCost: "Միջին ամսական արժեքը կՎտ*ժ",
+      averageMonthlyCostAMD: "Միջին ամսական արժեքը ՀՀ դրամ",
+      calculate: "Հաշվարկել",
+      getOffer: "Ստանալ առաջարկ",
+      annualProductionLabel: "Տարեկան արտադրողականություն",
+      annualSavingsLabel: "Տարեկան խնայողություն",
+      kwUnit: "կՎտ",
+      calculatedModalTitle: "Արևային Կայանի Հաշվարկ",
+      calculatedModalDescription:
+        "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
+    },
     whyChooseUs: {
       title: "Ինչու՞ ընտրել մեզ",
       block1: {
@@ -114,7 +151,8 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Որակ",
-        description: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+        description:
+          "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
       },
       block4: {
         title: "Հաճախորդամետ մոտեցում",
@@ -123,7 +161,8 @@ export const TRANSLATIONS = {
       },
       block2: {
         title: "Կայունություն",
-        description: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+        description:
+          "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
       },
     },
     steps: {

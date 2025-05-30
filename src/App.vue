@@ -7,10 +7,10 @@
     <PartnersSection />
     <!-- <OfferSection /> -->
     <!-- <CalculatorSection /> -->
-    <ContactsSection />
+    <ContactsSection ref="contactSection" />
     <EmailContact />
     <FooterComponent />
-    <!-- <CalculatorButton /> -->
+    <CalculatorButton @goToOffer="scrollToContact" />
   </div>
 </template>
 
@@ -27,7 +27,7 @@ import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
-import { provide, reactive } from "vue";
+import { provide, reactive, ref } from "vue";
 import { TRANSLATIONS } from "./translations";
 
 const translationStore = reactive({
@@ -56,16 +56,26 @@ const translationStore = reactive({
   },
 });
 
+
+const contactSection = ref(null);
+
+const scrollToContact = () => {
+
+  const sectionComponent = contactSection.value;
+  const el = sectionComponent?.root;
+
+  if (el && typeof el.scrollIntoView === 'function') {
+    el.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    console.error("Contact section element not available or invalid.");
+  }
+};
+
 provide("translationStore", translationStore);
 </script>
 
-<script setup>
-
-
-</script>
 
 <style>
-/* Global styles */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;

@@ -1,34 +1,49 @@
 <template>
-    <div class="calculator-button">
-        Calculator
+    <div>
+        <div class="calculator-button" @click="openModal">
+            <img class="icon" src="/icons/Calculator_Icon.svg" alt="Calculator" />
+        </div>
+        <CalculatorModal :visible="showModal" @close="showModal = false" @goToOffer="()=>{emit('goToOffer')}"/>
     </div>
 </template>
 
+
+<script setup>
+import { ref } from 'vue';
+import CalculatorModal from '@/components/CalculatorModal.vue';
+
+const showModal = ref(false);
+
+const emit = defineEmits(['goToOffer']);
+
+const openModal = () => {
+    showModal.value = true;
+}
+
+</script>
+
 <style scoped>
 .calculator-button {
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    background-color: #55B17A;
-    text-align: center;
-    border-radius: 5px;
-
-    width: 100px;
-    height: 50px;
+    background-color: #C1470A;
+    width: 80px;
+    height: 80px;
     position: fixed;
-    bottom: 350px;
-    right: -25px;
-
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
-
-    color: white
+    bottom: 60px;
+    right: 0;
+    color: #FCFCFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 
-@media (max-width: 768px) {
+@media (orientation: portrait) {
+
     .calculator-button {
-        display: none;
+        width: 70px;
+        height: 70px;
     }
+
 }
 </style>

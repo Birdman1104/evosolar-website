@@ -1,5 +1,5 @@
 <template>
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section"  ref="root">
         <h1>{{ translationStore.t('contactUs', 'title') }}</h1>
         <div class="container">
             <div class="map-container">
@@ -40,9 +40,16 @@
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { inject, ref, onMounted } from "vue";
 
 const translationStore = inject("translationStore");
+
+const contactSectionRef = ref(null);
+
+const root = ref(null);
+defineExpose({
+  root
+});
 </script>
 
 <script>
