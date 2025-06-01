@@ -6,7 +6,6 @@
     <!-- <OurProjects /> -->
     <PartnersSection />
     <!-- <OfferSection /> -->
-    <!-- <CalculatorSection /> -->
     <ContactsSection ref="contactSection" />
     <EmailContact />
     <FooterComponent />
@@ -21,7 +20,6 @@ import WhyChooseUs from './components/WhyChooseUs.vue';
 import OfferSection from './components/OfferSection.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
 import OurProjects from './components/OurProjects.vue';
-import CalculatorSection from './components/CalculatorSection.vue';
 import PartnersSection from './components/PartnersSection.vue';
 import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
