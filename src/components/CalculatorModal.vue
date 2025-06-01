@@ -60,7 +60,7 @@
                         </svg>
                     </div>
                     <div v-if="dropdownOpen" class="dropdown-options">
-                        <div v-for="option in REGIONOPTIONS" :key="option.value" class="dropdown-option"
+                        <div v-for="option in REGION_OPTIONS" :key="option.value" class="dropdown-option"
                             @click="selectRegion(option.value)">
                             {{ option.label }}
                         </div>
@@ -113,10 +113,9 @@
     </div>
 </template>
 
-
 <script setup>
 import { inject, watch, ref, computed } from "vue";
-import { REGIONOPTIONS, MONTHSCOUNT, STANCEPOWER, ROUNDTO, WEEKSCOUNT, PROFIT } from './../../public/data/constants.js'
+import { REGION_OPTIONS, MONTHS_COUNT, STANCE_POWER, ROUND_TO, WEEKS_COUNT, PROFIT } from './../../public/data/constants.js'
 
 const props = defineProps({
     visible: Boolean,
@@ -129,7 +128,6 @@ const emit = defineEmits(['goToOffer', 'close']);
 
 const dropdownOpen = ref(false);
 const isCalculated = ref(false);
-const placeholder = 'Տարածաշրջան';
 const inputValue = ref(null);
 const systemSize = ref(null);
 const region = ref('');
@@ -159,7 +157,7 @@ const getOffer = () => {
 };
 
 const getRegionLabel = (val) => {
-    const found = REGIONOPTIONS.find((opt) => opt.value === val);
+    const found = REGION_OPTIONS.find((opt) => opt.value === val);
     return found?.label || '';
 }
 
@@ -189,22 +187,19 @@ const calculate = () => {
     }
 
     if (isCurrency.value) {
-        calculatedResult = ((inputValue.value * MONTHSCOUNT) / WEEKSCOUNT) / STANCEPOWER;
+        calculatedResult = ((inputValue.value * MONTHS_COUNT) / WEEKS_COUNT) / STANCE_POWER;
     } else {
-        calculatedResult = (inputValue.value * MONTHSCOUNT) / STANCEPOWER;
-        calculatedResult = Math.ceil(calculatedResult / ROUNDTO) * ROUNDTO;
+        calculatedResult = (inputValue.value * MONTHS_COUNT) / STANCE_POWER;
     }
-
-
+    calculatedResult = Math.ceil(calculatedResult / ROUND_TO) * ROUND_TO;
     systemSize.value = calculatedResult;
-    annualSavings.value = systemSize.value * WEEKSCOUNT * PROFIT;
+    annualSavings.value = systemSize.value * WEEKS_COUNT * PROFIT;
     annualProductivity.value = systemSize.value * PROFIT;
     isCalculated.value = true;
 }
 </script>
 
 <style scoped>
-
 .modal-overlay {
     position: fixed;
     top: 0px;
