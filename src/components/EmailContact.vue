@@ -2,9 +2,9 @@
     <section class="email-contact">
         <form @submit.prevent="submitForm">
             <label for="fname">{{ translationStore.t('emailForm', 'fullName') }}</label>
-            <input type="text" name="name" id="fname" v-model="name" />
+            <input type="text" name="name" id="fname" v-model="name" required />
             <label for="fmail">{{ translationStore.t('emailForm', 'email') }}</label>
-            <input type="email" name="email" id='fmail' v-model="email" />
+            <input type="email" name="email" id='fmail' v-model="email" required />
             <label for="fmessage">{{ translationStore.t('emailForm', 'message') }}</label>
             <textarea name="message" id="fmessage" v-model="message"></textarea>
             <button type="submit">{{ translationStore.t('emailForm', 'send') }}</button>
@@ -54,9 +54,15 @@ export default {
             });
             const result = await response.json();
             if (result.success) {
-                console.log(result);
+                this.resetForm();
+                // console.log(result);
             }
         },
+        resetForm() {
+            this.name = '';
+            this.email = '';
+            this.message = ''
+        }
     },
 };
 </script>
