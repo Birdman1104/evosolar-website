@@ -40,8 +40,7 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Annual Savings",
       kwUnit: "kW",
       calculatedModalTitle: "Solar Station Calculation",
-      calculatedModalDescription:
-        "The proposed installed capacity of the station is:",
+      calculatedModalDescription: "The proposed installed capacity of the station is:",
     },
     whyChooseUs: {
       title: "Why Choose Us?",
@@ -57,13 +56,11 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Customer-Centric Approach",
-        description:
-          "We provide personalized solutions for each client to meet their unique energy needs and goals.",
+        description: "We provide personalized solutions for each client to meet their unique energy needs and goals.",
       },
       block4: {
         title: "Sustainability",
-        description:
-          "We are committed to protecting the environment and creating a GREEN planet.",
+        description: "We are committed to protecting the environment and creating a GREEN planet.",
       },
     },
     steps: {
@@ -88,6 +85,7 @@ export const TRANSLATIONS = {
       email: "Contact Email",
       send: "Send",
       message: "Message",
+      connect: "Our team will contact you shortly",
     },
     contactUs: {
       title: "Contact Us",
@@ -107,8 +105,7 @@ export const TRANSLATIONS = {
     services: {
       title: "Ծառայություններ",
       button: "Ավելին",
-      description:
-        "Մենք մատուցում ենք ձեզ անհրաժեշտ լավագույն ծառայությունները։",
+      description: "Մենք մատուցում ենք ձեզ անհրաժեշտ լավագույն ծառայությունները։",
       service1: {
         title: "Նախագծում և տեղադրում",
         description:
@@ -139,8 +136,7 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Տարեկան խնայողություն",
       kwUnit: "կՎտ",
       calculatedModalTitle: "Արևային Կայանի Հաշվարկ",
-      calculatedModalDescription:
-        "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
+      calculatedModalDescription: "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
     },
     whyChooseUs: {
       title: "Ինչու՞ ընտրել մեզ",
@@ -151,8 +147,7 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Որակ",
-        description:
-          "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+        description: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
       },
       block4: {
         title: "Հաճախորդամետ մոտեցում",
@@ -161,8 +156,7 @@ export const TRANSLATIONS = {
       },
       block2: {
         title: "Կայունություն",
-        description:
-          "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+        description: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
       },
     },
     steps: {
@@ -187,6 +181,7 @@ export const TRANSLATIONS = {
       email: "Էլ. հասցե",
       send: "Ուղարկել",
       message: "Նամակ",
+      connect: "Մեր թիմը կկապվի ձեզ հետ շուտով",
     },
     contactUs: {
       title: "Կապ",

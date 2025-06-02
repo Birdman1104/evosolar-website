@@ -115,7 +115,9 @@
 
 <script setup>
 import { inject, watch, ref, computed } from "vue";
-import { REGION_OPTIONS, MONTHS_COUNT, STANCE_POWER, ROUND_TO, WEEKS_COUNT, PROFIT } from './../../public/data/constants.js'
+import { REGION_OPTIONS, MONTHS_COUNT, STANCE_POWER, ROUND_TO, WEEKS_COUNT, PROFIT } from './../../public/data/constants.js';
+
+const sharedState = inject('sharedState');
 
 const props = defineProps({
     visible: Boolean,
@@ -165,7 +167,6 @@ const backToCalculator = () => {
     isCalculated.value = false;
 }
 
-
 const closeModal = () => {
     emit('close');
     isModalOpened.value = false;
@@ -196,6 +197,12 @@ const calculate = () => {
     annualSavings.value = systemSize.value * WEEKS_COUNT * PROFIT;
     annualProductivity.value = systemSize.value * PROFIT;
     isCalculated.value = true;
+
+    sharedState.calculatedValue = calculatedResult;
+    sharedState.annualSavings = annualSavings.value;
+    sharedState.annualProductivity = annualProductivity.value;
+    sharedState.isCurrency = isCurrency.value;
+    sharedState.region = region.value;
 }
 </script>
 

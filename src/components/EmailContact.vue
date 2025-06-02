@@ -2,11 +2,12 @@
     <section class="email-contact">
         <form @submit.prevent="submitForm">
             <label for="fname">{{ translationStore.t('emailForm', 'fullName') }}</label>
-            <input type="text" name="name" id="fname" v-model="name" />
+            <input type="text" name="name" id="fname" v-model="name" required />
             <label for="fmail">{{ translationStore.t('emailForm', 'email') }}</label>
-            <input type="email" name="email" id='fmail' v-model="email" />
+            <input type="email" name="email" id='fmail' v-model="email" required />
             <label for="fmessage">{{ translationStore.t('emailForm', 'message') }}</label>
             <textarea name="message" id="fmessage" v-model="message"></textarea>
+            <p>{{ translationStore.t('emailForm', 'connect') }}</p>
             <button type="submit">{{ translationStore.t('emailForm', 'send') }}</button>
         </form>
     </section>
@@ -19,7 +20,8 @@ const translationStore = inject("translationStore");
 </script>
 
 <script>
-const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
+import { inject } from "vue";
+const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
 
 export default {
     data() {
@@ -27,10 +29,12 @@ export default {
             name: "",
             email: "",
             message: "",
+            sharedState: inject('sharedState'),
         };
     },
     methods: {
         async submitForm() {
+            if (!this.email || !this.name) return
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
@@ -42,12 +46,30 @@ export default {
                     name: this.name,
                     email: this.email,
                     message: this.message,
+                    value: this.sharedState.calculatedValue +
+                        (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
+                    annualSavings: this.sharedState.annualSavings,
+                    annualProductivity: this.sharedState.annualProductivity,
+                    region: this.sharedState.region,
                 }),
             });
             const result = await response.json();
             if (result.success) {
-                console.log(result);
+                this.resetForm();
+                this.showSuccessMessage();
             }
+        },
+        resetForm() {
+            this.name = '';
+            this.email = '';
+            this.message = ''
+        },
+        showSuccessMessage() {
+            const successMessage = this.$el.querySelector('p');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
         },
     },
 };
@@ -84,6 +106,11 @@ section {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px 150px;
+}
+
+p {
+    display: none;
+    color: #45a049;
 }
 
 @media (max-width: 768px) {

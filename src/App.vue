@@ -3,9 +3,7 @@
     <Header />
     <Services />
     <WhyChooseUs />
-    <!-- <OurProjects /> -->
     <PartnersSection />
-    <!-- <OfferSection /> -->
     <ContactsSection ref="contactSection" />
     <EmailContact />
     <FooterComponent />
@@ -17,9 +15,7 @@
 import Header from './components/HeaderComponent.vue';
 import Services from './components/ServicesComponent.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
-import OfferSection from './components/OfferSection.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
-import OurProjects from './components/OurProjects.vue';
 import PartnersSection from './components/PartnersSection.vue';
 import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
@@ -27,6 +23,24 @@ import FooterComponent from './components/FooterComponent.vue';
 
 import { provide, reactive, ref } from "vue";
 import { TRANSLATIONS } from "./translations";
+
+const sharedState = reactive({
+  calculatedValue: 0,
+  annualSavings: 0,
+  annualProductivity: 0,
+  isCurrency: false,
+  region: '',
+});
+
+sharedState.calculatedValue = 0;
+sharedState.annualSavings = 0;
+sharedState.annualProductivity = 0;
+sharedState.isCurrency = false;
+sharedState.region = '';
+
+
+provide('sharedState', sharedState);
+
 
 const translationStore = reactive({
   language: "hy",
