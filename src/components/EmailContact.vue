@@ -7,6 +7,7 @@
             <input type="email" name="email" id='fmail' v-model="email" required />
             <label for="fmessage">{{ translationStore.t('emailForm', 'message') }}</label>
             <textarea name="message" id="fmessage" v-model="message"></textarea>
+            <p>{{ translationStore.t('emailForm', 'connect') }}</p>
             <button type="submit">{{ translationStore.t('emailForm', 'send') }}</button>
         </form>
     </section>
@@ -55,14 +56,21 @@ export default {
             const result = await response.json();
             if (result.success) {
                 this.resetForm();
-                // console.log(result);
+                this.showSuccessMessage();
             }
         },
         resetForm() {
             this.name = '';
             this.email = '';
             this.message = ''
-        }
+        },
+        showSuccessMessage() {
+            const successMessage = this.$el.querySelector('p');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        },
     },
 };
 </script>
@@ -98,6 +106,11 @@ section {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px 150px;
+}
+
+p {
+    display: none;
+    color: #45a049;
 }
 
 @media (max-width: 768px) {
