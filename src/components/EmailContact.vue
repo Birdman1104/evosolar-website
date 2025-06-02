@@ -19,7 +19,8 @@ const translationStore = inject("translationStore");
 </script>
 
 <script>
-const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
+import { inject } from "vue";
+const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
 
 export default {
     data() {
@@ -27,10 +28,12 @@ export default {
             name: "",
             email: "",
             message: "",
+            sharedState: inject('sharedState'),
         };
     },
     methods: {
         async submitForm() {
+            if (!this.email || !this.name) return
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
@@ -42,6 +45,11 @@ export default {
                     name: this.name,
                     email: this.email,
                     message: this.message,
+                    value: this.sharedState.calculatedValue +
+                        (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
+                    annualSavings: this.sharedState.annualSavings,
+                    annualProductivity: this.sharedState.annualProductivity,
+                    region: this.sharedState.region,
                 }),
             });
             const result = await response.json();
