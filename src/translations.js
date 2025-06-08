@@ -5,7 +5,7 @@ export const TRANSLATIONS = {
       whyChooseUs: "Why Choose Us?",
       ourProjects: "Our Projects",
       contacts: "Contacts",
-      about: "About Us"
+      about: "About Us",
     },
     services: {
       title: "OUR SERVICES",
@@ -95,6 +95,13 @@ export const TRANSLATIONS = {
       visitUs: "Visit Us",
       address: "Gai Ave 37, Yerevan, Armenia",
     },
+    consulting: {
+      topText: "The answers to your solar questions",
+      bottomText1: "Get",
+      bottomText2: "free consultation",
+      bottomText3: "from our specialists.",
+      buttonText: "Contact Us",
+    },
   },
   hy: {
     header: {
@@ -102,8 +109,7 @@ export const TRANSLATIONS = {
       whyChooseUs: "Ինչու Ընտրել մեզ",
       ourProjects: "Մեր Գործերը",
       contacts: "Կապ",
-      about: "Մեր մասին"
-
+      about: "Մեր մասին",
     },
     services: {
       title: "Ծառայություններ",
@@ -192,6 +198,13 @@ export const TRANSLATIONS = {
       emailUs: "Դիմեք մեզ",
       visitUs: "Այցելեք մեզ",
       address: "Գայի պողոտա 37, Երևան",
+    },
+    consulting: {
+      topText: "Ձեր արևային հարցերի պատասխանները",
+      bottomText1: "Ստացեք",
+      bottomText2: "անվճար խորհրդատվություն",
+      bottomText3: "մեր մասնագետների կողմից։",
+      buttonText: "Կապ մեզ հետ",
     },
   },
 };

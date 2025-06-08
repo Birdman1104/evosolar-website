@@ -1,5 +1,5 @@
 <template ref="contactSectionRef">
-    <section id="contact" class="contact-section" >
+    <section id="contact" class="contact-section">
         <h1>{{ translationStore.t('contactUs', 'title') }}</h1>
         <div class="container-wrapper">
             <div class="map-container" v-if="isMounted">
@@ -26,7 +26,7 @@
 
                 <div class="contact-box">
                     <p>✉️ {{ translationStore.t('contactUs', 'emailUs') }}</p>
-                    <p><a href="mailto:arsenmazmanyan11@gmail.com">sales@evosolar.am</a></p>
+                    <p><a href="mailto:sales@evosolar.am">sales@evosolar.am</a></p>
                 </div>
 
                 <div class="contact-box">
@@ -86,7 +86,7 @@ defineExpose({
     justify-content: center;
     gap: 50px;
     background: white;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;

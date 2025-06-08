@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent />
+    <Consultation />
     <Services />
     <WhyChooseUs />
     <PartnersSection />
@@ -13,6 +14,7 @@
 
 <script setup>
 import HeaderComponent from './components/HeaderComponent.vue';
+import Consultation from './components/ConsultationComponent.vue';
 import Services from './components/ServicesComponent.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
@@ -43,7 +45,6 @@ sharedState.region = '';
 
 
 provide('sharedState', sharedState);
-
 
 const translationStore = reactive({
   language: "hy",
@@ -76,7 +77,7 @@ const translationStore = reactive({
 const scrollToContact = () => {
   nextTick(() => {
     if (contactSection.value) {
-      const el = contactSection.value ;
+      const el = contactSection.value;
       el?.scrollIntoView({ behavior: 'smooth' });
     } else {
       console.warn("contactSection is not ready yet");
