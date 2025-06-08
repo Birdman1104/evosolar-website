@@ -23,6 +23,7 @@ import FooterComponent from './components/FooterComponent.vue';
 
 import { provide, reactive, ref } from "vue";
 import { TRANSLATIONS } from "./translations";
+import './style.css';
 
 const sharedState = reactive({
   calculatedValue: 0,

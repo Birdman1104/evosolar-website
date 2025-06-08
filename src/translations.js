@@ -5,6 +5,7 @@ export const TRANSLATIONS = {
       whyChooseUs: "Why Choose Us?",
       ourProjects: "Our Projects",
       contacts: "Contacts",
+      about: "About Us"
     },
     services: {
       title: "OUR SERVICES",
@@ -101,6 +102,8 @@ export const TRANSLATIONS = {
       whyChooseUs: "Ինչու Ընտրել մեզ",
       ourProjects: "Մեր Գործերը",
       contacts: "Կապ",
+      about: "Մեր մասին"
+
     },
     services: {
       title: "Ծառայություններ",
