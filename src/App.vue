@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <HeaderComponent />
     <Services />
     <WhyChooseUs />
     <PartnersSection />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import Header from './components/HeaderComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 import Services from './components/ServicesComponent.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
@@ -21,7 +21,7 @@ import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
-import { provide, reactive, ref } from "vue";
+import { provide, reactive, ref, nextTick } from "vue";
 import { TRANSLATIONS } from "./translations";
 import './style.css';
 
@@ -32,6 +32,8 @@ const sharedState = reactive({
   isCurrency: false,
   region: '',
 });
+
+const contactSection = ref(null);
 
 sharedState.calculatedValue = 0;
 sharedState.annualSavings = 0;
@@ -70,19 +72,18 @@ const translationStore = reactive({
 });
 
 
-const contactSection = ref(null);
 
 const scrollToContact = () => {
-
-  const sectionComponent = contactSection.value;
-  const el = sectionComponent?.root;
-
-  if (el && typeof el.scrollIntoView === 'function') {
-    el.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    console.error("Contact section element not available or invalid.");
-  }
+  nextTick(() => {
+    if (contactSection.value) {
+      const el = contactSection.value ;
+      el?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn("contactSection is not ready yet");
+    }
+  });
 };
+
 
 provide("translationStore", translationStore);
 </script>

@@ -13,4 +13,9 @@ export default defineConfig({
     },
   },
   base: "/evosolar-website/",
+  server: {
+    hmr: {
+      // overlay: false, // Disable error overlay if it gets annoying
+    },
+  }
 });

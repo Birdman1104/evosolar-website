@@ -312,7 +312,6 @@ const calculate = () => {
 
 .close-button {
     right: 20px;
-    ;
 }
 
 .back-button {

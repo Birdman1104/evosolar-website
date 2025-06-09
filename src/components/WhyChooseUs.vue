@@ -1,5 +1,5 @@
 <template>
-  <section id="blocks" class="blocks-section">
+  <section id="about" class="blocks-section">
     <h2>{{ translationStore.t('whyChooseUs', 'title') }}</h2>
     <div class="blocks">
       <div class="block" v-for="(index) in 4" :key="index">
@@ -18,7 +18,6 @@ const translationStore = inject("translationStore");
 <style scoped>
 .blocks-section {
   background: #ffffff;
-  /* background: #081C10; */
   padding: 20px 40px 30px 40px;
 }
 

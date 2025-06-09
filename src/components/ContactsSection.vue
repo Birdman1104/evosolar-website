@@ -1,8 +1,8 @@
-<template>
-    <section id="contact" class="contact-section"  ref="root">
+<template ref="contactSectionRef">
+    <section id="contact" class="contact-section" >
         <h1>{{ translationStore.t('contactUs', 'title') }}</h1>
-        <div class="container">
-            <div class="map-container">
+        <div class="container-wrapper">
+            <div class="map-container" v-if="isMounted">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.6607079386436!2d44.56738817641832!3d40.19436367147618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa337d96f5425%3A0xe7b39fb66c1123a7!2s37%20Gai%20Ave%2C%20Yerevan%200076!5e0!3m2!1sen!2sam!4v1740042328628!5m2!1sen!2sam"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -40,44 +40,40 @@
 </template>
 
 <script setup>
-import { inject, ref, onMounted } from "vue";
-
+import { inject, ref, onMounted, defineExpose } from "vue";
 const translationStore = inject("translationStore");
+
+const socials = [
+    {
+        icon: 'icons/telegram.png',
+        alt: 'Telegram',
+        url: 'https://t.me/LeonK8800'
+    },
+    // {
+    //     icon: 'icons/viber.png',
+    //     alt: 'Viber',
+    //     url: 'https://t.me/Birdman1104'
+    // },
+    // {
+    //     icon: 'icons/whatsapp.png',
+    //     alt: 'WhatsApp',
+    //     url: 'https://t.me/Birdman1104'
+    // },
+]
+
 
 const contactSectionRef = ref(null);
 
-const root = ref(null);
+const isMounted = ref(false);
+
+onMounted(() => {
+    isMounted.value = true;
+});
+
 defineExpose({
-  root
+    el: contactSectionRef
 });
 </script>
-
-<script>
-export default {
-    data() {
-        return {
-            socials: [
-                {
-                    icon: 'icons/telegram.png',
-                    alt: 'Telegram',
-                    url: 'https://t.me/LeonK8800'
-                },
-                // {
-                //     icon: 'icons/viber.png',
-                //     alt: 'Viber',
-                //     url: 'https://t.me/Birdman1104'
-                // },
-                // {
-                //     icon: 'icons/whatsapp.png',
-                //     alt: 'WhatsApp',
-                //     url: 'https://t.me/Birdman1104'
-                // },
-            ]
-        }
-    }
-};
-</script>
-
 
 <style scoped>
 .contact-section h1 {
@@ -85,10 +81,9 @@ export default {
     margin-bottom: 20px;
 }
 
-.container {
+.container-wrapper {
     display: flex;
     justify-content: center;
-
     gap: 50px;
     background: white;
     padding: 20px;

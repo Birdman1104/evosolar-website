@@ -1,37 +1,57 @@
 <script setup>
-import { inject } from "vue";
+import { inject, ref } from "vue";
 const translationStore = inject("translationStore");
+
+const isMenuOpen = ref(false);
+const dropdownOpen = ref(false);
+const langOptions = {
+  hy: { value: 'hy', label: 'Հա' },
+  en: { value: 'en', label: 'EN' }
+}
+
+const handleClick = (lang) => {
+  if (translationStore) {
+    translationStore.switchLanguage(lang);
+  } else {
+    console.error("translationStore is not defined");
+  };
+  toggleDropdown();
+};
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+  dropdownOpen.value = false;
+};
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value;
+};
+
+const backToCalculator = () => {
+  toggleMenu()
+}
 </script>
 
 <script>
 export default {
   data() {
     return {
-      isMenuOpen: false,
-      dropdownOpen: false,
-      langOptions: {
-        hy: { value: 'hy', label: 'Հա' },
-        en: { value: 'en', label: 'EN' }
-      }
+
 
     };
   },
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
 
-    toggleDropdown() {
-      this.dropdownOpen = !this.dropdownOpen;
-    },
+
+
   },
 };
 </script>
 
 <template>
   <header class="header">
-    <div class="flex flex-row items-center justify-between w-screen text-base header-content ">
-      <img src="/images/Logo.svg" alt="Logo" class="" />
+    <div class="flex flex-row items-center justify-between w-screen text-base header-content p-4 md:p-[30px]">
+      <img src="/images/Logo.svg" alt="Logo" class="logo" />
       <nav class="flex flex-row ">
         <div class="dropdown-menu flex flex-row " id="myLinks">
           <div class="menu-item mr-[72px]"><a href="#about">{{ translationStore.t('header', 'about') }}</a></div>
@@ -47,7 +67,7 @@ export default {
           </div>
           <div v-if="dropdownOpen" class="dropdown-options">
             <div v-for="option in langOptions" :key="option.value" class="dropdown-option"
-              @click="selectRegion(option.value)">
+              @click="handleClick(option.value)">
               <span>
                 <img v-if="option.value === 'hy'" src='/icons/hy.svg' class="select-icon" />
                 <img v-else src="/icons/en.svg" class="select-icon" />
@@ -59,21 +79,24 @@ export default {
           </div>
         </div>
         <button class="menu-toggle" @click="toggleMenu">☰</button>
-        <div v-if="isMenuOpen">
-          <div>
-            <button></button>
-          </div>
-          <div class="dropdown-menu flex flex-row " :class="{ 'active': isMenuOpen }" id="myLinks">
-            <div class="menu-item mr-[72px]"><a href="#about">{{ translationStore.t('header', 'about') }}</a></div>
-            <div class="menu-item mr-[72px]"><a href="#services">{{ translationStore.t('header', 'services') }}</a>
-            </div>
-            <div class="menu-item mr-[72px]"><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></div>
-          </div>
-        </div>
-
       </nav>
     </div>
   </header>
+
+  <div v-if="isMenuOpen" class="fixed top-[0] left-[0] w-screen h-screen bg-[#232323] z-[50]">
+
+    <div class="border-solid border border-b-[#F6F6F6] h-[80px]">
+      <button class="back-button" @click="backToCalculator">
+        <img src="/icons/back-arrow.svg" alt="Back" />
+      </button>
+    </div>
+    <div class="dropdown-menu flex flex-row " :class="{ 'active': isMenuOpen }" id="myLinks">
+      <div class="menu-item mr-[72px]"><a href="#about">{{ translationStore.t('header', 'about') }}</a></div>
+      <div class="menu-item mr-[72px]"><a href="#services">{{ translationStore.t('header', 'services') }}</a>
+      </div>
+      <div class="menu-item mr-[72px]"><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></div>
+    </div>
+  </div>
 </template>
 
 
@@ -181,20 +204,39 @@ export default {
   cursor: pointer;
 }
 
-
 .menu-item:last-child {
   border: none;
 }
 
+.back-button {
+  position: absolute;
+  top: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding-left: 20px;
+}
+
 @media (max-width: 768px) {
+
+  .header-content {
+    padding: 30px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
   .dropdown-menu {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.8);
+    background: none;
     position: absolute;
-    top: 50px;
+    /* top: 50px; */
     left: 0px;
-    margin-top: 20px;
+    margin: 70px 60px;
     width: 100%;
   }
 
@@ -207,7 +249,9 @@ export default {
   }
 
   .menu-item {
-    border-bottom: 3px solid #4b4742;
+    border-bottom: none;
+    margin-bottom: 30px;
+    color: #F6F6F6;
   }
 }
 </style>
