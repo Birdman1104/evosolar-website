@@ -1,15 +1,14 @@
 <template>
-    <section id="consultation" class="consultation-section flex items-center justify-center min-h-screen bg-white px-4">
-        <div class="text-center max-w-md">
-            <p class="text-sm sm:text-base text-black mb-4">{{ translationStore.t('consulting', 'topText') }}</p>
-            <h1 class="text-2xl sm:text-3xl font-medium text-black mb-6 leading-snug">
+    <section id="consultation" class="consultationSection">
+        <div class="textBlock">
+            <h2 class="consultationTitle">{{ translationStore.t('consulting', 'topText') }}</h2>
+            <h1 class="mainText">
                 {{ translationStore.t('consulting', 'bottomText1') }}
-                <span class="text-orange-700 font-semibold">{{ translationStore.t('consulting', 'bottomText2') }}</span>
+                <span class="orangeText">{{ translationStore.t('consulting', 'bottomText2') }}</span>
                 {{ translationStore.t('consulting', 'bottomText3') }}
             </h1>
-            <button
-                class="bg-orange-700 hover:bg-orange-800 text-white text-lg font-medium px-8 py-3 rounded transition-colors">
-                {{ translationStore.t('consulting', 'buttonText') }} </button>
+            <a href="#contact"><button class="consultationButton">
+                    {{ translationStore.t('consulting', 'buttonText') }} </button></a>
         </div>
     </section>
     <hr>
@@ -19,3 +18,64 @@
 import { inject } from "vue";
 const translationStore = inject("translationStore");
 </script>
+
+<style>
+.consultationSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    background-color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.textBlock {
+    text-align: center;
+    max-width: 40rem;
+}
+
+.consultationTitle {
+    font-weight: 400;
+    color: black;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.mainText {
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.375;
+}
+
+.orangeText {
+    color: #c2410c;
+    font-weight: 600;
+}
+
+.consultationButton {
+    background-color: #c1470a;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.9rem 4rem;
+    border-radius: 0.5rem;
+    border-style: hidden;
+}
+
+.consultationButton:hover {
+    background-color: #f2711c;
+}
+
+@media (min-width: 640px) {
+    .consultationTitle {
+        font-size: 1rem;
+    }
+
+    .mainText {
+        font-size: 1.875rem;
+    }
+}
+</style>
