@@ -102,6 +102,27 @@ export const TRANSLATIONS = {
       bottomText3: "from our specialists.",
       buttonText: "Contact Us",
     },
+    aboutUs: {
+      header: "About Us",
+      title1: "We offer",
+      title2: "premium class",
+      title3: "solar panels",
+      description:
+        "At 𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿, we specialize in designing and installing modern solar systems for both residential and business needs. Our mission is to make clean, renewable energy accessible while helping our customers save money and reduce their carbon footprint.",
+      more: "More about us",
+      whyUs: "Why Choose Us?",
+      experienceTitle: "Experience.",
+      experienceText:
+        "Our team consists of experienced solar specialists who are dedicated to their mission and continuously invest in professional development.",
+      qualityTitle: "Quality.",
+      qualityText:
+        "We use only high-quality solar panels, equipment, and components to ensure reliability and efficiency.",
+      customerCentricTitle: "Customer-Centric Approach.",
+      customerCentricText:
+        "We provide personalized solutions for each client to meet their unique energy needs and goals.",
+      sustainabilityTitle: "Sustainability.",
+      sustainabilityText: "We are committed to protecting the environment and creating a GREEN planet.",
+    },
   },
   hy: {
     header: {
@@ -205,6 +226,26 @@ export const TRANSLATIONS = {
       bottomText2: "անվճար խորհրդատվություն",
       bottomText3: "մեր մասնագետների կողմից։",
       buttonText: "Կապ մեզ հետ",
+    },
+    aboutUs: {
+      header: "Մեր Մասին",
+      title1: "Մենք առաջարկում ենք",
+      title2: "պրեմիում դասի",
+      title3: "արևային կայաններ",
+      description:
+        "𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿-ում մենք մասնագիտացած ենք և բնակելի և բիզնեսի համար ժամանակակից արևային կայանների նախագծման և տեղադրման մեջ: Մեր առաքելությունն է հասանելի դարձնել մաքուր, վերականգնվող էներգիան՝ օգնելով մեր հաճախորդներին խնայել գումար և նվազեցնել ածխածնի բացասական հետքը:",
+      more: "Իմանալ ավելին",
+      whyUs: "Ինչո՞ւ ընտրել մեզ",
+      experienceTitle: "Փորձառություն.",
+      experienceText:
+        "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
+      qualityTitle: "Որակ.",
+      qualityText: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+      customerCentricTitle: "Հաճախորդակենտրոն մոտեցում.",
+      customerCentricText:
+        "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
+      sustainabilityTitle: "Կայունություն.",
+      sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
     },
   },
 };
