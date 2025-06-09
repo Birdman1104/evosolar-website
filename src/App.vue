@@ -3,6 +3,7 @@
     <HeaderComponent />
     <Consultation />
     <Services />
+    <AboutUs />
     <WhyChooseUs />
     <PartnersSection />
     <ContactsSection ref="contactSection" />
@@ -16,6 +17,7 @@
 import HeaderComponent from './components/HeaderComponent.vue';
 import Consultation from './components/ConsultationComponent.vue';
 import Services from './components/ServicesComponent.vue';
+import AboutUs from './components/AboutUs.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
 import PartnersSection from './components/PartnersSection.vue';
