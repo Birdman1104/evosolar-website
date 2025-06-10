@@ -12,10 +12,10 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/evosolar-website/",
+  base: "",
   server: {
     hmr: {
       // overlay: false, // Disable error overlay if it gets annoying
     },
-  }
+  },
 });
