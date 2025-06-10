@@ -123,6 +123,10 @@ export const TRANSLATIONS = {
       sustainabilityTitle: "Sustainability.",
       sustainabilityText: "We are committed to protecting the environment and creating a GREEN planet.",
     },
+    findUs: {
+      title: "Find Us At",
+      address: "Gai Ave 37, Yerevan",
+    },
   },
   hy: {
     header: {
@@ -246,6 +250,10 @@ export const TRANSLATIONS = {
         "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
       sustainabilityTitle: "Կայունություն.",
       sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+    },
+    findUs: {
+      title: "Մեզ Կարող եք Գտնել",
+      address: "Գայի պողոտա 37, Երևան",
     },
   },
 };

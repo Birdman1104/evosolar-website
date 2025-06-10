@@ -6,6 +6,7 @@
     <AboutUs />
     <WhyChooseUs />
     <PartnersSection />
+    <MapSection />
     <ContactsSection ref="contactSection" />
     <EmailContact />
     <FooterComponent />
@@ -28,6 +29,7 @@ import FooterComponent from './components/FooterComponent.vue';
 import { provide, reactive, ref, nextTick } from "vue";
 import { TRANSLATIONS } from "./translations";
 import './style.css';
+import MapSection from './components/MapSection.vue';
 
 const sharedState = reactive({
   calculatedValue: 0,
