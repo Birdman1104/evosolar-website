@@ -1,6 +1,10 @@
 <script setup>
-import { inject, ref } from "vue";
+import { inject, ref, provide } from "vue";
+import ThemeToggle from "./ThemeToggle.vue";
 const translationStore = inject("translationStore");
+const currentHour = new Date().getHours();
+const isDark = ref(currentHour < 8 || currentHour > 20);
+provide("isDark", isDark);
 
 const isMenuOpen = ref(false);
 const dropdownOpen = ref(false);
@@ -49,7 +53,7 @@ export default {
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header-dark': isDark, 'header-light': !isDark }">
     <div class="flex flex-row items-center justify-between w-screen text-base header-content p-4 md:p-[30px]">
       <img src="/images/Logo.svg" alt="Logo" class="logo" />
       <nav class="flex flex-row ">
@@ -81,6 +85,7 @@ export default {
         <button class="menu-toggle" @click="toggleMenu">☰</button>
       </nav>
     </div>
+    <ThemeToggle />
   </header>
 
   <div v-if="isMenuOpen" class="fixed top-[0] left-[0] w-screen h-screen bg-[#232323] z-[50]">
@@ -102,14 +107,27 @@ export default {
 
 
 <style scoped>
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 100px
+}
+
 .header {
-  background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.header-dark {
+  background-image: url('/images/hero_night.jpg');
+}
+
+.header-light {
+  background-image: url('/images/hero.jpg');
 }
 
 .header-content {
