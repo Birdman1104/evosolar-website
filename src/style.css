@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@font-face {
+  font-family: 'Montserrat Armenian';
+  src: url('/src/assets/fonts/Montserratarm/Montserratarm-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

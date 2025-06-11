@@ -32,22 +32,22 @@ const translationStore = inject("translationStore");
 
 .textBlock {
     text-align: center;
-    max-width: 40rem;
+    max-width: 70%;
 }
 
 .consultationTitle {
     font-weight: 400;
+    margin-top: 130px;
     color: black;
-    font-size: 1.3rem;
+    font-size: 25px;
     margin-bottom: 1rem;
 }
 
 .mainText {
     color: black;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 40px;
     margin-bottom: 1.5rem;
-    line-height: 1.375;
 }
 
 .orangeText {
@@ -63,19 +63,36 @@ const translationStore = inject("translationStore");
     padding: 0.9rem 4rem;
     border-radius: 0.5rem;
     border-style: hidden;
+    margin-bottom: 130px;
 }
 
 .consultationButton:hover {
     background-color: #f2711c;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
     .consultationTitle {
-        font-size: 1rem;
+        font-size: 16px;
+        margin-top: 100px;
+    }
+
+    .textBlock {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .mainText {
-        font-size: 1.875rem;
+        font-size: 20px;
+
+    }
+
+    .consultationButton {
+        margin-bottom: 100px;
+        height: 50px;
+        width: 260px;
+        padding: 0;
     }
 }
 </style>
