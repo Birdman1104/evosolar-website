@@ -21,7 +21,8 @@ const translationStore = inject("translationStore");
 <style scoped>
 .map-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 250px 20px;
+  margin: 0 0 20px 0;
   background-color: #fff;
   font-family: sans-serif;
 }

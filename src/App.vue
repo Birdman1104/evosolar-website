@@ -7,9 +7,9 @@
     <WhyChooseUs />
     <PartnersSection />
     <MapSection />
-    <ContactsSection ref="contactSection" />
+    <!-- <ContactsSection ref="contactSection" /> -->
     <EmailContact />
-    <FooterComponent />
+    <!-- <FooterComponent /> -->
     <CalculatorButton @goToOffer="scrollToContact" />
   </div>
 </template>
@@ -22,9 +22,9 @@ import AboutUs from './components/AboutUs.vue';
 import WhyChooseUs from './components/WhyChooseUs.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
 import PartnersSection from './components/PartnersSection.vue';
-import ContactsSection from './components/ContactsSection.vue';
+// import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
-import FooterComponent from './components/FooterComponent.vue';
+// import FooterComponent from './components/FooterComponent.vue';
 
 import { provide, reactive, ref, nextTick } from "vue";
 import { TRANSLATIONS } from "./translations";

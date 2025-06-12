@@ -1,121 +1,175 @@
 <template>
-    <section class="email-contact">
-        <form @submit.prevent="submitForm">
-            <label for="fname">{{ translationStore.t('emailForm', 'fullName') }}</label>
-            <input type="text" name="name" id="fname" v-model="name" required />
-            <label for="fmail">{{ translationStore.t('emailForm', 'email') }}</label>
-            <input type="email" name="email" id='fmail' v-model="email" required />
-            <label for="fmessage">{{ translationStore.t('emailForm', 'message') }}</label>
-            <textarea name="message" id="fmessage" v-model="message"></textarea>
-            <p>{{ translationStore.t('emailForm', 'connect') }}</p>
-            <button type="submit">{{ translationStore.t('emailForm', 'send') }}</button>
-        </form>
-    </section>
+    <div class="contact-wrapper">
+
+        <div class="contact-form">
+            <h3 class="contact-title">Կապ Մեզ Հետ</h3>
+
+            <form class="form">
+                <div class="input-group">
+                    <input type="text" placeholder="Հեռախոսահամար" />
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Ձեր Անունը" />
+                </div>
+                <button type="submit" class="submit-button">Կապ Մեզ Հետ</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="logo">
+                    <!-- <img src="@/assets/logo.png" alt="EvoSolar Logo" /> -->
+                </div>
+
+                <div class="footer-column">
+                    <h4>Կապ</h4>
+                    <p>Գայի պողոտա 37, Երևան</p>
+                    <p>055 648 800</p>
+                    <p>sales@evosolar.am</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-column">
+                    <h4>Հղումներ</h4>
+                    <p>Մեր Մասին</p>
+                    <p>Ծառայություններ</p>
+                    <p>Կապ</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © EvoSolar 2025</p>
+                <div class="social-icons">
+                    <!-- <a href="#"><img src="@/assets/fb.svg" alt="Facebook" /></a>
+                    <a href="#"><img src="@/assets/ig.svg" alt="Instagram" /></a>
+                    <a href="#"><img src="@/assets/yt.svg" alt="YouTube" /></a>
+                    <a href="#"><img src="@/assets/tiktok.svg" alt="TikTok" /></a>
+                    <a href="#"><img src="@/assets/in.svg" alt="LinkedIn" /></a> -->
+                </div>
+            </div>
+        </footer>
+
+    </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
-
-const translationStore = inject("translationStore");
-</script>
-
-<script>
-import { inject } from "vue";
-const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
-
-export default {
-    data() {
-        return {
-            name: "",
-            email: "",
-            message: "",
-            sharedState: inject('sharedState'),
-        };
-    },
-    methods: {
-        async submitForm() {
-            if (!this.email || !this.name) return
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_ACCESS_KEY,
-                    name: this.name,
-                    email: this.email,
-                    message: this.message,
-                    value: this.sharedState.calculatedValue +
-                        (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
-                    annualSavings: this.sharedState.annualSavings,
-                    annualProductivity: this.sharedState.annualProductivity,
-                    region: this.sharedState.region,
-                }),
-            });
-            const result = await response.json();
-            if (result.success) {
-                this.resetForm();
-                this.showSuccessMessage();
-            }
-        },
-        resetForm() {
-            this.name = '';
-            this.email = '';
-            this.message = ''
-        },
-        showSuccessMessage() {
-            const successMessage = this.$el.querySelector('p');
-            successMessage.style.display = 'block';
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        },
-    },
-};
+// no JS needed
 </script>
 
 <style scoped>
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical
+.contact-wrapper {
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: sans-serif;
 }
 
-button {
-    background-color: #04AA6D;
+.contact-form {
+    background-color: #2a2a2a;
+    margin: -100px auto 60px;
+    max-width: 600px;
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 2px solid #c2410c;
+    text-align: center;
+    position: relative;
+    top: -120px;
+    align-items: center;
+}
+
+.contact-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 12px 16px;
+    border: 1px solid #444;
+    background: #1a1a1a;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.submit-button {
+    background-color: #c2410c;
     color: white;
-    padding: 12px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.submit-button:hover {
+    background-color: #a73709;
 }
 
-section {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px 150px;
+.footer {
+    background-color: #1f1f1f;
+    padding: 40px 20px;
 }
 
-p {
-    display: none;
-    color: #45a049;
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    section {
-        padding: 20px;
-    }
+.logo img {
+    height: 40px;
+}
+
+.footer-column {
+    min-width: 180px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.footer-column p {
+    margin: 4px 0;
+    color: #ddd;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-bottom p {
+    color: #888;
+    font-size: 14px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0.9);
 }
 </style>
