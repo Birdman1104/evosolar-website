@@ -109,7 +109,7 @@ export default {
 <style scoped>
 .theme-toggle {
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 100px
 }
 

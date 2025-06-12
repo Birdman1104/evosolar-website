@@ -6,7 +6,8 @@
 
             <form class="form" @submit.prevent="submitForm">
                 <div class="input-group">
-                    <input type="text" name="phoneNumber" id="fphoneNumber" v-model="phoneNumber" required
+                    <input type="tel" name="phoneNumber" id="fphoneNumber" v-model="phoneNumber" required
+                        pattern="[0-9]{9}" maxlength="9"
                         :placeholder="translationStore.t('contactUs', 'phoneNumberPlaceholder')" />
                 </div>
                 <div class="input-group">
@@ -43,11 +44,9 @@
             <div class="footer-bottom">
                 <p>Copyright © EvoSolar 2025</p>
                 <div class="social-icons">
-                    <!-- <a href="#"><img src="@/assets/fb.svg" alt="Facebook" /></a>
-                    <a href="#"><img src="@/assets/ig.svg" alt="Instagram" /></a>
-                    <a href="#"><img src="@/assets/yt.svg" alt="YouTube" /></a>
-                    <a href="#"><img src="@/assets/tiktok.svg" alt="TikTok" /></a>
-                    <a href="#"><img src="@/assets/in.svg" alt="LinkedIn" /></a> -->
+                    <a v-for="(social, index) in socials" :key="index" :href=social.url target="_blank">
+                        <img :src=social.icon :alt=social.alt>
+                    </a>
                 </div>
             </div>
         </footer>
@@ -58,6 +57,23 @@
 <script setup>
 import { inject } from "vue";
 const translationStore = inject("translationStore");
+const socials = [
+    {
+        icon: 'icons/telegram.png',
+        alt: 'Telegram',
+        url: 'https://t.me/LeonK8800'
+    },
+    // {
+    //     icon: 'icons/viber.png',
+    //     alt: 'Viber',
+    //     url: 'https://t.me/Birdman1104'
+    // },
+    // {
+    //     icon: 'icons/whatsapp.png',
+    //     alt: 'WhatsApp',
+    //     url: 'https://t.me/Birdman1104'
+    // },
+]
 </script>
 
 <script>
@@ -78,6 +94,10 @@ export default {
             console.warn(this.phoneNumber, this.name);
 
             if (!this.phoneNumber || !this.name) return
+
+            if (this.phoneNumber.startsWith('0')) {
+                this.phoneNumber = this.phoneNumber.slice(1);
+            }
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
@@ -87,7 +107,7 @@ export default {
                 body: JSON.stringify({
                     access_key: WEB3FORMS_ACCESS_KEY,
                     name: this.name,
-                    phoneNumber: this.phoneNumber,
+                    phoneNumber: '+374' + this.phoneNumber,
                     value: this.sharedState.calculatedValue +
                         (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
                     annualSavings: this.sharedState.annualSavings,
@@ -140,7 +160,7 @@ a {
     font-family: sans-serif;
 }
 
-p {
+.successMessage {
     display: none;
     color: #45a049;
 }
@@ -148,7 +168,7 @@ p {
 .contact-form {
     background-color: #2a2a2a;
     margin: -100px auto 0;
-    max-width: 900px;
+    max-width: 600px;
     padding: 40px 30px;
     border-radius: 8px;
     border: 4px solid #c2410c;
@@ -243,6 +263,11 @@ p {
 .footer-bottom p {
     color: #888;
     font-size: 14px;
+}
+
+.social-icons {
+    position: relative;
+    margin: auto;
 }
 
 .social-icons a {
