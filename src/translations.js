@@ -81,19 +81,17 @@ export const TRANSLATIONS = {
     ourPartners: {
       title: "OUR PARTNERS",
     },
-    emailForm: {
-      fullName: "Full Name",
-      email: "Contact Email",
-      send: "Send",
-      message: "Message",
-      connect: "Our team will contact you shortly",
-    },
     contactUs: {
       title: "Contact Us",
-      emailUs: "Email Us",
-      callUs: "Call Us",
-      visitUs: "Visit Us",
-      address: "Gai Ave 37, Yerevan, Armenia",
+      phoneNumberPlaceholder: "Phone Number",
+      namePlaceholder: "Name Surname",
+      buttonText: "Contact Us",
+      contact: "Contacts",
+      address: "Gai Ave 37, Yerevan",
+      links: "Links",
+      aboutUs: "About Us",
+      services: "Services",
+      contactUs: "Contact Us",
     },
     consulting: {
       topText: "The answers to your solar questions",
@@ -139,7 +137,8 @@ export const TRANSLATIONS = {
     services: {
       title: "Ծառայություններ",
       button: "Ավելին",
-      description: "Մենք առաջարկում ենք ամբողջական արևային լուծումներ՝ նախագծումից մինչև սպասարկում։ Աշխատում ենք և անհատների և բիզնեսների համար՝ ապահովելով խնայողություն։",
+      description:
+        "Մենք առաջարկում ենք ամբողջական արևային լուծումներ՝ նախագծումից մինչև սպասարկում։ Աշխատում ենք և անհատների և բիզնեսների համար՝ ապահովելով խնայողություն։",
       service1: {
         title: "Նախագծում և տեղադրում",
         description:
@@ -210,19 +209,17 @@ export const TRANSLATIONS = {
     ourPartners: {
       title: "Մեր Գործընկերները",
     },
-    emailForm: {
-      fullName: "Անուն Ազգանուն",
-      email: "Էլ. հասցե",
-      send: "Ուղարկել",
-      message: "Նամակ",
-      connect: "Մեր թիմը կկապվի ձեզ հետ շուտով",
-    },
     contactUs: {
-      title: "Կապ",
-      callUs: "Զանգահարեք մեզ",
-      emailUs: "Դիմեք մեզ",
-      visitUs: "Այցելեք մեզ",
+      title: "Կապ Մեզ Հետ",
+      phoneNumberPlaceholder: "Հեռախոսահամար",
+      namePlaceholder: "Անուն Ազգանուն",
+      buttonText: "Կապ մեզ հետ",
+      contact: "Կապ",
       address: "Գայի պողոտա 37, Երևան",
+      links: "Հղումներ",
+      aboutUs: "Մեր Մասին",
+      services: "Ծառայություններ",
+      contactUs: "Կապ",
     },
     consulting: {
       topText: "Ձեր արևային հարցերի պատասխանները",

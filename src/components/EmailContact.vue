@@ -2,38 +2,37 @@
     <div class="contact-wrapper">
 
         <div class="contact-form">
-            <h3 class="contact-title">Կապ Մեզ Հետ</h3>
+            <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
 
             <form class="form">
                 <div class="input-group">
-                    <input type="text" placeholder="Հեռախոսահամար" />
+                    <input type="text" :placeholder="translationStore.t('contactUs', 'phoneNumberPlaceholder')" />
                 </div>
                 <div class="input-group">
-                    <input type="text" placeholder="Ձեր Անունը" />
+                    <input type="text" :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
                 </div>
-                <button type="submit" class="submit-button">Կապ Մեզ Հետ</button>
+                <button type="submit" class="submit-button">{{ translationStore.t('contactUs', 'buttonText') }}</button>
             </form>
         </div>
 
         <footer class="footer">
             <div class="footer-top">
                 <div class="logo">
-                    <!-- <img src="@/assets/logo.png" alt="EvoSolar Logo" /> -->
+                    <img src="/images/logo.png" alt="EvoSolar Logo" />
                 </div>
 
                 <div class="footer-column">
-                    <h4>Կապ</h4>
-                    <p>Գայի պողոտա 37, Երևան</p>
+                    <h4>{{ translationStore.t('contactUs', 'contact') }}</h4>
+                    <p>{{ translationStore.t('contactUs', 'address') }}</p>
                     <p>055 648 800</p>
                     <p>sales@evosolar.am</p>
                 </div>
 
-                <!-- Links -->
                 <div class="footer-column">
-                    <h4>Հղումներ</h4>
-                    <p>Մեր Մասին</p>
-                    <p>Ծառայություններ</p>
-                    <p>Կապ</p>
+                    <h4>{{ translationStore.t('contactUs', 'links') }}</h4>
+                    <p>{{ translationStore.t('contactUs', 'aboutUs') }}</p>
+                    <p>{{ translationStore.t('contactUs', 'services') }}</p>
+                    <p>{{ translationStore.t('contactUs', 'contactUs') }}</p>
                 </div>
             </div>
 
@@ -53,7 +52,8 @@
 </template>
 
 <script setup>
-// no JS needed
+import { inject } from "vue";
+const translationStore = inject("translationStore");
 </script>
 
 <style scoped>
@@ -65,7 +65,7 @@
 
 .contact-form {
     background-color: #2a2a2a;
-    margin: -100px auto 60px;
+    margin: -100px auto 0;
     max-width: 600px;
     padding: 40px 30px;
     border-radius: 8px;
@@ -117,7 +117,7 @@
 
 .footer {
     background-color: #1f1f1f;
-    padding: 40px 20px;
+    padding: 0 20px 40px 20px;
 }
 
 .footer-top {
