@@ -2,19 +2,19 @@
 import { inject } from "vue";
 const isDark = inject("isDark");
 const savedTheme = localStorage.getItem("evoSolarTheme");
-let moonIconUrl = isDark.value ? "/icons/moon_white.png" : "/icons/moon_black.png";
+let moonIconUrl = isDark.value ? "./icons/moon_white.png" : "./icons/moon_black.png";
 if (savedTheme === 'light') {
     isDark.value = false;
-    moonIconUrl = "/icons/moon_black.png";
+    moonIconUrl = "./icons/moon_black.png";
 } else if (savedTheme === 'dark') {
     isDark.value = true;
-    moonIconUrl = "/icons/moon_white.png";
+    moonIconUrl = "./icons/moon_white.png";
 }
 function toggleTheme() {
     isDark.value = !isDark.value;
     localStorage.setItem("evoSolarTheme", isDark.value ? 'dark' : 'light');
     document.documentElement.classList.toggle("dark", isDark.value);
-    document.getElementById("moon-icon").src = isDark.value ? "/icons/moon_white.png" : "/icons/moon_black.png";
+    document.getElementById("moon-icon").src = isDark.value ? "./icons/moon_white.png" : "./icons/moon_black.png";
 }
 </script>
 

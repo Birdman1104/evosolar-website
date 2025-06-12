@@ -21,7 +21,7 @@ const translationStore = inject("translationStore");
 
 const partners = ref([
   { image: "icons/longi.png", url: "https://www.longi.com/", title: "Longi" },
-  { image: "icons/ameriabank.png", url: "https://ameriabank.am/", title: "AmeriaBank" },
+  { image: "icons/converseBank.png", url: "https://www.conversebank.am/", title: "ConverseBank" },
   { image: "icons/acbabank.png", url: "https://www.acba.am/en/", title: "ACBA Bank" },
   { image: "icons/growatt.png", url: "https://en.growatt.com/", title: "Growatt" },
   { image: "icons/fca.png", url: "https://www.fca.am/en/home.html", title: "FCA" },
@@ -72,18 +72,25 @@ onMounted(() => {
 <style scoped>
 .partners-section {
   background: #ffffff;
-  padding: 20px 20px 30px 20px;
+  padding: 0 20px 0 20px;
+  border-bottom: 1px solid rgba(35, 35, 35, 0.4);
 }
 
 .partners-section h2 {
-  font-size: 2rem;
+  font-size: 35px;
   text-align: center;
+  font-weight: 400;
+  margin-top: 100px;
+  margin-bottom: 45px;
+  color: rgba(35, 35, 35, 1);
 }
+
 
 .slider-container {
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: 130px;
 }
 
 .slider {
@@ -103,5 +110,11 @@ onMounted(() => {
 .partner-icon img {
   width: 100%;
   height: auto;
+  filter: grayscale(100%);
+}
+
+
+.partner-icon img:hover {
+  filter: grayscale(0%);
 }
 </style>
