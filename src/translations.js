@@ -92,6 +92,7 @@ export const TRANSLATIONS = {
       aboutUs: "About Us",
       services: "Services",
       contactUs: "Contact Us",
+      success: "Your message has been successfully sent. Thank you for contacting us.",
     },
     consulting: {
       topText: "The answers to your solar questions",
@@ -220,6 +221,7 @@ export const TRANSLATIONS = {
       aboutUs: "Մեր Մասին",
       services: "Ծառայություններ",
       contactUs: "Կապ",
+      success: "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
     },
     consulting: {
       topText: "Ձեր արևային հարցերի պատասխանները",

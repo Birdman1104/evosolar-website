@@ -4,13 +4,17 @@
         <div class="contact-form">
             <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
 
-            <form class="form">
+            <form class="form" @submit.prevent="submitForm">
                 <div class="input-group">
-                    <input type="text" :placeholder="translationStore.t('contactUs', 'phoneNumberPlaceholder')" />
+                    <input type="text" name="phoneNumber" id="fphoneNumber" v-model="phoneNumber" required
+                        :placeholder="translationStore.t('contactUs', 'phoneNumberPlaceholder')" />
                 </div>
                 <div class="input-group">
-                    <input type="text" :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
+                    <input type="text" name="name" id="fname" v-model="name" required
+                        :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
                 </div>
+                <p class="successMessage">{{ translationStore.t('contactUs', 'success') }}</p>
+
                 <button type="submit" class="submit-button">{{ translationStore.t('contactUs', 'buttonText') }}</button>
             </form>
         </div>
@@ -24,8 +28,8 @@
                 <div class="footer-column">
                     <h4>{{ translationStore.t('contactUs', 'contact') }}</h4>
                     <p>{{ translationStore.t('contactUs', 'address') }}</p>
-                    <p>055 648 800</p>
-                    <p>sales@evosolar.am</p>
+                    <p><a href="tel:++37455648800">+374 55 64 88 00</a></p>
+                    <p><a href="mailto:sales@evosolar.am">sales@evosolar.am</a></p>
                 </div>
 
                 <div class="footer-column">
@@ -56,20 +60,98 @@ import { inject } from "vue";
 const translationStore = inject("translationStore");
 </script>
 
+<script>
+import { inject } from "vue";
+const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
+// const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
+
+export default {
+    data() {
+        return {
+            name: "",
+            phoneNumber: "",
+            sharedState: inject('sharedState'),
+        };
+    },
+    methods: {
+        async submitForm() {
+            console.warn(this.phoneNumber, this.name);
+
+            if (!this.phoneNumber || !this.name) return
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    name: this.name,
+                    phoneNumber: this.phoneNumber,
+                    value: this.sharedState.calculatedValue +
+                        (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
+                    annualSavings: this.sharedState.annualSavings,
+                    annualProductivity: this.sharedState.annualProductivity,
+                    region: this.sharedState.region,
+                }),
+            });
+
+            console.warn({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                name: this.name,
+                phoneNumber: this.phoneNumber,
+                value: this.sharedState.calculatedValue +
+                    (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
+                annualSavings: this.sharedState.annualSavings,
+                annualProductivity: this.sharedState.annualProductivity,
+                region: this.sharedState.region,
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                this.resetForm();
+                this.showSuccessMessage();
+            }
+        },
+        resetForm() {
+            this.name = '';
+            this.phoneNumber = '';
+        },
+        showSuccessMessage() {
+            const successMessage = document.getElementsByClassName('successMessage')[0];
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        },
+    },
+};
+</script>
+
 <style scoped>
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .contact-wrapper {
     background-color: #1f1f1f;
     color: #fff;
     font-family: sans-serif;
 }
 
+p {
+    display: none;
+    color: #45a049;
+}
+
 .contact-form {
     background-color: #2a2a2a;
     margin: -100px auto 0;
-    max-width: 600px;
+    max-width: 900px;
     padding: 40px 30px;
     border-radius: 8px;
-    border: 2px solid #c2410c;
+    border: 4px solid #c2410c;
     text-align: center;
     position: relative;
     top: -120px;
@@ -143,7 +225,7 @@ const translationStore = inject("translationStore");
 }
 
 .footer-column p {
-    margin: 4px 0;
+    margin: 8px 0;
     color: #ddd;
 }
 
