@@ -109,8 +109,8 @@ export default {
 <style scoped>
 .theme-toggle {
   position: absolute;
-  right: 10px;
-  top: 100px
+  right: 20px;
+  top: 185px
 }
 
 .header {

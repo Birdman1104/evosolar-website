@@ -1,44 +1,45 @@
 <template>
-    <section class="hero-section">
-        <div class="hero-content">
-            <div class="hero-image">
-                <img src="/images/roof.png" alt="Roof with solar panels" />
-            </div>
-            <div class="hero-text">
-                <div class="hero-label">{{ translationStore.t('aboutUs', 'header') }}</div>
-                <h1>
-                    {{ translationStore.t('aboutUs', 'title1') }}<br />
-                    <span class="highlight">{{ translationStore.t('aboutUs', 'title2') }}</span><br />
-                    {{ translationStore.t('aboutUs', 'title3') }}
-                </h1>
-                <p>
-                    {{ translationStore.t('aboutUs', 'description') }}
-                </p>
-                <div class="hero-more">
-                    <button class="more-btn" @click="toggleMore">
-                        {{ translationStore.t('aboutUs', 'more') }}
-                        <span :class="{ 'arrow': true, 'open': showMore }">&gt;</span>
-                    </button>
-                    <transition name="fade-slide">
-                        <div v-if="showMore" class="more-text">
-                            <b>{{ translationStore.t('aboutUs', 'whyUs') }}</b>
-                            <br />
-                            <br />
-                            <p><b>{{ translationStore.t('aboutUs', 'experienceTitle') }}</b>{{
-                                translationStore.t('aboutUs', 'experienceText') }}</p><br />
-                            <p><b>{{ translationStore.t('aboutUs', 'qualityTitle') }}</b>{{
-                                translationStore.t('aboutUs',
+    <!-- <section class="hero-section"> -->
+    <div class="hero-content">
+        <div class="hero-image">
+            <img src="/images/roof.png" alt="Roof with solar panels" />
+            <div class="image-bg-layer"></div>
+        </div>
+        <div class="hero-text">
+            <div class="hero-label">{{ translationStore.t('aboutUs', 'header') }}</div>
+            <h1>
+                {{ translationStore.t('aboutUs', 'title1') }}<br />
+                <span class="highlight">{{ translationStore.t('aboutUs', 'title2') }}</span><br />
+                {{ translationStore.t('aboutUs', 'title3') }}
+            </h1>
+            <p>
+                {{ translationStore.t('aboutUs', 'description') }}
+            </p>
+            <div class="hero-more">
+                <button class="more-btn" @click="toggleMore">
+                    {{ translationStore.t('aboutUs', 'more') }}
+                    <span :class="{ 'arrow': true, 'open': showMore }">&gt;</span>
+                </button>
+                <transition name="fade-slide">
+                    <div v-if="showMore" class="more-text">
+                        <b>{{ translationStore.t('aboutUs', 'whyUs') }}</b>
+                        <br />
+                        <br />
+                        <p><b>{{ translationStore.t('aboutUs', 'experienceTitle') }}</b>{{
+                            translationStore.t('aboutUs', 'experienceText') }}</p><br />
+                        <p><b>{{ translationStore.t('aboutUs', 'qualityTitle') }}</b>{{
+                            translationStore.t('aboutUs',
                                 'qualityText') }}</p><br />
-                            <p><b>{{ translationStore.t('aboutUs', 'customerCentricTitle') }}</b>{{
-                                translationStore.t('aboutUs', 'customerCentricText') }}</p><br />
-                            <p><b>{{ translationStore.t('aboutUs', 'sustainabilityTitle') }}</b>{{
-                                translationStore.t('aboutUs', 'sustainabilityText') }}</p><br />
-                        </div>
-                    </transition>
-                </div>
+                        <p><b>{{ translationStore.t('aboutUs', 'customerCentricTitle') }}</b>{{
+                            translationStore.t('aboutUs', 'customerCentricText') }}</p><br />
+                        <p><b>{{ translationStore.t('aboutUs', 'sustainabilityTitle') }}</b>{{
+                            translationStore.t('aboutUs', 'sustainabilityText') }}</p><br />
+                    </div>
+                </transition>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- </section> -->
 </template>
 
 <script setup>
@@ -54,7 +55,6 @@ const toggleMore = () => {
 <style scoped>
 .hero-section {
     width: 100%;
-    min-height: 60vh;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -63,36 +63,45 @@ const toggleMore = () => {
 
 .hero-content {
     display: flex;
+    height: 780px;
+    position: relative;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
     width: 100%;
-    padding: 40px 0;
 }
 
 .hero-image {
-    flex: 1 1 0;
-    display: flex;
+    position: absolute;
+    height: 95%;
     align-items: center;
     justify-content: center;
-    position: relative;
     overflow: visible;
+    left: -6%;
+}
+
+.image-bg-layer {
+    position: absolute;
+    left: 8%;
+    top: 8%;
+    z-index: -1;
+    background: #eaeaea;
+    width: 530px;
+    height: 500px;
+
 }
 
 .hero-image img {
-    /* width: 420px; */
-    max-width: 40vw;
-    height: auto;
+    z-index: 2;
+    height: 100%;
     display: block;
-    background: #eaeaea;
     border-radius: 8px;
-    position: absolute;
-    left: -500px;
-    /* top: 0; */
+    left: 0;
+    height: 580px;
 }
 
 .hero-text {
-    flex: 1 1 0;
+    position: absolute;
+    right: 10%;
     background: #fff;
     border-radius: 8px;
     padding: 40px 48px 40px 48px;
@@ -195,6 +204,7 @@ const toggleMore = () => {
     .hero-content {
         flex-direction: column;
         padding: 24px 0;
+        height: fit-content;
     }
 
     .hero-image {
@@ -204,17 +214,25 @@ const toggleMore = () => {
 
     .hero-image img {
         display: block;
-        background: #eaeaea;
         top: 0;
         left: 0;
         margin: auto;
         border-radius: 8px;
+        height: 320px;
+
+    }
+
+    .image-bg-layer {
+        width: 280px;
+        height: 260px;
+        left: -5px;
     }
 
     .hero-text {
+        position: unset;
         margin-left: 0;
         padding: 28px 16px;
-        min-width: 0;
+        min-width: none;
         max-width: 100vw;
     }
 }
