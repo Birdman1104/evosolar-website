@@ -8,9 +8,8 @@
     <WhyChooseUs />
     <PartnersSection />
     <MapSection />
-    <!-- <ContactsSection ref="contactSection" /> -->
     <EmailContact />
-    <!-- <FooterComponent /> -->
+    <FooterComponent />
     <CalculatorButton @goToOffer="scrollToContact" />
   </div>
 </template>
