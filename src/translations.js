@@ -41,7 +41,8 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Annual Savings",
       kwUnit: "kW",
       calculatedModalTitle: "Solar Station Calculation",
-      calculatedModalDescription: "The proposed installed capacity of the station is:",
+      calculatedModalDescription:
+        "The proposed installed capacity of the station is:",
     },
     whyChooseUs: {
       title: "Why Choose Us?",
@@ -57,11 +58,13 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Customer-Centric Approach",
-        description: "We provide personalized solutions for each client to meet their unique energy needs and goals.",
+        description:
+          "We provide personalized solutions for each client to meet their unique energy needs and goals.",
       },
       block4: {
         title: "Sustainability",
-        description: "We are committed to protecting the environment and creating a GREEN planet.",
+        description:
+          "We are committed to protecting the environment and creating a GREEN planet.",
       },
     },
     steps: {
@@ -120,7 +123,8 @@ export const TRANSLATIONS = {
       customerCentricText:
         "We provide personalized solutions for each client to meet their unique energy needs and goals.",
       sustainabilityTitle: "Sustainability.",
-      sustainabilityText: "We are committed to protecting the environment and creating a GREEN planet.",
+      sustainabilityText:
+        "We are committed to protecting the environment and creating a GREEN planet.",
     },
     findUs: {
       title: "Find Us At",
@@ -170,7 +174,8 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Տարեկան խնայողություն",
       kwUnit: "կՎտ",
       calculatedModalTitle: "Արևային Կայանի Հաշվարկ",
-      calculatedModalDescription: "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
+      calculatedModalDescription:
+        "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
     },
     whyChooseUs: {
       title: "Ինչու՞ ընտրել մեզ",
@@ -181,7 +186,8 @@ export const TRANSLATIONS = {
       },
       block3: {
         title: "Որակ",
-        description: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+        description:
+          "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
       },
       block4: {
         title: "Հաճախորդամետ մոտեցում",
@@ -190,17 +196,20 @@ export const TRANSLATIONS = {
       },
       block2: {
         title: "Կայունություն",
-        description: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+        description:
+          "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
       },
     },
     steps: {
-      title: "5 քայլ դեպի քո՛ արևային կայանը",
-      description: "Բացահայտե՛ք մեր ծառայություններն և լուծումները",
-      step1: "Խորհրդատվություն, Չափագրում",
-      step2: "Նախագծում",
-      step3: "Նախապատրաստական աշխատանքներ",
+      title: "6 Քայլ Դեպի Քո Արևային Կայանը",
+      description:
+        "խորհրդատվությունից մինչև տեղադրում ու սպասարկում՝ արդյունավետ և երկարակյաց համակարգի համար։",
+      step1: "Խորհրդատվություն",
+      step2: "Չափագրում",
+      step3: "Նախագծում",
       step4: "Տեղադրում",
       step5: "Մոնիթորինգ",
+      step6: "Սպասարկում",
     },
     ourProjects: {
       title: "Մեր Նախագծերը",
@@ -243,12 +252,14 @@ export const TRANSLATIONS = {
       experienceText:
         "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
       qualityTitle: "Որակ.",
-      qualityText: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+      qualityText:
+        "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
       customerCentricTitle: "Հաճախորդակենտրոն մոտեցում.",
       customerCentricText:
         "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
       sustainabilityTitle: "Կայունություն.",
-      sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+      sustainabilityText:
+        "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
     },
     findUs: {
       title: "Մեզ Կարող եք Գտնել",

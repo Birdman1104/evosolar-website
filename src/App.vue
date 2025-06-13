@@ -3,13 +3,14 @@
     <HeaderComponent />
     <Consultation />
     <Services />
+    <OfferSection/>
     <AboutUs />
     <WhyChooseUs />
     <PartnersSection />
     <MapSection />
     <!-- <ContactsSection ref="contactSection" /> -->
     <EmailContact />
-    <!-- <FooterComponent /> -->
+    <FooterComponent />
     <CalculatorButton @goToOffer="scrollToContact" />
   </div>
 </template>
@@ -25,11 +26,12 @@ import PartnersSection from './components/PartnersSection.vue';
 // import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
 // import FooterComponent from './components/FooterComponent.vue';
-
+import FooterComponent from './components/FooterComponent.vue';
 import { provide, reactive, ref, nextTick } from "vue";
 import { TRANSLATIONS } from "./translations";
 import './style.css';
 import MapSection from './components/MapSection.vue';
+import OfferSection from './components/OfferSection.vue';
 
 const sharedState = reactive({
   calculatedValue: 0,
