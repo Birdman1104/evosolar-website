@@ -1,274 +1,188 @@
 <template>
   <section id="partners" class="partners-section">
     <h2>{{ translationStore.t('steps', 'title') }}</h2>
-    <div class="w-[70%] mb-[15px]">{{ translationStore.t('steps', 'description') }}</div>
-    <div class="slider-container" ref="sliderContainer" @mouseenter="pauseScrolling" @mouseleave="startScrolling">
+    <div class="w-[70%] mb-[15px]">
+      {{ translationStore.t('steps', 'description') }}
+    </div>
+
+    <div class="slider-container" ref="sliderContainer" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
       <div class="slider" ref="slider">
-        <div class="flex justify-center flex-col" v-for="(partner, index) in partners" :key="partner.title + index">
+        <div v-for="(partner, index) in partners" :key="partner.title + index" class="partner-item">
           <div class="partner-icon">
             <img :src="partner.image" :alt="partner.title" />
           </div>
-          <div class="text-center">
-            {{ translationStore.t("steps", partner.title) }}
+          <div class="text-center text-sm">
+            {{ translationStore.t('steps', partner.title) }}
           </div>
         </div>
-      </div>
-      <div class="dots">
-        <span v-for="(partner, index) in partners" :key="'dot-' + index" :class="{ active: index === currentIndex }"
-          @click="goToIndex(index)"></span>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import { inject, onMounted, ref, nextTick, onBeforeUnmount, watchEffect } from "vue";
 
-const translationStore = inject("translationStore");
-const currentIndex = ref(0); // Track current center item
-const isTouched = ref(false); // Track whether user interacted
+<script setup>
+import { inject, ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
+
+const translationStore = inject('translationStore');
 const partners = ref([
-  { image: "icons/Frame.png", title: "step1" },
-  { image: "icons/Frame1.png", title: "step2" },
-  { image: "icons/Frame2.png", title: "step3" },
-  { image: "icons/Frame3.png", title: "step4" },
-  { image: "icons/Frame4.png", title: "step5" },
-  { image: "icons/Frame5.png", title: "step6" },
+  { image: 'icons/Frame.png', title: 'step1' },
+  { image: 'icons/Frame1.png', title: 'step2' },
+  { image: 'icons/Frame2.png', title: 'step3' },
+  { image: 'icons/Frame3.png', title: 'step4' },
+  { image: 'icons/Frame4.png', title: 'step5' },
+  { image: 'icons/Frame5.png', title: 'step6' },
 ]);
 
 const slider = ref(null);
 const sliderContainer = ref(null);
-
+const isHovered = ref(false);
 let animationFrame;
 let position = 0;
-const speed = 1;
-
 let itemWidth = 0;
-
-const goToIndex = (index) => {
-  pauseScrolling();
-  currentIndex.value = index;
-  position = -index * itemWidth;
-  updateSliderPosition();
-  
-  // Resume loop after short delay
-  setTimeout(() => {
-    startScrolling();
-  }, 3000); // Wait 3s before resuming
-};
+const speed = 1;
 
 const updateSliderPosition = () => {
   if (slider.value) {
     slider.value.style.transform = `translateX(${position}px)`;
   }
 };
-const onDragStart = (x) => {
-  isDragging = true;
-  isTouched.value = true;
+
+const onMouseEnter = () => {
+  isHovered.value = true;
   pauseScrolling();
-  dragStartX = x;
-  dragStartPosition = position;
+};
+
+const onMouseLeave = () => {
+  isHovered.value = false;
+  scrollLoop();
 };
 
 
-const shiftLeft = () => {
-  const firstItem = partners.value.shift();
-  partners.value.push(firstItem);
-  position += itemWidth;
-  slider.value.style.transition = "none";
+const scrollLoop = () => {
+  if (isHovered.value) return;
+
+  position -= speed;
+
+  const firstItem = slider.value.children[0];
+  const firstItemRight = firstItem.getBoundingClientRect().right;
+  const containerLeft = sliderContainer.value.getBoundingClientRect().left;
+
+  if (firstItemRight <= containerLeft) {
+    const removed = partners.value.shift();
+    partners.value.push(removed);
+    position += itemWidth;
+  }
+
   updateSliderPosition();
-  nextTick(() => {
-    slider.value.style.transition = "transform 0s linear";
-  });
-};
-
-const shiftRight = () => {
-  const lastItem = partners.value.pop();
-  partners.value.unshift(lastItem);
-  position -= itemWidth;
-  slider.value.style.transition = "none";
-  updateSliderPosition();
-  nextTick(() => {
-    slider.value.style.transition = "transform 0s linear";
-  });
-};
-const startScrolling = () => {
-  if (isTouched.value) return; // 👈 Skip if touched
-
-  const scroll = () => {
-    if (!slider.value || partners.value.length === 0) return;
-
-    position -= speed;
-
-    const firstItem = slider.value.children[0];
-    if (firstItem.getBoundingClientRect().right <= sliderContainer.value.getBoundingClientRect().left) {
-      shiftLeft();
-    }
-
-    updateSliderPosition();
-    animationFrame = requestAnimationFrame(scroll);
-  };
-
-  animationFrame = requestAnimationFrame(scroll);
+  animationFrame = requestAnimationFrame(scrollLoop);
 };
 
 const pauseScrolling = () => {
   cancelAnimationFrame(animationFrame);
 };
 
-// 🖱 Drag support
+const clamp = (val, min, max) => Math.max(min, Math.min(val, max));
+
 let isDragging = false;
-let dragStartX = 0;
-let dragStartPosition = 0;
+let startX = 0;
+let startPos = 0;
 
-
+const onDragStart = (x) => {
+  isDragging = true;
+  pauseScrolling();
+  startX = x;
+  startPos = position;
+};
 
 const onDragMove = (x) => {
   if (!isDragging) return;
-  const dx = x - dragStartX;
-  position = dragStartPosition + dx;
-  updateSliderPosition();
 
-  if (dx < -itemWidth) {
-    // Dragging left
-    shiftLeft();
-    dragStartX += itemWidth;
-    dragStartPosition = position;
-  } else if (dx > itemWidth) {
-    // Dragging right
-    shiftRight();
-    dragStartX -= itemWidth;
-    dragStartPosition = position;
-  }
+  const dx = x - startX;
+  const maxScrollLeft = 0;
+  const visibleCount = Math.floor(sliderContainer.value.offsetWidth / itemWidth);
+  const maxScrollRight = -(itemWidth * (partners.value.length - visibleCount));
+
+  position = clamp(startPos + dx, maxScrollRight, maxScrollLeft);
+  updateSliderPosition();
 };
 
 const onDragEnd = () => {
   if (!isDragging) return;
   isDragging = false;
-  startScrolling();
+  if (!isHovered.value) scrollLoop();
 };
-
-// Mouse & Touch events
-const handleMouseDown = (e) => onDragStart(e.clientX);
-const handleMouseMove = (e) => onDragMove(e.clientX);
-const handleMouseUp = () => onDragEnd();
-
-const handleTouchStart = (e) => onDragStart(e.touches[0].clientX);
-const handleTouchMove = (e) => onDragMove(e.touches[0].clientX);
-const handleTouchEnd = () => onDragEnd();
 
 onMounted(() => {
   nextTick(() => {
-    const firstItem = slider.value.querySelector(".partner-icon");
-    itemWidth = firstItem.offsetWidth + 40; // margin compensation
+    itemWidth =
+      slider.value.querySelector('.partner-item').offsetWidth +
+      parseInt(getComputedStyle(slider.value.querySelector('.partner-item')).marginRight) * 2;
 
-    startScrolling();
+    scrollLoop();
 
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+    sliderContainer.value.addEventListener('mousedown', (e) => onDragStart(e.clientX));
+    window.addEventListener('mousemove', (e) => onDragMove(e.clientX));
+    window.addEventListener('mouseup', onDragEnd);
 
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd);
+    sliderContainer.value.addEventListener('touchstart', (e) => onDragStart(e.touches[0].clientX));
+    window.addEventListener('touchmove', (e) => onDragMove(e.touches[0].clientX));
+    window.addEventListener('touchend', onDragEnd);
   });
 });
 
-watchEffect(() => {
-  currentIndex.value = Math.round(-position / itemWidth);
-});
 onBeforeUnmount(() => {
-  window.removeEventListener("mousedown", handleMouseDown);
-  window.removeEventListener("mousemove", handleMouseMove);
-  window.removeEventListener("mouseup", handleMouseUp);
-  window.removeEventListener("touchstart", handleTouchStart);
-  window.removeEventListener("touchmove", handleTouchMove);
-  window.removeEventListener("touchend", handleTouchEnd);
+  cancelAnimationFrame(animationFrame);
+  window.removeEventListener('mousemove', onDragMove);
+  window.removeEventListener('mouseup', onDragEnd);
+  window.removeEventListener('touchmove', onDragMove);
+  window.removeEventListener('touchend', onDragEnd);
 });
-
 </script>
 
 
 <style scoped>
 .partners-section {
-  background: rgba(35, 35, 35, 1);
-  height: 550px;
-  padding: 0 20px 0 20px;
-  color: rgba(246, 246, 246, 1);
-  text-align: center;
-  align-items: center;
+  background: #232323;
+  padding: 60px 20px;
+  color: #f6f6f6;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
-
-.partners-section h2 {
-  font-size: 40px;
-  text-align: center;
-  font-weight: 400;
-  margin-bottom: 15px;
-  color: rgba(246, 246, 246, 1);
-}
-
 
 .slider-container {
   width: 100%;
   overflow: hidden;
-  position: relative;
-  margin-bottom: 130px;
+  cursor: grab;
+  user-select: none;
+  margin-top: 40px;
 }
-
-.slider {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  justify-content: center;
-  align-items: center;
-}
-
-.partner-icon {
-  display: flex;
-  width: 200px;
-  margin: 0 20px;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.partner-icon img {
-  width: 110px;
-  height: 110px;
-  margin-bottom: 20px;
-}
-
 
 .slider-container:active {
   cursor: grabbing;
 }
 
-.slider-container {
-  cursor: grab;
-  user-select: none;
-}
-
-
-.dots {
+.slider {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+  will-change: transform;
+  transition: transform 0s linear;
 }
 
-.dots span {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.partner-item {
+  flex: 0 0 auto;
+  width: 200px;
+  margin: 0 20px;
+  text-align: center;
 }
 
-.dots span.active {
-  background-color: #fff;
+.partner-icon img {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
 }
 </style>
