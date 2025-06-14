@@ -194,7 +194,6 @@ const toggleMore = () => {
     margin-top: 18px;
     color: #444;
     font-size: 1.05rem;
-    background: #f7f7f7;
     border-radius: 6px;
     padding: 16px 18px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
@@ -205,6 +204,31 @@ const toggleMore = () => {
         flex-direction: column;
         padding: 24px 0;
         height: fit-content;
+    }
+
+    .hero-text h1 {
+        font-size: 25px;
+        width: 110%;
+    }
+
+    .hero-label {
+        text-align: center;
+    }  
+
+    .more-text {
+        padding: 0;
+    }
+
+    .hero-more {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .more-btn {
+        width: 55%;
+        align-self: center;
+        margin: 30px 0;
     }
 
     .hero-image {
@@ -219,7 +243,6 @@ const toggleMore = () => {
         margin: auto;
         border-radius: 8px;
         height: 320px;
-
     }
 
     .image-bg-layer {
@@ -232,8 +255,9 @@ const toggleMore = () => {
         position: unset;
         margin-left: 0;
         padding: 28px 16px;
-        min-width: none;
-        max-width: 100vw;
+        min-width: 270px;
+        max-width: 100%;
+        width: 270px;
     }
 }
 </style>
