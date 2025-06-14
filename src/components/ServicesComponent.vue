@@ -24,7 +24,42 @@
       </div>
 
     </div>
+    <div v-if="isMobile" class="treemb-box">
+      <img src="../../public/images/treemb.png" />
+      <div class="treebadgeMb orangeBlock">
+        <span>{{ translationStore.t('services', 'coBadge') }}</span>
+        <span class="text-sm">{{ translationStore.t('services', 'coBadge2') }}</span>
+      </div>
+      <div class="treebadgeMb greenBlock">
+        <span>{{ translationStore.t('services', 'treeBadge') }}</span>
+        <span class="text-sm">{{ translationStore.t('services', 'treeBadge2') }}</span>
+      </div>
+    </div>
+    <div class="text-box">
+      <div class="tree-title-box">
+        <span class="tree-title"> {{ translationStore.t('services', 'titleText') }}</span>
+        <span class="tree-title text-[#c2410c] mb-[20px]"> {{ translationStore.t('services', 'titleText2') }}</span>
+        <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext') }}</span>
+        <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext2') }}</span>
+      </div>
+
+    </div>
+
   </section>
+  <div v-if="!isMobile" class="badge-box">
+    <div class="treebadge orange">
+      <span>{{ translationStore.t('services', 'coBadge') }}</span>
+      <span class="text-sm">{{ translationStore.t('services', 'coBadge2') }}</span>
+    </div>
+    <div class="treebadge green">
+      <span>{{ translationStore.t('services', 'treeBadge') }}</span>
+      <span class="text-sm">{{ translationStore.t('services', 'treeBadge2') }}</span>
+    </div>
+  </div>
+  <div v-if="!isMobile" class="tree-box">
+    <img class="tree" src="../../public/images/tree.png" />
+  </div>
+
 </template>
 
 <script setup>
@@ -107,6 +142,60 @@ export default {
 
 }
 
+.text-box {
+  display: flex;
+  height: 600px;
+  margin-left: 10%;
+  align-self: baseline;
+}
+
+.tree-box {
+  position: relative;
+  margin-top: 30px;
+}
+
+.badge-box {
+  position: relative;
+  width: 600px;
+}
+
+.treebadge {
+  position: absolute;
+  width: 220px;
+  height: 110px;
+  color: #F6F6F6;
+  font-weight: 500;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  flex-direction: column;
+}
+
+.orange {
+  background-color: #c2410c;
+  right: -540px;
+  bottom: 300px;
+}
+
+.green {
+  background-color: #13381E;
+  right: -250px;
+  bottom: 150px;
+}
+
+.text-sm {
+  font-size: 24px;
+}
+
+.tree {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 .card {
   flex: 1 1 30%;
   position: relative;
@@ -116,6 +205,7 @@ export default {
   max-height: 359px;
   width: 100%;
   height: 100%;
+  margin-bottom: 60px;
 }
 
 .card img {
@@ -161,7 +251,22 @@ export default {
   align-content: center;
   line-height: 23px;
   display: flex;
+}
 
+
+.tree-title-box {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  margin-top: 100px;
+}
+
+.tree-title {
+  font-size: 40px;
+  text-align: left;
+  font-weight: 400;
+  line-height: 100%;
 }
 
 .card button {
@@ -187,6 +292,11 @@ export default {
     font-size: 20px;
   }
 
+  .orange {
+    right: -200px;
+    ;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -197,6 +307,89 @@ export default {
 
   .card {
     flex: 1 1 100%;
+  }
+
+  .text-box {
+    border: 1px solid #00000033;
+    border-radius: 10px;
+    margin-left: 0;
+    padding: auto;
+    position: relative;
+    background: #FFFFFF;
+    top: -40px;
+    height: 570px;
+    z-index: 1;
+  }
+
+  .tree-title-box {
+    width: 90%;
+    margin: auto;
+  }
+
+  .tree-title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .treemb-box {
+    position: relative;
+    width: 350px;
+    height: 350px;
+  }
+
+  .treemb-box img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .badge-box {
+    position: absolute;
+    width: auto;
+  }
+
+  .treebadgeMb {
+    position: absolute;
+    width: 130px;
+    height: 65px;
+    color: #F6F6F6;
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-direction: column;
+  }
+
+  .greenBlock {
+    bottom: 0;
+    z-index: 10;
+    background-color: #13381E;
+  }
+
+  .orangeBlock {
+    top: 0;
+    right: 0;
+    z-index: 0;
+    background-color: #c2410c;
+
+  }
+
+  .text-sm {
+    font-size: 14px;
+  }
+
+  .tree-title-box {
+    width: 85%;
+    margin-top: 60px;
+  }
+
+  .tree-title-box span {
+    width: 100%;
   }
 
   .card-title {

@@ -9,6 +9,9 @@ export const TRANSLATIONS = {
     },
     services: {
       title: "OUR SERVICES",
+      titleText: "",
+      titleText2: "",
+      treetext: "",
       button: "Learn More",
       description: "We provide the best services for your needs.",
       service1: {
@@ -95,7 +98,8 @@ export const TRANSLATIONS = {
       aboutUs: "About Us",
       services: "Services",
       contactUs: "Contact Us",
-      success: "Your message has been successfully sent. Thank you for contacting us.",
+      success:
+        "Your message has been successfully sent. Thank you for contacting us.",
     },
     consulting: {
       topText: "The answers to your solar questions",
@@ -141,6 +145,16 @@ export const TRANSLATIONS = {
     },
     services: {
       title: "Ծառայություններ",
+      titleText: "Երբևէ հաշվել եք թե 1 կՎտ արևային կայանը քանի ",
+      titleText2: "«ծառի է համարժեք»",
+      treeBadge: "20-25",
+      coBadge: "CO₂ 1.5",
+      treeBadge2: "ծառ",
+      coBadge2: "տոննա",
+      treetext:
+        "1 կՎտ արևային կայանը տարեկան խնայում է միջինում 1.5 տոննա CO₂, ինչը համարժեք է մոտ 25 ծառի կողմից կլանված ածխաթթու գազին։ ",
+      treetext2:
+        "Այսինքն, 1 կՎտ կայանը համարժեք է 20-25 ծառի։ Ամեն տեղադրված արևային կայան նշանակում է ավելի քիչ վնաս օդին, ավելի քիչ կախվածություն վառելիքից և ավելի շատ խնայված ծառեր։",
       button: "Ավելին",
       description:
         "Մենք առաջարկում ենք ամբողջական արևային լուծումներ՝ նախագծումից մինչև սպասարկում։ Աշխատում ենք և անհատների և բիզնեսների համար՝ ապահովելով խնայողություն։",
@@ -230,7 +244,8 @@ export const TRANSLATIONS = {
       aboutUs: "Մեր Մասին",
       services: "Ծառայություններ",
       contactUs: "Կապ",
-      success: "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
+      success:
+        "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
     },
     consulting: {
       topText: "Ձեր արևային հարցերի պատասխանները",
