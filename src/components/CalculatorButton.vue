@@ -3,7 +3,7 @@
         <div class="calculator-button" @click="openModal">
             <img class="icon" src="/icons/Calculator_Icon.svg" alt="Calculator" />
         </div>
-        <CalculatorModal :visible="showModal" @close="showModal = false" @goToOffer="()=>{emit('goToOffer')}"/>
+        <CalculatorModal :visible="showModal" @close="showModal = false" @goToOffer="() => { emit('goToOffer') }" />
     </div>
 </template>
 
@@ -19,7 +19,6 @@ const emit = defineEmits(['goToOffer']);
 const openModal = () => {
     showModal.value = true;
 }
-
 </script>
 
 <style scoped>
@@ -28,7 +27,7 @@ const openModal = () => {
     width: 80px;
     height: 80px;
     position: fixed;
-    bottom: 60px;
+    bottom: 80px;
     right: 0;
     color: #FCFCFC;
     display: flex;
@@ -40,11 +39,9 @@ const openModal = () => {
 
 
 @media (orientation: portrait) {
-
     .calculator-button {
         width: 70px;
         height: 70px;
     }
-
 }
 </style>

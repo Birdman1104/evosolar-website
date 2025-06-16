@@ -3,12 +3,11 @@
     <HeaderComponent />
     <Consultation />
     <Services />
-    <OfferSection/>
+    <OfferSection />
     <AboutUs />
-    <!-- <WhyChooseUs /> -->
     <PartnersSection />
     <MapSection />
-    <EmailContact />
+    <EmailContact ref="contactSection" />
     <FooterComponent />
     <CalculatorButton @goToOffer="scrollToContact" />
   </div>
@@ -19,12 +18,9 @@ import HeaderComponent from './components/HeaderComponent.vue';
 import Consultation from './components/ConsultationComponent.vue';
 import Services from './components/ServicesComponent.vue';
 import AboutUs from './components/AboutUs.vue';
-import WhyChooseUs from './components/WhyChooseUs.vue';
 import CalculatorButton from './components/CalculatorButton.vue';
 import PartnersSection from './components/PartnersSection.vue';
-// import ContactsSection from './components/ContactsSection.vue';
 import EmailContact from './components/EmailContact.vue';
-// import FooterComponent from './components/FooterComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import { provide, reactive, ref, nextTick } from "vue";
 import { TRANSLATIONS } from "./translations";
@@ -47,7 +43,6 @@ sharedState.annualSavings = 0;
 sharedState.annualProductivity = 0;
 sharedState.isCurrency = false;
 sharedState.region = '';
-
 
 provide('sharedState', sharedState);
 
@@ -77,8 +72,6 @@ const translationStore = reactive({
   },
 });
 
-
-
 const scrollToContact = () => {
   nextTick(() => {
     if (contactSection.value) {
@@ -90,10 +83,8 @@ const scrollToContact = () => {
   });
 };
 
-
 provide("translationStore", translationStore);
 </script>
-
 
 <style>
 body {

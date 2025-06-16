@@ -2,8 +2,6 @@ export const TRANSLATIONS = {
   en: {
     header: {
       services: "Services",
-      whyChooseUs: "Why Choose Us?",
-      ourProjects: "Our Projects",
       contacts: "Contacts",
       about: "About Us",
     },
@@ -44,31 +42,7 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Annual Savings",
       kwUnit: "kW",
       calculatedModalTitle: "Solar Station Calculation",
-      calculatedModalDescription:
-        "The proposed installed capacity of the station is:",
-    },
-    whyChooseUs: {
-      title: "Why Choose Us?",
-      block1: {
-        title: "Experience",
-        description:
-          "Our team consists of experienced solar specialists who are dedicated to their mission and continuously invest in professional development.",
-      },
-      block2: {
-        title: "Quality",
-        description:
-          "We use only high-quality solar panels, equipment, and components to ensure reliability and efficiency.",
-      },
-      block3: {
-        title: "Customer-Centric Approach",
-        description:
-          "We provide personalized solutions for each client to meet their unique energy needs and goals.",
-      },
-      block4: {
-        title: "Sustainability",
-        description:
-          "We are committed to protecting the environment and creating a GREEN planet.",
-      },
+      calculatedModalDescription: "The proposed installed capacity of the station is:",
     },
     steps: {
       title: "5 STEPS TO YOUR SOLAR SYSTEM",
@@ -78,11 +52,6 @@ export const TRANSLATIONS = {
       step3: "Preparation Work",
       step4: "Installation",
       step5: "Monitoring",
-    },
-    ourProjects: {
-      title: "OUR PROJECTS",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Ipsum consequat ac egestas vestibulum integer vivamus ullamcorper ultrices. Proin eu at tortor eget. Semper sed mattis volutpat urna at congue. Nibh arcu proin iaculis odio. Ridiculus lorem sit facilisi.",
     },
     ourPartners: {
       title: "OUR PARTNERS",
@@ -98,8 +67,7 @@ export const TRANSLATIONS = {
       aboutUs: "About Us",
       services: "Services",
       contactUs: "Contact Us",
-      success:
-        "Your message has been successfully sent. Thank you for contacting us.",
+      success: "Your message has been successfully sent. Thank you for contacting us.",
     },
     consulting: {
       topText: "The answers to your solar questions",
@@ -127,8 +95,7 @@ export const TRANSLATIONS = {
       customerCentricText:
         "We provide personalized solutions for each client to meet their unique energy needs and goals.",
       sustainabilityTitle: "Sustainability.",
-      sustainabilityText:
-        "We are committed to protecting the environment and creating a GREEN planet.",
+      sustainabilityText: "We are committed to protecting the environment and creating a GREEN planet.",
     },
     findUs: {
       title: "Find Us At",
@@ -138,8 +105,6 @@ export const TRANSLATIONS = {
   hy: {
     header: {
       services: "Ծառայություններ",
-      whyChooseUs: "Ինչու Ընտրել մեզ",
-      ourProjects: "Մեր Գործերը",
       contacts: "Կապ",
       about: "Մեր մասին",
     },
@@ -188,47 +153,17 @@ export const TRANSLATIONS = {
       annualSavingsLabel: "Տարեկան խնայողություն",
       kwUnit: "կՎտ",
       calculatedModalTitle: "Արևային Կայանի Հաշվարկ",
-      calculatedModalDescription:
-        "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
-    },
-    whyChooseUs: {
-      title: "Ինչու՞ ընտրել մեզ",
-      block1: {
-        title: "Փորձառություն",
-        description:
-          "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
-      },
-      block3: {
-        title: "Որակ",
-        description:
-          "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
-      },
-      block4: {
-        title: "Հաճախորդամետ մոտեցում",
-        description:
-          "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
-      },
-      block2: {
-        title: "Կայունություն",
-        description:
-          "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
-      },
+      calculatedModalDescription: "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
     },
     steps: {
       title: "6 Քայլ Դեպի Քո Արևային Կայանը",
-      description:
-        "խորհրդատվությունից մինչև տեղադրում ու սպասարկում՝ արդյունավետ և երկարակյաց համակարգի համար։",
+      description: "խորհրդատվությունից մինչև տեղադրում ու սպասարկում՝ արդյունավետ և երկարակյաց համակարգի համար։",
       step1: "Խորհրդատվություն",
       step2: "Չափագրում",
       step3: "Նախագծում",
       step4: "Տեղադրում",
       step5: "Մոնիթորինգ",
       step6: "Սպասարկում",
-    },
-    ourProjects: {
-      title: "Մեր Նախագծերը",
-      description:
-        "ՀԱՅԵՐԵՆ Lorem ipsum dolor sit amet consectetur. Ipsum consequat ac egestas vestibulum integer vivamus ullamcorper ultrices. Proin eu at tortor eget. Semper sed mattis volutpat urna at congue. Nibh arcu proin iaculis odio. Ridiculus lorem sit facilisi.",
     },
     ourPartners: {
       title: "Մեր Գործընկերները",
@@ -244,8 +179,7 @@ export const TRANSLATIONS = {
       aboutUs: "Մեր Մասին",
       services: "Ծառայություններ",
       contactUs: "Կապ",
-      success:
-        "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
+      success: "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
     },
     consulting: {
       topText: "Ձեր արևային հարցերի պատասխանները",
@@ -267,14 +201,12 @@ export const TRANSLATIONS = {
       experienceText:
         "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
       qualityTitle: "Որակ.",
-      qualityText:
-        "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+      qualityText: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
       customerCentricTitle: "Հաճախորդակենտրոն մոտեցում.",
       customerCentricText:
         "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
       sustainabilityTitle: "Կայունություն.",
-      sustainabilityText:
-        "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
+      sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
     },
     findUs: {
       title: "Մեզ Կարող եք Գտնել",

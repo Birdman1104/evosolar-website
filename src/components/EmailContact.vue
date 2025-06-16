@@ -1,9 +1,7 @@
-<template>
+<template ref="contactSectionRef">
     <div class="contact-wrapper">
-
         <div class="contact-form">
             <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
-
             <form class="form" @submit.prevent="submitForm">
                 <div class="input-group">
                     <input type="tel" name="phoneNumber" id="fphoneNumber" v-model="phoneNumber" required
@@ -15,36 +13,26 @@
                         :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
                 </div>
                 <p class="successMessage">{{ translationStore.t('contactUs', 'success') }}</p>
-
                 <button type="submit" class="submit-button">{{ translationStore.t('contactUs', 'buttonText') }}</button>
             </form>
         </div>
-
-
-
     </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { inject, ref, onMounted, defineExpose } from "vue";
 const translationStore = inject("translationStore");
-const socials = [
-    {
-        icon: 'icons/telegram.png',
-        alt: 'Telegram',
-        url: 'https://t.me/LeonK8800'
-    },
-    // {
-    //     icon: 'icons/viber.png',
-    //     alt: 'Viber',
-    //     url: 'https://t.me/Birdman1104'
-    // },
-    // {
-    //     icon: 'icons/whatsapp.png',
-    //     alt: 'WhatsApp',
-    //     url: 'https://t.me/Birdman1104'
-    // },
-]
+
+const contactSectionRef = ref(null);
+const isMounted = ref(false);
+
+onMounted(() => {
+    isMounted.value = true;
+});
+
+defineExpose({
+    el: contactSectionRef
+});
 </script>
 
 <script>
@@ -62,10 +50,7 @@ export default {
     },
     methods: {
         async submitForm() {
-            console.warn(this.phoneNumber, this.name);
-
             if (!this.phoneNumber || !this.name) return
-
             if (this.phoneNumber.startsWith('0')) {
                 this.phoneNumber = this.phoneNumber.slice(1);
             }
@@ -85,17 +70,6 @@ export default {
                     annualProductivity: this.sharedState.annualProductivity,
                     region: this.sharedState.region,
                 }),
-            });
-
-            console.warn({
-                access_key: WEB3FORMS_ACCESS_KEY,
-                name: this.name,
-                phoneNumber: this.phoneNumber,
-                value: this.sharedState.calculatedValue +
-                    (this.sharedState.isCurrency ? " AMD " : " KWT * H"),
-                annualSavings: this.sharedState.annualSavings,
-                annualProductivity: this.sharedState.annualProductivity,
-                region: this.sharedState.region,
             });
 
             const result = await response.json();
