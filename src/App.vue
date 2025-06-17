@@ -44,7 +44,6 @@ sharedState.annualProductivity = 0;
 sharedState.isCurrency = false;
 sharedState.region = '';
 
-
 provide('sharedState', sharedState);
 
 const translationStore = reactive({
@@ -73,8 +72,6 @@ const translationStore = reactive({
   },
 });
 
-
-
 const scrollToContact = () => {
   nextTick(() => {
     if (contactSection.value) {
@@ -86,10 +83,8 @@ const scrollToContact = () => {
   });
 };
 
-
 provide("translationStore", translationStore);
 </script>
-
 
 <style>
 body {

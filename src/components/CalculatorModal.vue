@@ -208,6 +208,7 @@ const calculate = () => {
 
 <style scoped>
 .modal-overlay {
+    background-color: rgba(15, 15, 15, 0.92);
     position: fixed;
     top: 0px;
     left: 0;
