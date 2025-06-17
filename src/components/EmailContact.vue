@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-wrapper">
+    <div class="contact-wrapper" ref="root">
 
         <div class="contact-form">
             <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
@@ -26,7 +26,13 @@
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { inject, ref } from "vue";
+
+const root = ref(null);
+defineExpose({
+    root
+})
+
 const translationStore = inject("translationStore");
 const socials = [
     {
