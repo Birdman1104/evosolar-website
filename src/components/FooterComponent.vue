@@ -6,7 +6,7 @@ const socials = [
     {
         icon: 'icons/telegram.png',
         alt: 'Telegram',
-        url: 'https://t.me/LeonK8800'
+        url: 'https://t.me/evosolarllc'
     },
     // {
     //     icon: 'icons/viber.png',
@@ -23,7 +23,7 @@ const socials = [
 
 <script>
 window.onload = () => {
-    
+
     document.getElementById("yearSpan").innerHTML = new Date().getFullYear();
 }
 </script>
@@ -64,13 +64,12 @@ window.onload = () => {
 
 
 <style scoped>
-
 .footer {
     background-color: #1f1f1f;
     padding: 0 20px 40px 20px;
-        color: #fff;
+    color: #fff;
     font-family: sans-serif;
-    
+
 }
 
 a {
@@ -142,13 +141,13 @@ a {
         display: block;
     }
 
-        .footer-top {
+    .footer-top {
         display: block;
         padding: 0 30px;
         justify-self: center;
     }
 
-        .logo {
+    .logo {
         margin-bottom: 40px;
     }
 }

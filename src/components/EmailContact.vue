@@ -34,8 +34,8 @@ const translationStore = inject("translationStore");
 
 <script>
 import { inject } from "vue";
-const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
-// const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
+// const WEB3FORMS_ACCESS_KEY = "5ac91e69-ea81-4604-8477-16ef97aaade1";
+const WEB3FORMS_ACCESS_KEY = "15ac1e74-0952-47d8-90e1-aedc662d9c79";
 
 export default {
     data() {
