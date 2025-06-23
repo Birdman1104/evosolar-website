@@ -201,16 +201,18 @@ export default {
   position: relative;
   text-align: left;
   color: white;
-  max-width: 355px;
+  max-width: 359px;
   max-height: 359px;
+
   width: 100%;
   height: 100%;
   margin-bottom: 60px;
 }
 
 .card img {
-  width: 100%;
-  height: auto;
+  width: 359px;
+  height: 359px;
+  object-fit: cover;
 }
 
 .overlay {
@@ -219,7 +221,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 98.75%;
+  height: 100%;
   width: 100%;
   opacity: 0.3;
   background-color: #000000;
@@ -243,7 +245,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  height: 95%;
+  height: 98%;
   width: 100%;
   background-color: rgba(35, 35, 35, 0.96);
   border-bottom: 11px solid rgba(193, 71, 10, 1);
