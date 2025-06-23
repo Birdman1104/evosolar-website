@@ -1,6 +1,6 @@
 <template>
     <!-- <section class="hero-section"> -->
-    <div class="hero-content">
+    <div id="about" class="hero-content">
         <div class="hero-image">
             <img src="/images/roof.png" alt="Roof with solar panels" />
             <div class="image-bg-layer"></div>
