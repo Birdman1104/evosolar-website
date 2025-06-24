@@ -5,32 +5,98 @@ export const TRANSLATIONS = {
       contacts: "Contacts",
       about: "About Us",
     },
+    consulting: {
+      topText: "Answer to your solar questions",
+      bottomText1: "",
+      bottomText2: "Get a free",
+      bottomText3: "consultation from our experts.",
+      buttonText: "Get In Touch",
+    },
     services: {
-      title: "OUR SERVICES",
-      titleText: "",
-      titleText2: "",
-      treetext: "",
+      title: "SERVICES",
+      titleText1: "Have you ever calculated",
+      titleText2: 'how many "trees"',
+      titleText3: "1 kW solar system is equivalent to?",
+      treetext:
+        "A 1 kW solar system saves an average of 1.5 tons of CO₂ per year, which is equivalent to the amount of carbon dioxide absorbed by about 25 trees.",
+      treetext2:
+        "This means that 1 kW solar system is equivalent to 20-25 trees. Every installed solar system means less harm to the air, less dependence on fuel and more trees saved.",
+      treeBadge: "20-25",
+      coBadge: "CO₂ 1.5",
+      treeBadge2: "trees",
+      coBadge2: "tons",
       button: "Learn More",
-      description: "We provide the best services for your needs.",
+      description:
+        "We offer complete solar solutions - from design to maintenance. We work\nwith both individuals and businesses to ensure energy savings.",
       service1: {
         title: "Design and Installation",
         description:
-          "We offer premium solar system design and installation services for both homes and businesses, free of charge.",
+          "We offer free design and installation of solar power systems. Tailored solutions for both residential and commercial properties. All projects are handled by experienced professionals. We ensure high quality and long-lasting results.",
       },
       service2: {
         title: "Maintenance of Solar Systems",
         description:
-          "We provide maintenance services for both solar systems installed by us and those installed by other companies.",
+          "We service both our own installations and systems installed by other companies. We analyze system performance and fix any issues or malfunctions. We ensure smooth, efficient and safe operation of your solar system.",
       },
       service3: {
         title: "Adding Solar Panels",
         description:
-          "Increase the capacity of your existing solar system. We specialize in adding solar panels and expanding your system for improved energy efficiency.",
+          "We upgrade your existing system by adding new solar panels. Customized expansion solutions tailored to your needs. We ensure efficient and seamless system enhancement.",
       },
+    },
+    steps: {
+      title: "6 STEPS TO YOUR SOLAR SYSTEM",
+      description: "Explore our services and solutions.",
+      step1: "Consultation",
+      step2: "Measurements",
+      step3: "Design",
+      step4: "Installation",
+      step5: "Monitoring",
+      step6: "Maintenance",
+    },
+    ourPartners: {
+      title: "Our Partners",
+    },
+    contactUs: {
+      title: "Contact Us",
+      phoneNumberPlaceholder: "Phone Number",
+      namePlaceholder: "Name Surname",
+      buttonText: "Get In Touch",
+      contact: "Contacts",
+      address: "Gai Ave 37, Yerevan",
+      links: "Links",
+      aboutUs: "About Us",
+      services: "Services",
+      contactUs: "Contact",
+      success: "Your message has been successfully sent. Thank you for contacting us.",
+    },
+    aboutUs: {
+      header: "About Us",
+      title1: "We offer",
+      title2: "premium class",
+      title3: "solar panels",
+      description:
+        "At 𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿, we specialize in designing and installing modern solar systems for both residential and business needs. Our mission is to make clean, renewable energy accessible while helping our customers save money and reduce their carbon footprint.",
+      more: "More about us",
+      whyUs: "Why Choose Us?",
+      experienceTitle: "Experience",
+      experienceText:
+        "Our team consists of skilled solar professionals who are passionate about their work and continuously strive for professional growth.",
+      qualityTitle: "Quality",
+      qualityText:
+        "We use only high-quality solar panels, equipment, and components to ensure long-lasting and efficient systems.",
+      customerCentricTitle: "Customer-Centric Approach",
+      customerCentricText: "We provide a personalized approach to meet each customer’s unique energy needs and goals.",
+      sustainabilityTitle: "Sustainability",
+      sustainabilityText: "We are committed to protecting the environment and contributing to a GREENER planet.",
+    },
+    findUs: {
+      title: "Find us on the map",
+      address: "Gai Ave 37, Yerevan",
     },
     calculatorModal: {
       title: "Solar Calculator",
-      description: "Average electricity consumption cost",
+      description: "Average cost of electricity consumption",
       currency: "AMD",
       kwhUnit: "kWh",
       location: "Region",
@@ -44,63 +110,6 @@ export const TRANSLATIONS = {
       calculatedModalTitle: "Solar Station Calculation",
       calculatedModalDescription: "The proposed installed capacity of the station is:",
     },
-    steps: {
-      title: "5 STEPS TO YOUR SOLAR SYSTEM",
-      description: "Explore our services and solutions.",
-      step1: "Consultation, Measurement",
-      step2: "Design",
-      step3: "Preparation Work",
-      step4: "Installation",
-      step5: "Monitoring",
-    },
-    ourPartners: {
-      title: "OUR PARTNERS",
-    },
-    contactUs: {
-      title: "Contact Us",
-      phoneNumberPlaceholder: "Phone Number",
-      namePlaceholder: "Name Surname",
-      buttonText: "Contact Us",
-      contact: "Contacts",
-      address: "Gai Ave 37, Yerevan",
-      links: "Links",
-      aboutUs: "About Us",
-      services: "Services",
-      contactUs: "Contact Us",
-      success: "Your message has been successfully sent. Thank you for contacting us.",
-    },
-    consulting: {
-      topText: "The answers to your solar questions",
-      bottomText1: "Get",
-      bottomText2: "free consultation",
-      bottomText3: "from our specialists.",
-      buttonText: "Contact Us",
-    },
-    aboutUs: {
-      header: "About Us",
-      title1: "We offer",
-      title2: "premium class",
-      title3: "solar panels",
-      description:
-        "At 𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿, we specialize in designing and installing modern solar systems for both residential and business needs. Our mission is to make clean, renewable energy accessible while helping our customers save money and reduce their carbon footprint.",
-      more: "More about us",
-      whyUs: "Why Choose Us?",
-      experienceTitle: "Experience.",
-      experienceText:
-        "Our team consists of experienced solar specialists who are dedicated to their mission and continuously invest in professional development.",
-      qualityTitle: "Quality.",
-      qualityText:
-        "We use only high-quality solar panels, equipment, and components to ensure reliability and efficiency.",
-      customerCentricTitle: "Customer-Centric Approach.",
-      customerCentricText:
-        "We provide personalized solutions for each client to meet their unique energy needs and goals.",
-      sustainabilityTitle: "Sustainability.",
-      sustainabilityText: "We are committed to protecting the environment and creating a GREEN planet.",
-    },
-    findUs: {
-      title: "Find Us At",
-      address: "Gai Ave 37, Yerevan",
-    },
   },
   hy: {
     header: {
@@ -108,10 +117,18 @@ export const TRANSLATIONS = {
       contacts: "Կապ",
       about: "Մեր մասին",
     },
+    consulting: {
+      topText: "Ձեր արևային հարցերի պատասխանները",
+      bottomText1: "Ստացեք",
+      bottomText2: "անվճար խորհրդատվություն",
+      bottomText3: "մեր մասնագետների կողմից։",
+      buttonText: "Կապ մեզ հետ",
+    },
     services: {
       title: "Ծառայություններ",
-      titleText: "Երբևէ հաշվել եք թե 1 կՎտ արևային կայանը քանի ",
+      titleText1: "Երբևէ հաշվել եք թե 1 կՎտ արևային կայանը քանի ",
       titleText2: "«ծառի է համարժեք»",
+      titleText3: " ",
       treeBadge: "20-25",
       coBadge: "CO₂ 1.5",
       treeBadge2: "ծառ",
@@ -126,18 +143,48 @@ export const TRANSLATIONS = {
       service1: {
         title: "Նախագծում և տեղադրում",
         description:
-          "Մենք առաջարկում ենք Պրեմիում դասի արևային կայանների անվճար նախագծում, տեղադրում և սպասարկում թե՛՛ տների և թե՛ բիզնեսի համար:",
+          "Իրականացնում ենք արևային կայանների Անվճար նախագծում և տեղադրում։ Հարմարեցված լուծումներ թե՜ տների, թե՜ բիզնեսների համար։ Աշխատանքներն իրականացվում են փորձառու մասնագետների կողմից։ Ապահովում ենք բարձր որակ և երկարաժամկետ արդյունք։",
       },
       service2: {
         title: "Արևային Կայանի Սպասարկում",
         description:
-          "Իրականացնում ենք ինչպես մեր, այնպես էլ այլ ընկերությունների կողմից տեղադրված արևային կայանների սպասարկում:",
+          "Սպասարկում ենք ինչպես մեր, այնպես էլ այլ ընկերությունների կողմից տեղադրված արևային կայաններ: Կատարում ենք համակարգի վերլուծություն և խափանումների վերացում։ Երաշխավորում ենք կայանի անխափան, արդյունավետ և անվտանգ շահագործումը։",
       },
       service3: {
         title: "Առկա արևային կայանի ընդլայնում",
         description:
-          "Ձեր առկա արևային կայանի հզորության բարձրացում: Մենք առաջարկում ենք արևային վահանակների ավելացում և համակարգի ընդլայնում։",
+          "Իրականացնում ենք Ձեր առկա կայանի հզորության բարձրացում՝ նոր վահանակներով։ Մշակում ենք անհատական ընդլայնման լուծումներ։ Երաշխավորում ենք համակարգի արդյունավետ արդիականացում։",
       },
+    },
+    steps: {
+      title: "6 Քայլ Դեպի Քո Արևային Կայանը",
+      description: "խորհրդատվությունից մինչև տեղադրում ու սպասարկում՝ արդյունավետ և երկարակյաց համակարգի համար։",
+      step1: "Խորհրդատվություն",
+      step2: "Չափագրում",
+      step3: "Նախագծում",
+      step4: "Տեղադրում",
+      step5: "Մոնիթորինգ",
+      step6: "Սպասարկում",
+    },
+    aboutUs: {
+      header: "Մեր Մասին",
+      title1: "Մենք առաջարկում ենք",
+      title2: "պրեմիում դասի",
+      title3: "արևային կայաններ",
+      description:
+        "𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿-ում մենք մասնագիտացած ենք և բնակելի և բիզնեսի համար ժամանակակից արևային կայանների նախագծման և տեղադրման մեջ: Մեր առաքելությունն է հասանելի դարձնել մաքուր, վերականգնվող էներգիան՝ օգնելով մեր հաճախորդներին խնայել գումար և նվազեցնել ածխածնի բացասական հետքը:",
+      more: "Իմանալ ավելին",
+      whyUs: "Ինչո՞ւ ընտրել մեզ",
+      experienceTitle: "Փորձառություն",
+      experienceText:
+        "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
+      qualityTitle: "Որակ",
+      qualityText: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
+      customerCentricTitle: "Հաճախորդակենտրոն մոտեցում",
+      customerCentricText:
+        "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
+      sustainabilityTitle: "Կայունություն",
+      sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
     },
     calculatorModal: {
       title: "Արևային Հաշվիչ",
@@ -155,16 +202,6 @@ export const TRANSLATIONS = {
       calculatedModalTitle: "Արևային Կայանի Հաշվարկ",
       calculatedModalDescription: "Ձեզ առաջարկվող կայանի դրվածքային հզորությունը ՝",
     },
-    steps: {
-      title: "6 Քայլ Դեպի Քո Արևային Կայանը",
-      description: "խորհրդատվությունից մինչև տեղադրում ու սպասարկում՝ արդյունավետ և երկարակյաց համակարգի համար։",
-      step1: "Խորհրդատվություն",
-      step2: "Չափագրում",
-      step3: "Նախագծում",
-      step4: "Տեղադրում",
-      step5: "Մոնիթորինգ",
-      step6: "Սպասարկում",
-    },
     ourPartners: {
       title: "Մեր Գործընկերները",
     },
@@ -180,33 +217,6 @@ export const TRANSLATIONS = {
       services: "Ծառայություններ",
       contactUs: "Կապ",
       success: "Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։ Շնորհակալություն, որ կապվեցիք մեզ հետ։",
-    },
-    consulting: {
-      topText: "Ձեր արևային հարցերի պատասխանները",
-      bottomText1: "Ստացեք",
-      bottomText2: "անվճար խորհրդատվություն",
-      bottomText3: "մեր մասնագետների կողմից։",
-      buttonText: "Կապ մեզ հետ",
-    },
-    aboutUs: {
-      header: "Մեր Մասին",
-      title1: "Մենք առաջարկում ենք",
-      title2: "պրեմիում դասի",
-      title3: "արևային կայաններ",
-      description:
-        "𝗘𝘃𝗼𝗦𝗼𝗹𝗮𝗿-ում մենք մասնագիտացած ենք և բնակելի և բիզնեսի համար ժամանակակից արևային կայանների նախագծման և տեղադրման մեջ: Մեր առաքելությունն է հասանելի դարձնել մաքուր, վերականգնվող էներգիան՝ օգնելով մեր հաճախորդներին խնայել գումար և նվազեցնել ածխածնի բացասական հետքը:",
-      more: "Իմանալ ավելին",
-      whyUs: "Ինչո՞ւ ընտրել մեզ",
-      experienceTitle: "Փորձառություն.",
-      experienceText:
-        "Մեր թիմը կազմված է փորձառու արևային մասնագետներից, ովքեր նվիրված են իրենց առաքելությանն ու մշտապես մասնագիտական զարգացմանը:",
-      qualityTitle: "Որակ.",
-      qualityText: "Մենք օգտագործում ենք միայն բարձր որակի արևային վահանակներ, սարքավորումներ և դետալներ։",
-      customerCentricTitle: "Հաճախորդակենտրոն մոտեցում.",
-      customerCentricText:
-        "Մենք ցուցաբերում ենք անհատական մոտեցում յուրաքանչյուր հաճախորդի՝ բավարարելու մեր հաճախորդների էներգետիկ կարիքներն ու նպատակները:",
-      sustainabilityTitle: "Կայունություն.",
-      sustainabilityText: "Մենք նվիրված ենք շրջակա միջավայրի պաշտպանությանն ու ԿԱՆԱՉ մոլորակ ստեղծելուն։",
     },
     findUs: {
       title: "Մեզ Կարող եք Գտնել",

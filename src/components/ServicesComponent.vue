@@ -37,8 +37,9 @@
     </div>
     <div class="text-box">
       <div class="tree-title-box">
-        <span class="tree-title"> {{ translationStore.t('services', 'titleText') }}</span>
-        <span class="tree-title text-[#c2410c] mb-[20px]"> {{ translationStore.t('services', 'titleText2') }}</span>
+        <span class="tree-title"> {{ translationStore.t('services', 'titleText1') }}</span>
+        <span class="tree-title text-[#c2410c] "> {{ translationStore.t('services', 'titleText2') }}</span>
+        <span class="tree-title mb-[20px]"> {{ translationStore.t('services', 'titleText3') }}</span>
         <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext') }}</span>
         <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext2') }}</span>
       </div>

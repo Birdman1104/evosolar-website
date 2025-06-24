@@ -25,14 +25,14 @@
                         <b>{{ translationStore.t('aboutUs', 'whyUs') }}</b>
                         <br />
                         <br />
-                        <p><b>{{ translationStore.t('aboutUs', 'experienceTitle') }}</b>{{
+                        <p><b>{{ translationStore.t('aboutUs', 'experienceTitle') }} - </b>{{
                             translationStore.t('aboutUs', 'experienceText') }}</p><br />
-                        <p><b>{{ translationStore.t('aboutUs', 'qualityTitle') }}</b>{{
+                        <p><b>{{ translationStore.t('aboutUs', 'qualityTitle') }} - </b>{{
                             translationStore.t('aboutUs',
                                 'qualityText') }}</p><br />
-                        <p><b>{{ translationStore.t('aboutUs', 'customerCentricTitle') }}</b>{{
+                        <p><b>{{ translationStore.t('aboutUs', 'customerCentricTitle') }} - </b>{{
                             translationStore.t('aboutUs', 'customerCentricText') }}</p><br />
-                        <p><b>{{ translationStore.t('aboutUs', 'sustainabilityTitle') }}</b>{{
+                        <p><b>{{ translationStore.t('aboutUs', 'sustainabilityTitle') }} - </b>{{
                             translationStore.t('aboutUs', 'sustainabilityText') }}</p><br />
                     </div>
                 </transition>
@@ -106,7 +106,6 @@ const toggleMore = () => {
     border-radius: 8px;
     padding: 40px 48px 40px 48px;
     margin-left: 32px;
-    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
     min-width: 340px;
     max-width: 500px;
 }
@@ -196,7 +195,6 @@ const toggleMore = () => {
     font-size: 1.05rem;
     border-radius: 6px;
     padding: 16px 18px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
 }
 
 @media (max-width: 900px) {
@@ -213,7 +211,7 @@ const toggleMore = () => {
 
     .hero-label {
         text-align: center;
-    }  
+    }
 
     .more-text {
         padding: 0;

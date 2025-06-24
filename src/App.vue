@@ -46,8 +46,11 @@ sharedState.region = '';
 
 provide('sharedState', sharedState);
 
+const lang = localStorage.getItem("evoSolarLanguage") || "hy";
+console.warn(`Current language: ${lang}`);
+
 const translationStore = reactive({
-  language: "hy",
+  language: lang,
   translations: TRANSLATIONS,
   t(...keys) {
     let current = this.translations[this.language];
@@ -69,6 +72,7 @@ const translationStore = reactive({
       this.language = 'en';
     }
     this.language = this.language;
+    localStorage.setItem("evoSolarLanguage", this.language);
   },
 });
 

@@ -23,7 +23,6 @@ const socials = [
 
 <script>
 window.onload = () => {
-
     document.getElementById("yearSpan").innerHTML = new Date().getFullYear();
 }
 </script>
@@ -52,7 +51,7 @@ window.onload = () => {
         </div>
 
         <div class="footer-bottom">
-            <p>Copyright © EvoSolar <span id='yearSpan'>231456</span></p>
+            <p>Copyright © EvoSolar <span id='yearSpan'></span></p>
             <div class="social-icons">
                 <a v-for="(social, index) in socials" :key="index" :href=social.url target="_blank">
                     <img :src=social.icon :alt=social.alt>
