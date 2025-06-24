@@ -1,6 +1,6 @@
 <template>
     <!-- <section class="hero-section"> -->
-    <div class="hero-content">
+    <div id="about" class="hero-content">
         <div class="hero-image">
             <img src="/images/roof.png" alt="Roof with solar panels" />
             <div class="image-bg-layer"></div>
@@ -18,7 +18,13 @@
             <div class="hero-more">
                 <button class="more-btn" @click="toggleMore">
                     {{ translationStore.t('aboutUs', 'more') }}
-                    <span :class="{ 'arrow': true, 'open': showMore }">&gt;</span>
+                    <span :class="{ 'arrow': true, 'open': showMore }">
+                    </span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
                 </button>
                 <transition name="fade-slide">
                     <div v-if="showMore" class="more-text">
@@ -59,11 +65,13 @@ const toggleMore = () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Montserrat Armenian', sans-serif !important;
 }
 
 .hero-content {
     display: flex;
-    height: 780px;
+    min-height: 800px;
+    height: auto;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -71,7 +79,7 @@ const toggleMore = () => {
 }
 
 .hero-image {
-    position: absolute;
+    width: fit-content;
     height: 95%;
     align-items: center;
     justify-content: center;
@@ -81,33 +89,32 @@ const toggleMore = () => {
 
 .image-bg-layer {
     position: absolute;
-    left: 8%;
-    top: 8%;
-    z-index: -1;
+    left: 0%;
+    top: 20%;
+    z-index: 0;
     background: #eaeaea;
-    width: 530px;
-    height: 500px;
-
+    width: 632px;
+    height: 601px;
 }
 
 .hero-image img {
+    position: absolute;
     z-index: 2;
-    height: 100%;
     display: block;
-    border-radius: 8px;
-    left: 0;
-    height: 580px;
+    width: 800px;
+    height: 800px;
+    left: -10%;
+    top: 10%;
 }
 
 .hero-text {
-    position: absolute;
-    right: 10%;
     background: #fff;
     border-radius: 8px;
     padding: 40px 48px 40px 48px;
     margin-left: 32px;
     min-width: 340px;
     max-width: 500px;
+    margin-left: 40%;
 }
 
 .hero-label {
@@ -122,10 +129,11 @@ const toggleMore = () => {
     line-height: 1.2;
     margin: 0 0 18px 0;
     letter-spacing: -1px;
+    font-family: 'Montserrat Armenian', sans-serif;
 }
 
 .highlight {
-    color: #e96b1f;
+    color: #C1470A;
     font-weight: 600;
 }
 
@@ -135,6 +143,7 @@ const toggleMore = () => {
     margin-bottom: 24px;
     margin-top: 0;
     line-height: 1.6;
+    font-family: 'Montserrat Armenian', sans-serif;
 }
 
 .hero-more {
@@ -153,6 +162,8 @@ const toggleMore = () => {
     border-bottom: 2px solid #bbb;
     padding: 0 0 2px 0;
     transition: border-color 0.2s;
+    font-family: 'Montserrat Armenian', sans-serif;
+
 }
 
 .more-btn:hover {
@@ -161,16 +172,9 @@ const toggleMore = () => {
 }
 
 .arrow {
-    display: inline-block;
     margin-left: 8px;
-    font-size: 1.2em;
-    transition: transform 0.3s cubic-bezier(.4, 2, .6, 1), color 0.2s;
 }
 
-.arrow.open {
-    transform: rotate(90deg);
-    color: #e96b1f;
-}
 
 .fade-slide-enter-active,
 .fade-slide-leave-active {
@@ -231,22 +235,26 @@ const toggleMore = () => {
 
     .hero-image {
         margin-bottom: 24px;
-        position: relative;
     }
 
     .hero-image img {
         display: block;
         top: 0;
         left: 0;
+        position: unset;
         margin: auto;
+        object-fit: scale-down;
         border-radius: 8px;
         height: 320px;
+        width: 350px;
+        z-index: 100;
     }
 
     .image-bg-layer {
         width: 280px;
         height: 260px;
-        left: -5px;
+        z-index: -1;
+        top: 6%;
     }
 
     .hero-text {

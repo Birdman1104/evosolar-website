@@ -1,5 +1,5 @@
 <script setup>
-import { inject, ref, provide } from "vue";
+import { inject, ref, provide, onMounted, onUnmounted } from "vue";
 import ThemeToggle from "./ThemeToggle.vue";
 const translationStore = inject("translationStore");
 const currentHour = new Date().getHours();
@@ -7,11 +7,16 @@ const isDark = ref(currentHour < 8 || currentHour > 20);
 provide("isDark", isDark);
 
 const isMenuOpen = ref(false);
+const hideMenu = ref(false);
 const dropdownOpen = ref(false);
 const langOptions = {
-  hy: { value: 'hy', label: 'Հա' },
+  hy: { value: 'hy', label: 'ՀԱ' },
   en: { value: 'en', label: 'EN' }
 }
+
+const prevScrollPos = ref(window.top.scrollY);
+
+
 
 const handleClick = (lang) => {
   if (translationStore) {
@@ -34,27 +39,32 @@ const toggleDropdown = () => {
 const backToCalculator = () => {
   toggleMenu()
 }
+
+const handleNavBarScroll = () => {
+
+  if (prevScrollPos.value < window.top.scrollY) {
+    hideMenu.value = true;
+  } else {
+    hideMenu.value = false;
+
+  }
+  prevScrollPos.value = window.top.scrollY
+}
+
+
+onMounted(() => {
+  window.addEventListener('scroll', handleNavBarScroll, true)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleNavBarScroll, true)
+})
 </script>
 
-<script>
-export default {
-  data() {
-    return {
-
-
-    };
-  },
-  methods: {
-
-
-
-  },
-};
-</script>
 
 <template>
   <header class="header" :class="{ 'header-dark': isDark, 'header-light': !isDark }">
-    <div class="flex flex-row items-center justify-between w-screen text-base header-content p-4 md:p-[30px]">
+    <div class="header-content " :class="{ 'hide': hideMenu, 'show': !hideMenu }">
       <img src="/images/Logo.svg" alt="Logo" class="logo" />
       <nav class="flex flex-row ">
         <div class="dropdown-menu flex flex-row " id="myLinks">
@@ -96,10 +106,13 @@ export default {
       </button>
     </div>
     <div class="dropdown-menu flex flex-row " :class="{ 'active': isMenuOpen }" id="myLinks">
-      <div class="menu-item mr-[72px]"><a href="#about">{{ translationStore.t('header', 'about') }}</a></div>
-      <div class="menu-item mr-[72px]"><a href="#services">{{ translationStore.t('header', 'services') }}</a>
+      <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#about">{{ translationStore.t('header',
+          'about') }}</a></div>
+      <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#services">{{ translationStore.t('header',
+          'services') }}</a>
       </div>
-      <div class="menu-item mr-[72px]"><a href="#contact">{{ translationStore.t('header', 'contacts') }}</a></div>
+      <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#contact">{{ translationStore.t('header',
+          'contacts') }}</a></div>
     </div>
   </div>
 </template>
@@ -116,10 +129,11 @@ export default {
 .header {
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 830px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  background-repeat: no-repeat;
 }
 
 .header-dark {
@@ -130,7 +144,22 @@ export default {
   background-image: url('/images/hero.jpg');
 }
 
+.show {
+  position: fixed;
+  z-index: 10000;
+}
+
+
+.hide {
+  position: unset;
+}
+
 .header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+  font-size: 16px;
   background-color: rgba(13, 13, 13, 0.75);
   padding: 26px 80px;
 }
@@ -240,11 +269,12 @@ export default {
 @media (max-width: 768px) {
 
   .header-content {
-    padding: 30px;
+    padding: 30px 0;
   }
 
   .logo {
     width: 130px;
+    margin-left: 30px;
   }
 
   .dropdown-menu {
@@ -264,6 +294,8 @@ export default {
 
   .menu-toggle {
     display: block;
+    margin-right: 30px;
+
   }
 
   .menu-item {

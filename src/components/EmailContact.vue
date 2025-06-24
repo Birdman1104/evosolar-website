@@ -1,7 +1,7 @@
 <template>
     <div class="contact-wrapper" ref="root">
 
-        <div class="contact-form">
+        <div  id="contact" class="contact-form" >
             <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
             <form class="form" @submit.prevent="submitForm">
                 <div class="input-group">
