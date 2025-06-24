@@ -1,13 +1,13 @@
 <template>
-  <section id="partners" class="partners-section">
+  <section id="offers" class="offers-section">
     <h2>{{ translationStore.t('steps', 'title') }}</h2>
-    <div class="w-[70%] mb-[15px]">
+    <div class="w-[37%] mb-[15px] text-center description">
       {{ translationStore.t('steps', 'description') }}
     </div>
 
     <div class="slider-container" ref="sliderContainer" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
       <div class="slider" ref="slider">
-        <div v-for="(partner, index) in partners" :key="partner.title + index" class="partner-item">
+        <div v-for="(partner, index) in displayedOffers" :key="partner.title + index" class="partner-item">
           <div class="partner-icon">
             <img :src="partner.image" :alt="partner.title" />
           </div>
@@ -22,10 +22,10 @@
 
 
 <script setup>
-import { inject, ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { inject, ref, onMounted, onBeforeUnmount, nextTick, computed } from 'vue';
 
 const translationStore = inject('translationStore');
-const partners = ref([
+const offers = ref([
   { image: 'icons/Frame.png', title: 'step1' },
   { image: 'icons/Frame1.png', title: 'step2' },
   { image: 'icons/Frame2.png', title: 'step3' },
@@ -33,6 +33,9 @@ const partners = ref([
   { image: 'icons/Frame4.png', title: 'step5' },
   { image: 'icons/Frame5.png', title: 'step6' },
 ]);
+
+const displayedOffers = computed(() => [...offers.value, ...offers.value]);
+
 
 const slider = ref(null);
 const sliderContainer = ref(null);
@@ -69,8 +72,8 @@ const scrollLoop = () => {
   const containerLeft = sliderContainer.value.getBoundingClientRect().left;
 
   if (firstItemRight <= containerLeft) {
-    const removed = partners.value.shift();
-    partners.value.push(removed);
+    const removed = offers.value.shift();
+    offers.value.push(removed);
     position += itemWidth;
   }
 
@@ -101,7 +104,7 @@ const onDragMove = (x) => {
   const dx = x - startX;
   const maxScrollLeft = 0;
   const visibleCount = Math.floor(sliderContainer.value.offsetWidth / itemWidth);
-  const maxScrollRight = -(itemWidth * (partners.value.length - visibleCount));
+  const maxScrollRight = -(itemWidth * (offers.value.length - visibleCount));
 
   position = clamp(startPos + dx, maxScrollRight, maxScrollLeft);
   updateSliderPosition();
@@ -142,7 +145,7 @@ onBeforeUnmount(() => {
 
 
 <style scoped>
-.partners-section {
+.offers-section {
   background: #232323;
   padding: 60px 20px;
   color: #f6f6f6;
@@ -184,5 +187,17 @@ onBeforeUnmount(() => {
 
 .slider::-webkit-scrollbar {
   display: none;
+}
+
+
+@media (max-width: 768px) {
+    h2 {
+      font-size: 19px;
+    }
+
+    .description {
+      width: 70%;
+    }
+
 }
 </style>
