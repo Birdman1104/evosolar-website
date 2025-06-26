@@ -129,6 +129,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    font-size: 17px;
 }
 
 .input-group input {
