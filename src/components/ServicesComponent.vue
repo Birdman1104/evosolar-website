@@ -65,9 +65,8 @@
 </template>
 
 <script setup>
-import { inject, ref, onMounted, computed } from "vue";
+import { inject, ref } from "vue";
 const translationStore = inject("translationStore");
-const currentLang = computed(() => translationStore?.language);
 
 const hoveredIndex = ref(null);
 const clickedIndex = ref(null);
@@ -100,10 +99,6 @@ const isCardActive = (index) => {
 };
 
 
-onMounted(() => {
-  console.log(currentLang);
-
-})
 </script>
 
 <script>
