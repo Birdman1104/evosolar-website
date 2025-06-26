@@ -126,7 +126,8 @@ a {
 }
 
 .logo img {
-    height: 40px;
+    height: 30px;
+    width: 180px;
 }
 
 @media (max-width: 768px) {
