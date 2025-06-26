@@ -118,7 +118,7 @@ onUnmounted(() => {
 <style scoped>
 .theme-toggle {
   position: absolute;
-  right: 20px;
+  right: 80px;
   top: 185px
 }
 
