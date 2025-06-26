@@ -59,7 +59,7 @@
     </div>
   </div> -->
   <div v-if="!isMobile" class="tree-box">
-    <img class="tree" src="../../public/images/Tree.png" />
+    <img class="tree" src="../../public/images/tree.png" />
   </div>
 
 </template>
