@@ -15,7 +15,7 @@ export const TRANSLATIONS = {
     services: {
       title: "SERVICES",
       titleText1: "Have you ever calculated",
-      titleText2: 'how many "trees"',
+      titleText2: 'how many "trees" ',
       titleText3: "1 kW solar system is equivalent to?",
       treetext:
         "A 1 kW solar system saves an average of 1.5 tons of CO₂ per year, which is equivalent to the amount of carbon dioxide absorbed by about 25 trees.",

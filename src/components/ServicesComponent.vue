@@ -37,11 +37,11 @@
     </div>
     <div class="text-box">
       <div class="tree-title-box">
-        <span class="tree-title font-bold"> {{ translationStore.t('services', 'titleText1') }}
+        <span class="tree-title font-bold mb-[20px]"> {{ translationStore.t('services', 'titleText1') }}
           <span class="tree-title text-[#c2410c]"> {{ translationStore.t('services', 'titleText2') }}</span>
-          <span class="tree-title mb-[20px]"> {{ translationStore.t('services', 'titleText3') }}</span>
+          <span class="tree-title "> {{ translationStore.t('services', 'titleText3') }}</span>
         </span>
-        <span class="tree-title text-[#c2410c] mb-[20px]"> {{ translationStore.t('services', 'titleText2') }}</span>
+
         <span class="text-left w-[55%] desc"> {{ translationStore.t('services', 'treetext') }}</span>
         <span class="text-left w-[55%] desc2"> {{ translationStore.t('services', 'treetext2') }}</span>
       </div>
@@ -272,7 +272,7 @@ export default {
 .tree-title {
   font-size: 40px;
   text-align: left;
-  line-height: 100%;
+  line-height: 120%;
 }
 
 .card button {
