@@ -97,7 +97,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1100px;
-    margin: 0 auto 20px;
+    margin: -70px auto 20px;
     gap: 20px;
 }
 
@@ -116,8 +116,7 @@ a {
 }
 
 .footer-bottom {
-    border-top: 1px solid #333;
-    padding-top: 16px;
+    padding-top: 46px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +126,7 @@ a {
 }
 
 .footer-bottom p {
-    color: #888;
+    color: #cfcfcf;
     font-size: 14px;
 }
 
@@ -139,6 +138,11 @@ a {
     width: 20px;
     height: 20px;
     filter: brightness(0.9);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
