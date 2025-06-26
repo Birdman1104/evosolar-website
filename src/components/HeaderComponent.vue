@@ -16,8 +16,6 @@ const langOptions = {
 
 const prevScrollPos = ref(window.top.scrollY);
 
-
-
 const handleClick = (lang) => {
   if (translationStore) {
     translationStore.switchLanguage(lang);
@@ -157,20 +155,22 @@ onUnmounted(() => {
 .header-content {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 30px 0;
   width: 100%;
   font-size: 16px;
   background-color: rgba(13, 13, 13, 0.75);
-  padding: 26px 80px;
 }
 
 .logo {
   height: 28px;
+  margin-left: 80px;
+
 }
 
 .custom-dropdown-wrapper {
   position: relative;
   width: 48px;
+  margin-right: 80px;
 }
 
 .custom-select-box {
@@ -272,6 +272,9 @@ onUnmounted(() => {
     padding: 30px 0;
   }
 
+  .custom-dropdown-wrapper {
+    margin: 0;
+  }
   .logo {
     width: 130px;
     margin-left: 30px;

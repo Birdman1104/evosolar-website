@@ -37,16 +37,18 @@
     </div>
     <div class="text-box">
       <div class="tree-title-box">
-        <span class="tree-title"> {{ translationStore.t('services', 'titleText') }}</span>
-        <span class="tree-title text-[#c2410c] mb-[20px]"> {{ translationStore.t('services', 'titleText2') }}</span>
-        <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext') }}</span>
-        <span class="text-left w-[55%] "> {{ translationStore.t('services', 'treetext2') }}</span>
+        <span class="tree-title font-bold"> {{ translationStore.t('services', 'titleText') }}
+          <span class="tree-title text-[#c2410c] mb-[20px]"> {{ translationStore.t('services', 'titleText2') }}</span>
+        </span>
+
+        <span class="text-left w-[55%]  desc"> {{ translationStore.t('services', 'treetext') }}</span>
+        <span class="text-left w-[55%] desc2"> {{ translationStore.t('services', 'treetext2') }}</span>
       </div>
 
     </div>
 
   </section>
-  <div v-if="!isMobile" class="badge-box">
+  <!-- <div v-if="!isMobile" class="badge-box">
     <div class="treebadge orange">
       <span>{{ translationStore.t('services', 'coBadge') }}</span>
       <span class="text-sm">{{ translationStore.t('services', 'coBadge2') }}</span>
@@ -55,16 +57,17 @@
       <span>{{ translationStore.t('services', 'treeBadge') }}</span>
       <span class="text-sm">{{ translationStore.t('services', 'treeBadge2') }}</span>
     </div>
-  </div>
+  </div> -->
   <div v-if="!isMobile" class="tree-box">
-    <img class="tree" src="../../public/images/tree.png" />
+    <img class="tree" src="../../public/images/Tree.png" />
   </div>
 
 </template>
 
 <script setup>
-import { inject, ref } from "vue";
+import { inject, ref, onMounted, computed } from "vue";
 const translationStore = inject("translationStore");
+const currentLang = computed(() => translationStore?.language);
 
 const hoveredIndex = ref(null);
 const clickedIndex = ref(null);
@@ -95,6 +98,12 @@ const handleClick = (index) => {
 const isCardActive = (index) => {
   return hoveredIndex.value === index || clickedIndex.value === index;
 };
+
+
+onMounted(() => {
+  console.log(currentLang);
+
+})
 </script>
 
 <script>
@@ -135,10 +144,10 @@ export default {
 
 .service-cards {
   display: flex;
+  width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 35px;
-  gap: 28px;
 
 }
 
@@ -223,8 +232,8 @@ export default {
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.3;
-  background-color: #000000;
+  background: rgba(0, 0, 0, 0.99);
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .card-title {
@@ -267,7 +276,6 @@ export default {
 .tree-title {
   font-size: 40px;
   text-align: left;
-  font-weight: 400;
   line-height: 100%;
 }
 
@@ -296,7 +304,10 @@ export default {
 
   .orange {
     right: -200px;
-    ;
+  }
+
+  .tree {
+    width: 50%
   }
 
 }
@@ -331,6 +342,8 @@ export default {
   .tree-title {
     font-size: 25px;
     text-align: center;
+    margin-bottom: 15px;
+
   }
 
   .treemb-box {
@@ -391,11 +404,19 @@ export default {
   }
 
   .tree-title-box span {
-    width: 100%;
+    width: 95%;
   }
 
   .card-title {
     font-size: 20px;
+  }
+
+  .desc {
+    width: 94% !important;
+  }
+
+  .desc2 {
+    width: 85% !important;
   }
 }
 </style>
