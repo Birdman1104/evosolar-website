@@ -24,7 +24,6 @@ const translationStore = inject("translationStore");
   padding: 40px 20px 250px 20px;
   margin: 0 0 20px 0;
   background-color: #fff;
-  font-family: sans-serif;
 }
 
 .title {

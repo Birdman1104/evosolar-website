@@ -99,7 +99,6 @@ a {
 .contact-wrapper {
     background-color: #1f1f1f;
     color: #fff;
-    font-family: sans-serif;
 }
 
 .successMessage {
