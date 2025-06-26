@@ -108,7 +108,7 @@ a {
 }
 
 .contact-form {
-    background-color: #2a2a2a;
+    background-color: #1f1f1f;
     margin: -100px auto 0;
     max-width: 600px;
     padding: 40px 30px;
