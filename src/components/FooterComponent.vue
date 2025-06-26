@@ -44,9 +44,15 @@ window.onload = () => {
 
             <div class="footer-column">
                 <h4>{{ translationStore.t('contactUs', 'links') }}</h4>
-                <p>{{ translationStore.t('contactUs', 'aboutUs') }}</p>
-                <p>{{ translationStore.t('contactUs', 'services') }}</p>
-                <p>{{ translationStore.t('contactUs', 'contactUs') }}</p>
+                <a href="#about">
+                    <p>{{ translationStore.t('contactUs', 'aboutUs') }}</p>
+                </a>
+                <a href="#services">
+                    <p>{{ translationStore.t('contactUs', 'services') }}</p>
+                </a>
+                <a href="#contact">
+                    <p>{{ translationStore.t('contactUs', 'contactUs') }}</p>
+                </a>
             </div>
         </div>
 
@@ -68,7 +74,6 @@ window.onload = () => {
     padding: 0 20px 40px 20px;
     color: #fff;
     font-family: sans-serif;
-
 }
 
 a {

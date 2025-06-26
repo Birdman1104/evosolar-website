@@ -39,12 +39,10 @@ const backToCalculator = () => {
 }
 
 const handleNavBarScroll = () => {
-
   if (prevScrollPos.value < window.top.scrollY) {
     hideMenu.value = true;
   } else {
     hideMenu.value = false;
-
   }
   prevScrollPos.value = window.top.scrollY
 }
@@ -105,12 +103,12 @@ onUnmounted(() => {
     </div>
     <div class="dropdown-menu flex flex-row " :class="{ 'active': isMenuOpen }" id="myLinks">
       <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#about">{{ translationStore.t('header',
-          'about') }}</a></div>
+        'about') }}</a></div>
       <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#services">{{ translationStore.t('header',
-          'services') }}</a>
+        'services') }}</a>
       </div>
       <div class="menu-item mr-[72px]" @click="backToCalculator"><a href="#contact">{{ translationStore.t('header',
-          'contacts') }}</a></div>
+        'contacts') }}</a></div>
     </div>
   </div>
 </template>
@@ -275,6 +273,7 @@ onUnmounted(() => {
   .custom-dropdown-wrapper {
     margin: 0;
   }
+
   .logo {
     width: 130px;
     margin-left: 30px;
