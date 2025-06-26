@@ -8,16 +8,27 @@ const socials = [
         alt: 'Telegram',
         url: 'https://t.me/evosolarllc'
     },
-    // {
-    //     icon: 'icons/viber.png',
-    //     alt: 'Viber',
-    //     url: 'https://t.me/Birdman1104'
-    // },
-    // {
-    //     icon: 'icons/whatsapp.png',
-    //     alt: 'WhatsApp',
-    //     url: 'https://t.me/Birdman1104'
-    // },
+    {
+        icon: 'icons/facebook.png',
+        alt: 'Facebook',
+        url: 'https://www.facebook.com/evosolarllc'
+    },
+    {
+        icon: 'icons/instagram.png',
+        alt: 'Instagram',
+        url: 'https://www.instagram.com/evosolarllc/'
+    },
+    {
+        icon: 'icons/linkedin.png',
+        alt: 'LinkedIn',
+        url: 'https://www.linkedin.com/company/evosolar-llc/'
+    },
+    {
+        icon: 'icons/tiktok.png',
+        alt: 'TikTok',
+        url: 'https://www.tiktok.com/@evosolar_armenia'
+    },
+
 ]
 </script>
 
