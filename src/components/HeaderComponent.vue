@@ -249,6 +249,10 @@ onUnmounted(() => {
   text-decoration: none;
 }
 
+.menu-item {
+  line-height: 30px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -273,6 +277,10 @@ onUnmounted(() => {
   padding-left: 20px;
 }
 
+.dropdown-menu {
+  height: 30px;
+}
+
 @media (max-width: 768px) {
 
   .header-content {
@@ -293,7 +301,7 @@ onUnmounted(() => {
     flex-direction: column;
     background: none;
     position: absolute;
-    /* top: 50px; */
+    ;
     left: 0px;
     margin: 70px 60px;
     width: 100%;
