@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { inject, onMounted, ref, computed, nextTick } from "vue";
+import { computed, inject, nextTick, onMounted, ref } from "vue";
 
 const translationStore = inject("translationStore");
 
@@ -27,7 +27,7 @@ const partners = ref([
   { image: "icons/fca.png", url: "https://www.fca.am/en/home.html", title: "FCA" },
 ]);
 
-const displayedPartners = computed(() => [...partners.value, ...partners.value]);
+const displayedPartners = computed(() => [...partners.value, ...partners.value, ...partners.value]);
 
 const slider = ref(null);
 let animationFrame;
