@@ -1,53 +1,80 @@
 <template>
-  <section id="services" class="services flex justify-center flex-col items-center font-normal mb-[60px]">
-    <h1 class=" text-[35px] mt-[130px] mb-[15px]">{{ translationStore.t('services', 'title') }}</h1>
-    <p class="w-[75%] leading-[25px] m-[0]">{{ translationStore.t('services', 'description') }}</p>
+  <section
+    id="services"
+    class="services flex justify-center flex-col items-center font-normal mb-[60px]"
+  >
+    <h1 class="text-[35px] mt-[130px] mb-[15px]">
+      {{ translationStore.t("services", "title") }}
+    </h1>
+    <p class="w-[75%] leading-[25px] m-[0]">
+      {{ translationStore.t("services", "description") }}
+    </p>
     <div class="service-cards">
-
-      <div class="card" v-for="(service, index) in services" :key="index" @mouseenter="hoveredIndex = index"
-        @mouseleave="hoveredIndex = null" @click="handleClick(index)">
-
+      <div
+        class="card"
+        v-for="(service, index) in services"
+        :key="index"
+        @mouseenter="hoveredIndex = index"
+        @mouseleave="hoveredIndex = null"
+        @click="handleClick(index)"
+      >
         <img :src="service.image" :alt="service.title" />
         <div class="overlay" :class="{ hovered: isCardActive(index) }"></div>
 
         <div v-if="!isCardActive(index)" class="card-title flex justify-center">
           <span class="w-[80%] flex">
-            {{ translationStore.t('services', `service${index + 1}`, 'title') }}
+            {{ translationStore.t("services", `service${index + 1}`, "title") }}
           </span>
         </div>
 
         <div v-if="isCardActive(index)" class="description">
           <p class="m-[25px]">
-            {{ translationStore.t('services', `service${index + 1}`, 'description') }}
+            {{
+              translationStore.t(
+                "services",
+                `service${index + 1}`,
+                "description"
+              )
+            }}
           </p>
         </div>
       </div>
-
     </div>
     <div v-if="isMobile" class="treemb-box">
       <img src="../../public/images/treemb.png" />
       <div class="treebadgeMb orangeBlock">
-        <span>{{ translationStore.t('services', 'coBadge') }}</span>
-        <span class="text-sm">{{ translationStore.t('services', 'coBadge2') }}</span>
+        <span>{{ translationStore.t("services", "coBadge") }}</span>
+        <span class="text-sm">{{
+          translationStore.t("services", "coBadge2")
+        }}</span>
       </div>
       <div class="treebadgeMb greenBlock">
-        <span>{{ translationStore.t('services', 'treeBadge') }}</span>
-        <span class="text-sm">{{ translationStore.t('services', 'treeBadge2') }}</span>
+        <span>{{ translationStore.t("services", "treeBadge") }}</span>
+        <span class="text-sm">{{
+          translationStore.t("services", "treeBadge2")
+        }}</span>
       </div>
     </div>
     <div class="text-box">
       <div class="tree-title-box">
-        <span class="tree-title font-bold mb-[20px]"> {{ translationStore.t('services', 'titleText1') }}
-          <span class="tree-title text-[#c2410c]"> {{ translationStore.t('services', 'titleText2') }}</span>
-          <span class="tree-title "> {{ translationStore.t('services', 'titleText3') }}</span>
+        <span class="tree-title font-bold mb-[20px]">
+          {{ translationStore.t("services", "titleText1") }}
+          <span class="tree-title text-[#c2410c]">
+            {{ translationStore.t("services", "titleText2") }}</span
+          >
+          <span class="tree-title">
+            {{ translationStore.t("services", "titleText3") }}</span
+          >
         </span>
 
-        <span class="text-left w-[55%] desc"> {{ translationStore.t('services', 'treetext') }}</span>
-        <span class="text-left w-[55%] desc2"> {{ translationStore.t('services', 'treetext2') }}</span>
+        <span class="text-left w-[55%] desc">
+          {{ translationStore.t("services", "treetext") }}</span
+        >
+        <span class="text-left w-[55%] desc2">
+          {{ translationStore.t("services", "treetext2") }}</span
+        >
       </div>
-
     </div>
-
   </section>
   <!-- <div v-if="!isMobile" class="badge-box">
     <div class="treebadge orange">
@@ -62,7 +89,6 @@
   <div v-if="!isMobile" class="tree-box">
     <img class="tree" src="../../public/images/tree.png" />
   </div>
-
 </template>
 
 <script setup>
@@ -74,16 +100,16 @@ const clickedIndex = ref(null);
 
 const services = [
   {
-    title: 'service1',
-    image: 'images/service1.jpg',
+    title: "service1",
+    image: "images/service1.jpg",
   },
   {
-    title: 'Maintenance of Solar Systems',
-    image: 'images/service2.jpg',
+    title: "Maintenance of Solar Systems",
+    image: "images/service2.jpg",
   },
   {
-    title: 'Adding Solar Panels',
-    image: 'images/service3.jpg',
+    title: "Adding Solar Panels",
+    image: "images/service3.jpg",
   },
 ];
 
@@ -98,8 +124,6 @@ const handleClick = (index) => {
 const isCardActive = (index) => {
   return hoveredIndex.value === index || clickedIndex.value === index;
 };
-
-
 </script>
 
 <script>
@@ -108,16 +132,16 @@ export default {
     return {
       services: [
         {
-          title: 'service1',
-          image: 'images/service1.jpg',
+          title: "service1",
+          image: "images/service1.jpg",
         },
         {
-          title: 'Maintenance of Solar Systems',
-          image: 'images/service2.jpg',
+          title: "Maintenance of Solar Systems",
+          image: "images/service2.jpg",
         },
         {
-          title: 'Adding Solar Panels',
-          image: 'images/service3.jpg',
+          title: "Adding Solar Panels",
+          image: "images/service3.jpg",
         },
       ],
     };
@@ -135,7 +159,7 @@ export default {
   background: white;
   padding: 0 20px 30px 20px;
   text-align: center;
-  font-family: 'Montserrat Armenian', sans-serif;
+  font-family: "Montserrat Armenian", sans-serif;
 }
 
 .service-cards {
@@ -144,7 +168,6 @@ export default {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 35px;
-
 }
 
 .text-box {
@@ -168,7 +191,7 @@ export default {
   position: absolute;
   width: 220px;
   height: 110px;
-  color: #F6F6F6;
+  color: #f6f6f6;
   font-weight: 500;
   border-radius: 5px;
   text-align: center;
@@ -186,7 +209,7 @@ export default {
 }
 
 .green {
-  background-color: #13381E;
+  background-color: #13381e;
   right: -250px;
   bottom: 150px;
 }
@@ -229,7 +252,11 @@ export default {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.99);
-  background: linear-gradient(179deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    179deg,
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .card-title {
@@ -241,7 +268,7 @@ export default {
   right: 0;
   width: 100%;
   text-align: center;
-  font-family: 'Montserrat Armenian', sans-serif;
+  font-family: "Montserrat Armenian", sans-serif;
 }
 
 .description {
@@ -259,7 +286,6 @@ export default {
   line-height: 23px;
   display: flex;
 }
-
 
 .tree-title-box {
   font-size: 18px;
@@ -289,9 +315,22 @@ export default {
   padding-right: 20px;
   padding-bottom: 8px;
   padding-left: 20px;
-  background: #ED3200;
+  background: #ed3200;
 }
 
+@media (min-width: 1600px) {
+
+  .card {
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .card img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
+}
 
 @media (max-width: 1280px) and (min-width: 768px) {
   .card-title {
@@ -303,9 +342,8 @@ export default {
   }
 
   .tree {
-    width: 50%
+    width: 50%;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -324,7 +362,7 @@ export default {
     margin-left: 0;
     padding: auto;
     position: relative;
-    background: #FFFFFF;
+    background: #ffffff;
     top: -40px;
     height: 570px;
     z-index: 1;
@@ -339,7 +377,6 @@ export default {
     font-size: 25px;
     text-align: center;
     margin-bottom: 15px;
-
   }
 
   .treemb-box {
@@ -365,7 +402,7 @@ export default {
     position: absolute;
     width: 130px;
     height: 65px;
-    color: #F6F6F6;
+    color: #f6f6f6;
     font-weight: 500;
     border-radius: 5px;
     text-align: center;
@@ -379,7 +416,7 @@ export default {
   .greenBlock {
     bottom: 0;
     z-index: 10;
-    background-color: #13381E;
+    background-color: #13381e;
   }
 
   .orangeBlock {
@@ -387,7 +424,6 @@ export default {
     right: 0;
     z-index: 0;
     background-color: #c2410c;
-
   }
 
   .text-sm {
