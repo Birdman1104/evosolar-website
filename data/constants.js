@@ -13,7 +13,7 @@ export const REGION_OPTIONS = [
 ];
 
 export const MONTHS_COUNT = 12;
-export const STANCE_POWER = 1.3;
+export const STANCE_POWER = 1.25;
 export const ROUND_TO = 500;
 export const WEEKS_COUNT = 52;
 export const PROFIT = 1.25;
