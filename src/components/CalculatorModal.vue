@@ -114,8 +114,8 @@
 </template>
 
 <script setup>
-import { inject, watch, ref, computed } from "vue";
-import { REGION_OPTIONS, MONTHS_COUNT, STANCE_POWER, ROUND_TO, WEEKS_COUNT, PROFIT } from './../../public/data/constants.js';
+import { computed, inject, ref, watch } from "vue";
+import { MONTHS_COUNT, PROFIT, REGION_OPTIONS, ROUND_TO, STANCE_POWER, WEEKS_COUNT } from './../../public/data/constants.js';
 
 const sharedState = inject('sharedState');
 
