@@ -75,12 +75,7 @@ window.onload = () => {
       </div>
 
       <div class="social-icons">
-        <a
-          v-for="(social, index) in socials"
-          :key="index"
-          :href="social.url"
-          target="_blank"
-        >
+        <a v-for="(social, index) in socials" :key="index" :href="social.url" target="_blank">
           <img :src="social.icon" :alt="social.alt" />
         </a>
       </div>
@@ -93,7 +88,6 @@ window.onload = () => {
   background-color: #1f1f1f;
   padding: 0 20px 40px 20px;
   color: #fff;
-  font-family: sans-serif;
 }
 
 a {

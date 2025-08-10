@@ -93,6 +93,6 @@ provide("translationStore", translationStore);
 <style>
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat Armenian', sans-serif !important;
 }
 </style>

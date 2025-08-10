@@ -5,13 +5,13 @@
             <h3 class="contact-title">{{ translationStore.t('contactUs', 'title') }}</h3>
             <form class="form" @submit.prevent="submitForm">
                 <div class="input-group">
-                    <input type="tel" name="phoneNumber" id="fphoneNumber" v-model="phoneNumber" required
-                        pattern="[0-9]{9}" maxlength="9"
+                    <i class="fa-solid fa-phone icon"></i><input type="tel" name="phoneNumber" id="fphoneNumber"
+                        v-model="phoneNumber" required pattern="[0-9]{9}" maxlength="9"
                         :placeholder="translationStore.t('contactUs', 'phoneNumberPlaceholder')" />
                 </div>
                 <div class="input-group">
-                    <input type="text" name="name" id="fname" v-model="name" required
-                        :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
+                    <i class="fa-solid fa-id-badge icon"></i><input type="text" name="name" id="fname" v-model="name"
+                        required :placeholder="translationStore.t('contactUs', 'namePlaceholder')" />
                 </div>
                 <p class="successMessage">{{ translationStore.t('contactUs', 'success') }}</p>
                 <button type="submit" class="submit-button">{{ translationStore.t('contactUs', 'buttonText') }}</button>
@@ -99,7 +99,6 @@ a {
 .contact-wrapper {
     background-color: #1f1f1f;
     color: #fff;
-    font-family: sans-serif;
 }
 
 .successMessage {
@@ -108,7 +107,7 @@ a {
 }
 
 .contact-form {
-    background-color: #2a2a2a;
+    background-color: #1f1f1f;
     margin: -100px auto 0;
     max-width: 600px;
     padding: 40px 30px;
@@ -129,11 +128,12 @@ a {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    font-size: 17px;
 }
 
 .input-group input {
     width: 90%;
-    padding: 12px 16px;
+    padding: 12px 22px 12px 36px;
     border: 1px solid #444;
     background: #1a1a1a;
     border-radius: 6px;
@@ -141,8 +141,23 @@ a {
     font-size: 14px;
 }
 
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
 .input-group input::placeholder {
     color: #aaa;
+}
+
+.icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    font-size: 14px;
 }
 
 .submit-button {

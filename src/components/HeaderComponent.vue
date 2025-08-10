@@ -59,8 +59,9 @@ onUnmounted(() => {
 
 
 <template>
-  <header class="header" :class="{ 'header-dark': isDark, 'header-light': !isDark }">
-    <div class="header-content " :class="{ 'hide': hideMenu, 'show': !hideMenu }">
+  <header class="header" :class="{ 'header-dark-img': isDark, 'header-light-img': !isDark }">
+    <div class="header-content "
+      :class="{ 'hide': hideMenu, 'show': !hideMenu, 'header-dark': isDark, 'header-light': !isDark }">
       <img src="/images/Logo.svg" alt="Logo" class="logo" />
       <nav class="flex flex-row ">
         <div class="dropdown-menu flex flex-row " id="myLinks">
@@ -118,26 +119,34 @@ onUnmounted(() => {
 <style scoped>
 .theme-toggle {
   position: absolute;
-  right: 20px;
+  right: 80px;
   top: 185px
 }
 
 .header {
   background-size: cover;
   background-position: center;
-  height: 830px;
+  height: 85vh;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   background-repeat: no-repeat;
 }
 
-.header-dark {
+.header-dark-img {
   background-image: url('/images/hero_night.jpg');
 }
 
-.header-light {
+.header-light-img {
   background-image: url('/images/hero.jpg');
+}
+
+.header-dark {
+  background-color: #213239;
+}
+
+.header-light {
+  background-color: #4e5f66;
 }
 
 .show {
@@ -156,7 +165,7 @@ onUnmounted(() => {
   padding: 30px 0;
   width: 100%;
   font-size: 16px;
-  background-color: rgba(13, 13, 13, 0.75);
+  /* background-color: rgba(13, 13, 13, 0.75); */
 }
 
 .logo {
@@ -240,6 +249,10 @@ onUnmounted(() => {
   text-decoration: none;
 }
 
+.menu-item {
+  line-height: 30px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -264,6 +277,10 @@ onUnmounted(() => {
   padding-left: 20px;
 }
 
+.dropdown-menu {
+  height: 30px;
+}
+
 @media (max-width: 768px) {
 
   .header-content {
@@ -284,7 +301,7 @@ onUnmounted(() => {
     flex-direction: column;
     background: none;
     position: absolute;
-    /* top: 50px; */
+    ;
     left: 0px;
     margin: 70px 60px;
     width: 100%;

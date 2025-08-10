@@ -60,7 +60,7 @@ const translationStore = inject("translationStore");
     color: white;
     font-size: 1.125rem;
     font-weight: 500;
-    padding: 0.9rem 4rem;
+    padding: 0.9rem 6rem;
     border-radius: 0.5rem;
     border-style: hidden;
     margin-bottom: 130px;
